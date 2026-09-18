@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Take Care OFF Yourself! - Fundacja Można Zwariować</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="accent-blue">
+    <header>
+      <a href="index.html">
+        <img
+          src="images/logo-black.png"
+          alt="Fundacja Można Zwariować"
+          class="logo"
+        />
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html#projekty">PROJEKTY</a>
+        <a href="index.html#wsparcie">WSPARCIE</a>
+        <a href="index.html#psychoedu">PSYCHOEDU</a>
+        <a href="wiedza.html">WIEDZA</a>
+        <a href="index.html#aktualnosci">AKTUALNOŚCI</a>
+        <a href="index.html#partnerzy">PARTNERZY</a>
+        <a href="fundacja.html">FUNDACJA</a>
+        <a href="http://poradniamoznazwariowac.pl/" target="_blank">PORADNIA</a>
+        <a href="#kontakt">KONTAKT</a>
+      </nav>
+
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <nav class="menu" id="mobileMenu">
+      <a href="index.html#projekty">Projekty</a>
+      <a href="index.html#wsparcie">Wsparcie</a>
+      <a href="index.html#psychoedu">Psychoedu</a>
+      <a href="wiedza.html">Wiedza</a>
+      <a href="index.html#aktualnosci">Aktualności</a>
+      <a href="index.html#partnerzy">Partnerzy</a>
+      <a href="fundacja.html">Fundacja</a>
+      <a href="http://poradniamoznazwariowac.pl/" target="_blank">Poradnia</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <main class="container">
+      <div class="gradient-zone">
+      <section class="takecareoffyourself-hero">
+        <p class="eyebrow" style="justify-content:center;">Higiena cyfrowa</p>
+        <div class="takecareoffyourself-logo">
+          <img src="images/tcoylogo.png" alt="Take Care OFF Yourself Logo" />
+        </div>
+
+        <div class="takecareoffyourself-content">
+          <div class="takecareoffyourself-left">
+            <div class="takecareoffyourself-image">
+              <img src="images/tcoy1.png" alt="Take Care OFF Yourself" />
+            </div>
+          </div>
+
+          <div class="takecareoffyourself-right">
+            <p>
+              Według danych WHO przeciętny dorosły spędza przed ekranem ponad 6
+              godzin dziennie, młodzi dorośli nawet 9.
+            </p>
+            <h3>
+              W Polsce aż 37% osób w wieku 18–34 lat przyznaje, że nadmiar
+              bodźców cyfrowych negatywnie wpływa na ich samopoczucie.
+            </h3>
+            <p>
+              Konsekwencje to
+              <b
+                >problemy ze snem, trudności z koncentracją, nasilone stany
+                lękowe czy poczucie osamotnienia</b
+              >. <i>Take Care OFF Yourself</i> to projekt, który ma na celu
+              zachęcić do refleksji nad tym, jak nadmiar bodźców cyfrowych
+              wpływa na nasze samopoczucie i jak możemy sobie pomóc.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="takecareoffyourself-quiz">
+        <div class="quiz-wrapper">
+          <p class="eyebrow" style="justify-content:center;">Sprawdź się</p>
+          <h2>Sprawdź swoją higienę cyfrową</h2>
+
+          <form id="digitalHygieneQuiz">
+            <div class="quiz-question">
+              <p>Czy spędzasz w telefonie więcej niż 4 godziny dziennie?</p>
+              <div class="quiz-options">
+                <input type="radio" name="q1" value="yes" id="q1-yes" />
+                <label for="q1-yes">Tak</label>
+                <input type="radio" name="q1" value="no" id="q1-no" />
+                <label for="q1-no">Nie</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>Czy scrollujesz w pierwszych minutach po przebudzeniu?</p>
+              <div class="quiz-options">
+                <input type="radio" name="q2" value="yes" id="q2-yes" />
+                <label for="q2-yes">Tak</label>
+                <input type="radio" name="q2" value="no" id="q2-no" />
+                <label for="q2-no">Nie</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>Czy zdarza ci się chodzić z telefonem do łazienki?</p>
+              <div class="quiz-options">
+                <input type="radio" name="q3" value="yes" id="q3-yes" />
+                <label for="q3-yes">Tak</label>
+                <input type="radio" name="q3" value="no" id="q3-no" />
+                <label for="q3-no">Nie</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>Czy podczas spotkań z ludźmi sprawdzasz social media?</p>
+              <div class="quiz-options">
+                <input type="radio" name="q4" value="yes" id="q4-yes" />
+                <label for="q4-yes">Tak</label>
+                <input type="radio" name="q4" value="no" id="q4-no" />
+                <label for="q4-no">Nie</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>Czy korzystasz z telefonu w łóżku?</p>
+              <div class="quiz-options">
+                <input type="radio" name="q5" value="yes" id="q5-yes" />
+                <label for="q5-yes">Tak</label>
+                <input type="radio" name="q5" value="no" id="q5-no" />
+                <label for="q5-no">Nie</label>
+              </div>
+            </div>
+
+            <div class="quiz-question">
+              <p>
+                Czy doświadczasz obniżonego nastroju, lęku, trudności z
+                koncentracją?
+              </p>
+              <div class="quiz-options">
+                <input type="radio" name="q6" value="yes" id="q6-yes" />
+                <label for="q6-yes">Tak</label>
+                <input type="radio" name="q6" value="no" id="q6-no" />
+                <label for="q6-no">Nie</label>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="quiz-submit"
+              onclick="calculateQuizResult()"
+            >
+              Zobacz wynik
+            </button>
+          </form>
+
+          <div id="quizResult" class="quiz-result" style="display: none"></div>
+        </div>
+      </section>
+
+      <section class="takecareoffyourself-tips">
+        <p class="eyebrow" style="justify-content:center;">Praktyka</p>
+        <h2>Podstawowe zasady higieny cyfrowej</h2>
+        <div class="tips-list">
+          <h3>→ Ustaw limity aplikacji i wycisz powiadomienia.</h3>
+          <h3>→ Zadbaj o poranną i wieczorną rutynę offline.</h3>
+          <h3>→ Wyznacz strefy bez ekranów.</h3>
+          <h3>→ Ogranicz korzystanie z telefonu podczas spotkań.</h3>
+          <h3>→ Planuj aktywności analogowe - spacer, sport, książka.</h3>
+        </div>
+
+        <div class="takecareoffyourself-downloads">
+          <a
+            href="https://drive.google.com/file/d/1X4hQGOuIaIx8rHTEGJ8dn_weIZfPxAQ9/view?usp=sharing"
+            class="cta-button cta-button-custom-pink"
+            target="_blank"
+          >
+            POBIERZ PLAKATY Take Care OFF Yourself!
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1uewqJsJp4NoGZCtAJEx8et4A74IIZWDT/view?usp=sharing"
+            class="cta-button"
+            target="_blank"
+          >
+            POBIERZ PORADNIK O HIGIENIE CYFROWEJ!
+          </a>
+        </div>
+      </section>
+      </div>
+    </main>
+
+    <footer class="footer" id="kontakt">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>WESPRZYJ NAS</h3>
+          <div class="donation-info">
+            <p>
+              Jeśli chcesz wspierać naszą działalność, wyślij przelew tytułem
+              <strong>"darowizna na cele statutowe"</strong> na nr konta:
+            </p>
+            <p class="bank-account">
+              <strong>14 1600 1462 1893 5759 6000 0001</strong>
+            </p>
+            <br />
+            <a
+              href="https://patronite.pl/moznazwariowac"
+              target="_blank"
+              class="patronite-link"
+            >
+              <i class="fas fa-heart"></i> patronite.pl/moznazwariowac
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>DANE</h3>
+          <div class="contact-info">
+            <p><strong>Fundacja Można Zwariować</strong></p>
+            <p>ul. Racławicka 30/124</p>
+            <p>02-601 Warszawa</p>
+            <p>KRS: 0000785735</p>
+            <p>NIP: 7543222636</p>
+            <p>REGON: 383332308</p>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>BĄDŹMY W KONTAKCIE!</h3>
+          <div class="footer-social-icons">
+            <a
+              href="https://www.facebook.com/fundacjamoznazwariowac/"
+              target="_blank"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/moznazwariowac/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://open.spotify.com/show/7yq7L2H5VwxzbtKMXawCY4"
+              target="_blank"
+            >
+              <i class="fab fa-spotify"></i>
+            </a>
+            <a href="https://www.youtube.com/@moznazwariowac" target="_blank">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+          <br /><br />
+          <a href="mailto:fundacja@moznazwariowac.pl" class="email-link">
+            <i class="fas fa-envelope"></i> fundacja@moznazwariowac.pl
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Fundacja Można Zwariować. Wszystkie prawa zastrzeżone.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
