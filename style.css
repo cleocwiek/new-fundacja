@@ -330,13 +330,13 @@ header a img.logo {
   top: 0;
   bottom: 0;
   right: -100%;
-  width: min(39vw, 160px);
+  width: min(50vw, 210px);
   overflow-y: auto;
   overscroll-behavior: contain;
   background: var(--paper);
-  padding: calc(4.5rem + env(safe-area-inset-top)) 1rem
+  padding: calc(3.75rem + env(safe-area-inset-top)) 1rem
     calc(1.75rem + env(safe-area-inset-bottom));
-  gap: 1.4rem;
+  gap: 0;
   box-shadow: var(--shadow-soft);
   transition: right 0.3s ease;
   z-index: 50;
@@ -365,10 +365,11 @@ header a img.logo {
 .menu a {
   flex-shrink: 0;
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--ink);
   border-bottom: 1px solid var(--line);
-  padding-bottom: 0.6rem;
+  padding: 0.5rem 0;
+  line-height: 1.2;
 }
 
 @media (max-width: 900px) {
