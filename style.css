@@ -330,11 +330,11 @@ header a img.logo {
   top: 0;
   bottom: 0;
   right: -100%;
-  width: min(78vw, 320px);
+  width: min(39vw, 160px);
   overflow-y: auto;
   overscroll-behavior: contain;
   background: var(--paper);
-  padding: calc(1.75rem + env(safe-area-inset-top)) 2rem
+  padding: calc(4.5rem + env(safe-area-inset-top)) 1rem
     calc(1.75rem + env(safe-area-inset-bottom));
   gap: 1.4rem;
   box-shadow: var(--shadow-soft);
@@ -349,7 +349,7 @@ header a img.logo {
 .menu-close {
   position: absolute;
   top: calc(1rem + env(safe-area-inset-top));
-  right: 1rem;
+  right: 0.75rem;
   z-index: 1;
   width: 2.5rem;
   height: 2.5rem;
@@ -365,7 +365,7 @@ header a img.logo {
 .menu a {
   flex-shrink: 0;
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   color: var(--ink);
   border-bottom: 1px solid var(--line);
   padding-bottom: 0.6rem;
