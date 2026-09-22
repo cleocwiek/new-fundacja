@@ -346,6 +346,22 @@ header a img.logo {
   right: 0;
 }
 
+.menu-close {
+  position: absolute;
+  top: calc(1rem + env(safe-area-inset-top));
+  right: 1rem;
+  z-index: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--ink);
+  cursor: pointer;
+}
+
 .menu a {
   flex-shrink: 0;
   font-family: var(--font-serif);
