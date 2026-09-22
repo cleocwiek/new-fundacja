@@ -17,28 +17,41 @@
   --line: #e6dfd4;
   --line-strong: #d5cbbc;
 
-  /* accents — sampled from the three brochure covers */
-  --pink-700: #c15d84;
-  --pink-500: #e2839f9c;
-  --pink-500-solid: #e08aab;
-  --pink-300: #f2b9cf;
-  --pink-100: #fbe9f0;
+  /* accents — updated brand palette (Sept 2026) */
+  --pink-700: #c15492;
+  --pink-500: #e9bbd59c;
+  --pink-500-solid: #e9bbd5;
+  --pink-300: #efe6eb;
+  --pink-100: #f9f8f9;
 
-  --blue-700: #29688f;
-  --blue-500-solid: #5aa3d0;
-  --blue-300: #a9d1ea;
-  --blue-100: #e7f3fa;
+  --blue-700: #174b75;
+  --blue-500-solid: #1d72b8;
+  --blue-300: #a6bed2;
+  --blue-100: #e7ebee;
 
-  --green-700: #4c7a3d;
-  --green-500-solid: #86b473;
-  --green-300: #bcdaac;
-  --green-100: #eef6e9;
+  --green-700: #065925;
+  --green-500-solid: #038d36;
+  --green-300: #89d0a3;
+  --green-100: #e0ebe4;
+
+  /* new brand hues — not yet wired to a page theme */
+  --red-700: #973615;
+  --red-500-solid: #e94f1b;
+  --red-300: #dcbcb2;
+  --red-100: #f1ecea;
+
+  --navy-700: #202154;
+  --navy-500-solid: #2d2e83;
+  --navy-300: #a3a4c4;
+  --navy-100: #e5e5ea;
+
+  --yellow: #ffdc38;
 
   /* the "active" accent — overridden per page via body classes */
-  --accent-700: var(--pink-700);
-  --accent-500: var(--pink-500-solid);
-  --accent-300: var(--pink-300);
-  --accent-100: var(--pink-100);
+  --accent-700: var(--blue-700);
+  --accent-500: var(--blue-500-solid);
+  --accent-300: var(--blue-300);
+  --accent-100: var(--blue-100);
 
   --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -134,6 +147,22 @@ section {
   section { padding: 3.25rem 1.25rem; }
 }
 
+/* psychoedu and szukasz wsparcia sit back-to-back with no heading gap
+   between them, so their combined padding otherwise doubles up — trim it
+   to match the tighter spacing used elsewhere between sections */
+#psychoedu {
+  padding-bottom: 2.75rem;
+}
+
+#wsparcie {
+  padding-top: 2.75rem;
+}
+
+@media (max-width: 720px) {
+  #psychoedu { padding-bottom: 1.5rem; }
+  #wsparcie { padding-top: 1.5rem; }
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -143,7 +172,7 @@ section {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--accent-700);
+  color: var(--accent-500);
   margin-bottom: 0.9rem;
 }
 
@@ -340,8 +369,20 @@ header a img.logo {
   max-width: var(--container);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  grid-template-columns: 0.95fr 1.25fr 0.95fr;
+  gap: 2.5rem;
+}
+
+.footer-section {
+  min-width: 0;
+}
+
+/* strong/b default to --ink globally, which is the same as the
+   footer's own background — without this override, bold text here
+   (transfer title, bank account number) is invisible */
+.footer strong,
+.footer b {
+  color: inherit;
 }
 
 .footer-section h3 {
@@ -373,6 +414,8 @@ header a img.logo {
   font-weight: 600;
   border-bottom: 1px solid rgba(242, 236, 227, 0.35);
   padding-bottom: 2px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .footer-social-icons {
@@ -432,9 +475,9 @@ header a img.logo {
   margin-right: -50vw;
   background: linear-gradient(
     100deg,
-    #ffdb38 0%,
-    rgba(255, 219, 56, 0.45) 34%,
-    rgba(255, 219, 56, 0) 62%
+    var(--yellow) 0%,
+    rgba(255, 220, 56, 0.45) 34%,
+    rgba(255, 220, 56, 0) 62%
   );
 }
 
@@ -520,7 +563,7 @@ header a img.logo {
 .project .image-wrapper {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1018 / 1444;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--paper);
@@ -554,9 +597,97 @@ header a img.logo {
   padding-bottom: 2px;
 }
 
+/* "nasze projekty" as a row list — small thumbnail + title/description + link */
+.projects-list {
+  max-width: var(--container);
+  margin: 3rem auto 0;
+  padding: 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease;
+}
+
+.projects-list a.project-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.project-row:hover {
+  background: rgba(38, 34, 31, 0.03);
+}
+
+.project-row-thumb {
+  flex: 0 0 auto;
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--paper);
+  box-shadow: var(--shadow-card);
+}
+
+.project-row-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-row:hover .project-row-thumb img {
+  transform: scale(1.06);
+}
+
+.project-row-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.project-row-text h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 0 0 0.3rem;
+  color: var(--ink);
+}
+
+.project-row-text p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.project-row-arrow {
+  flex: 0 0 auto;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent-700);
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .projects-list { padding: 0 1.25rem; }
+}
+
+@media (max-width: 560px) {
+  .project-row-thumb { width: 72px; height: 72px; }
+  .project-row { gap: 1.1rem; }
+  .project-row-arrow { display: none; }
+}
+
 /* Trusted / crisis-support section — green accent by default here */
 .trusted-section {
-  background: var(--green-100);
+  background: transparent;
 }
 
 .trusted-heading {
@@ -565,7 +696,8 @@ header a img.logo {
 }
 
 .trusted-heading h2 {
-  color: var(--green-700);
+  color: var(--ink);
+  text-transform: lowercase;
 }
 
 .trusted-grid {
@@ -689,15 +821,26 @@ header a img.logo {
 
 /* Downloads / psychoedu */
 .downloads-section {
+  background: transparent;
+}
+
+.downloads-box {
+  max-width: var(--container);
+  margin: 0 auto;
   background: var(--paper);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 3rem 2.75rem;
+  box-shadow: var(--shadow-soft);
 }
 
 .downloads-heading,
 .downloads-content {
-  max-width: var(--container);
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
+}
+
+.downloads-heading {
+  margin-bottom: 2.5rem;
 }
 
 .downloads-content h3 {
@@ -769,7 +912,7 @@ header a img.logo {
 
 /* Instagram */
 .instagram-section {
-  background: var(--cream);
+  background: transparent;
 }
 
 .instagram-heading {
@@ -784,16 +927,26 @@ header a img.logo {
 
 /* Partners carousel */
 .partners-section {
-  background: var(--cream);
+  background: transparent;
+}
+
+.partners-box {
+  max-width: var(--container);
+  margin: 0 auto;
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 2.75rem 2.75rem 2.25rem;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
 }
 
 .partners-heading {
-  max-width: var(--container);
+  max-width: 100%;
   margin: 0 auto 2.5rem;
 }
 
 .partners-track {
-  max-width: var(--container);
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -803,27 +956,19 @@ header a img.logo {
 
 .partner-item {
   flex: 0 0 auto;
-  width: 120px;
-  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: grayscale(1) opacity(0.6);
-  transition: filter 0.2s ease;
-}
-
-.partner-item:hover {
-  filter: grayscale(0) opacity(1);
 }
 
 .partner-item img {
-  max-height: 60px;
+  height: 100px;
   width: auto;
   margin: 0 auto;
 }
 
 .partners-controls {
-  max-width: var(--container);
+  max-width: 100%;
   margin: 1.75rem auto 0;
   display: flex;
   gap: 0.75rem;
