@@ -328,11 +328,14 @@ header a img.logo {
   flex-direction: column;
   position: fixed;
   top: 0;
+  bottom: 0;
   right: -100%;
   width: min(78vw, 320px);
-  height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: var(--paper);
-  padding: 6rem 2rem 2rem;
+  padding: calc(1.75rem + env(safe-area-inset-top)) 2rem
+    calc(1.75rem + env(safe-area-inset-bottom));
   gap: 1.4rem;
   box-shadow: var(--shadow-soft);
   transition: right 0.3s ease;
@@ -344,6 +347,7 @@ header a img.logo {
 }
 
 .menu a {
+  flex-shrink: 0;
   font-family: var(--font-serif);
   font-size: 1.4rem;
   color: var(--ink);
