@@ -336,7 +336,7 @@ header a img.logo {
   background: var(--paper);
   padding: calc(3.75rem + env(safe-area-inset-top)) 1rem
     calc(1.75rem + env(safe-area-inset-bottom));
-  gap: 0;
+  gap: 1rem;
   box-shadow: var(--shadow-soft);
   transition: right 0.3s ease;
   z-index: 50;
