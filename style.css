@@ -534,6 +534,16 @@ header a img.logo {
   );
 }
 
+/* pink variant (FMZ x Magnum) */
+.gradient-zone-pink {
+  background: linear-gradient(
+    100deg,
+    var(--pink-500-solid) 0%,
+    rgba(233, 187, 213, 0.5) 34%,
+    rgba(233, 187, 213, 0) 62%
+  );
+}
+
 /* light yellow variant (OFFternoon, from the original site's #fff0c4) */
 .gradient-zone-lightyellow {
   background: linear-gradient(
@@ -710,6 +720,12 @@ header a img.logo {
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+}
+
+/* logo thumbnails: show the whole logo on white instead of cropping */
+.project-row-thumb-logo img {
+  object-fit: contain;
+  padding: 10px;
 }
 
 .project-row:hover .project-row-thumb img {
@@ -1473,6 +1489,56 @@ header a img.logo {
   .offternoon-description p {
     margin-bottom: 0.5rem;
   }
+}
+
+/* FMZ x Magnum page (reuses the OFFternoon layout) */
+.magnum-title {
+  max-width: 820px;
+  margin: 0 auto 2rem;
+}
+
+.magnum-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 0 auto 3rem;
+}
+
+.magnum-logos img {
+  height: 120px;
+  width: auto;
+  border-radius: var(--radius-sm);
+}
+
+.offternoon-hero .magnum-embed {
+  height: 540px;
+}
+
+.magnum-hero .offternoon-instagram + .offternoon-instagram {
+  margin-top: 2rem;
+}
+
+.magnum-hero .offternoon-description a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.magnum-hero .offternoon-description a:hover {
+  color: var(--pink-700);
+}
+
+/* on phones alternate text and posts instead of all text first */
+@media (max-width: 768px) {
+  .magnum-hero .offternoon-content .m-order-1 { order: 1; }
+  .magnum-hero .offternoon-content .m-order-2 { order: 2; }
+  .magnum-hero .offternoon-content .m-order-3 { order: 3; }
+  .magnum-hero .offternoon-content .m-order-4 { order: 4; }
+  .magnum-hero .offternoon-content .m-order-5 { order: 5; }
+  .magnum-hero .offternoon-content .m-order-6 { order: 6; }
+  .magnum-hero .offternoon-content .m-order-7 { order: 7; }
+  .magnum-hero .offternoon-instagram + .offternoon-instagram { margin-top: 0; }
 }
 
 /* =========================================================
