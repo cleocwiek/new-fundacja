@@ -1515,9 +1515,8 @@ header a img.logo {
   height: 540px;
 }
 
-.draft-placeholder {
-  font-style: italic;
-  color: var(--ink-soft) !important;
+.magnum-hero .offternoon-instagram + .offternoon-instagram {
+  margin-top: 2rem;
 }
 
 /* =========================================================
