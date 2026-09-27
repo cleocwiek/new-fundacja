@@ -1045,7 +1045,7 @@ header a img.logo {
 .onas-content p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .onas-content p b {
@@ -1082,7 +1082,7 @@ header a img.logo {
   display: block;
   padding: 0.9rem 0;
   font-size: 0.96rem;
-  color: var(--ink-soft);
+  color: var(--ink);
   transition: color 0.2s ease;
 }
 
@@ -1143,7 +1143,7 @@ header a img.logo {
 
 .kampania-subtitle {
   font-size: 1.05rem;
-  color: var(--ink-soft);
+  color: var(--ink);
   line-height: 1.8;
   margin-bottom: 2.25rem;
 }
@@ -1187,7 +1187,7 @@ header a img.logo {
 
 .kampania-text p {
   font-size: 1.08rem;
-  color: var(--ink-soft);
+  color: var(--ink);
   line-height: 1.8;
 }
 
@@ -1242,7 +1242,7 @@ header a img.logo {
   max-width: 640px;
   margin: 0 auto;
   font-size: 1.1rem;
-  color: var(--ink-soft);
+  color: var(--ink);
   line-height: 1.8;
 }
 
@@ -1281,7 +1281,7 @@ header a img.logo {
 }
 
 .mamtowgrupie-content p {
-  color: var(--ink-soft);
+  color: var(--ink);
   font-size: 1rem;
 }
 
@@ -1351,7 +1351,7 @@ header a img.logo {
 }
 
 .offternoon-description p {
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 @media (max-width: 860px) {
@@ -1387,7 +1387,7 @@ header a img.logo {
 }
 
 .pierwszasamopomoc-content > p {
-  color: var(--ink-soft);
+  color: var(--ink);
   font-size: 1.05rem;
   line-height: 1.8;
 }
@@ -1431,7 +1431,7 @@ header a img.logo {
 
 .step-item-text p {
   font-size: 0.94rem;
-  color: var(--ink-soft);
+  color: var(--ink);
   margin: 0;
 }
 
@@ -1768,7 +1768,7 @@ header a img.logo {
   max-width: 620px;
   font-size: 1.08rem;
   line-height: 1.75;
-  color: var(--ink-soft);
+  color: var(--ink);
   margin-bottom: 2rem;
 }
 
@@ -1859,7 +1859,7 @@ header a img.logo {
 }
 
 .wiedza-card p {
-  color: var(--ink-soft);
+  color: var(--ink);
   font-size: 0.96rem;
   line-height: 1.65;
   margin-bottom: 1.3rem;
@@ -1919,7 +1919,7 @@ header a img.logo {
 .wiedza-post-body p {
   font-size: 1.06rem;
   line-height: 1.85;
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .wiedza-post-body p b {
