@@ -451,7 +451,6 @@ header a img.logo {
   letter-spacing: 0.03em;
 }
 
-.patronite-link,
 .email-link {
   display: inline-flex;
   align-items: center;
@@ -1450,7 +1449,10 @@ header a img.logo {
 }
 
 .takecareoffyourself-title {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  /* same look as the "Można zwariować i żyć normalnie." title */
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 500;
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -1474,11 +1476,11 @@ header a img.logo {
   font-family: var(--font-serif);
   font-weight: 500;
   font-size: 1.5rem;
-  color: var(--accent-700);
+  color: var(--pink-700);
 }
 
 .takecareoffyourself-right p {
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .takecareoffyourself-quiz {
@@ -1536,8 +1538,25 @@ header a img.logo {
 }
 
 .quiz-options input {
-  margin-right: 0.4rem;
-  accent-color: var(--accent-700);
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: 0 0.5rem 0 0;
+  vertical-align: -0.2rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  cursor: pointer;
+}
+
+.quiz-options input:checked {
+  background: radial-gradient(circle, var(--ink) 0 40%, var(--paper) 45%);
+}
+
+.quiz-options input:focus-visible {
+  outline: 2px solid var(--accent-500);
+  outline-offset: 2px;
 }
 
 .quiz-result {
