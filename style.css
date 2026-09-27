@@ -536,6 +536,15 @@ header a img.logo {
   );
 }
 
+.gradient-zone-green {
+  background: linear-gradient(
+    100deg,
+    var(--green-500-solid) 0%,
+    rgba(3, 141, 54, 0.45) 34%,
+    rgba(3, 141, 54, 0) 62%
+  );
+}
+
 .hero {
   max-width: var(--container);
   margin: 0 auto;
