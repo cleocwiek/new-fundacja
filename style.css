@@ -534,6 +534,16 @@ header a img.logo {
   );
 }
 
+/* light yellow variant (OFFternoon, from the original site's #fff0c4) */
+.gradient-zone-lightyellow {
+  background: linear-gradient(
+    100deg,
+    #fff0c4 0%,
+    rgba(255, 240, 196, 0.6) 34%,
+    rgba(255, 240, 196, 0) 62%
+  );
+}
+
 .gradient-zone-green {
   background: linear-gradient(
     100deg,
@@ -1332,40 +1342,137 @@ header a img.logo {
    OFFTERNOON PAGE
    ========================================================= */
 
+/* Layout copied from the original moznazwariowac.pl OFFternoon page */
 .offternoon-hero {
+  padding: 4rem 1rem;
   text-align: center;
 }
 
 .offternoon-logo {
-  max-width: 300px;
-  margin: 0 auto 3rem;
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  display: block;
+  margin: 0 auto 2rem auto;
 }
 
 .offternoon-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
-  max-width: var(--container);
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: left;
 }
 
-.offternoon-description h2 {
-  font-size: 1.5rem;
+.offternoon-left,
+.offternoon-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.offternoon-description u {
-  text-decoration-color: var(--accent-500);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+.offternoon-video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.offternoon-hero .offternoon-video iframe {
+  width: 100%;
+  height: 600px;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.offternoon-description {
+  width: 100%;
+}
+
+.offternoon-hero .offternoon-instagram {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.offternoon-hero .instagram-embed {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  transform: translateY(-20px);
+  margin-bottom: -20px;
+}
+
+/* pink section titles, same look as on the Mam to w grupie page */
+.offternoon-section-title {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  color: var(--pink-700);
+  text-transform: lowercase;
+  margin-bottom: 1.75rem;
 }
 
 .offternoon-description p {
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--ink);
+  margin-bottom: 1.5rem;
 }
 
-@media (max-width: 860px) {
-  .offternoon-content { grid-template-columns: 1fr; gap: 2.5rem; }
+@media (max-width: 768px) {
+  .offternoon-hero .instagram-embed {
+    max-width: 380px;
+    height: 380px;
+    transform: translateY(-15px);
+    margin-bottom: -15px;
+  }
+
+  .offternoon-logo {
+    max-height: 400px;
+    width: 90%;
+  }
+
+  .offternoon-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .offternoon-left,
+  .offternoon-right {
+    width: 100%;
+  }
+
+  /* on phones the two columns merge; show video, intro, posts, rest */
+  .offternoon-left,
+  .offternoon-right {
+    display: contents;
+  }
+
+  .offternoon-video {
+    display: flex;
+    justify-content: center;
+    order: 1;
+  }
+
+  .offternoon-description-first { order: 2; }
+  .offternoon-right .offternoon-instagram { order: 3; }
+  .offternoon-description-second { order: 4; }
+  .offternoon-description-third { order: 5; }
+  .offternoon-left .offternoon-instagram { order: 6; }
+
+  .offternoon-description p {
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* =========================================================
