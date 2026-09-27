@@ -1519,6 +1519,16 @@ header a img.logo {
   margin-top: 2rem;
 }
 
+.magnum-hero .offternoon-description a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.magnum-hero .offternoon-description a:hover {
+  color: var(--pink-700);
+}
+
 /* =========================================================
    PIERWSZASAMOPOMOC PAGE
    ========================================================= */
