@@ -1529,6 +1529,18 @@ header a img.logo {
   color: var(--pink-700);
 }
 
+/* on phones alternate text and posts instead of all text first */
+@media (max-width: 768px) {
+  .magnum-hero .offternoon-content .m-order-1 { order: 1; }
+  .magnum-hero .offternoon-content .m-order-2 { order: 2; }
+  .magnum-hero .offternoon-content .m-order-3 { order: 3; }
+  .magnum-hero .offternoon-content .m-order-4 { order: 4; }
+  .magnum-hero .offternoon-content .m-order-5 { order: 5; }
+  .magnum-hero .offternoon-content .m-order-6 { order: 6; }
+  .magnum-hero .offternoon-content .m-order-7 { order: 7; }
+  .magnum-hero .offternoon-instagram + .offternoon-instagram { margin-top: 0; }
+}
+
 /* =========================================================
    PIERWSZASAMOPOMOC PAGE
    ========================================================= */
