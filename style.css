@@ -1407,6 +1407,18 @@ header a img.logo {
   margin-bottom: -20px;
 }
 
+/* pink section titles, same look as on the Mam to w grupie page */
+.offternoon-section-title {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  color: var(--pink-700);
+  text-transform: lowercase;
+  margin-bottom: 1.75rem;
+}
+
 .offternoon-description p {
   font-size: 1rem;
   line-height: 1.6;
