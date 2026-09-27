@@ -28,10 +28,10 @@
         </a>
 
         <nav class="desktop-nav">
-          <a href="#projekty">PROJEKTY</a>
-          <a href="#wsparcie">WSPARCIE</a>
-          <a href="#psychoedu">PSYCHOEDU</a>
           <a href="wiedza.html">WIEDZA</a>
+          <a href="#psychoedu">PSYCHOEDU</a>
+          <a href="#wsparcie">WSPARCIE</a>
+          <a href="#projekty">PROJEKTY</a>
           <a href="#aktualnosci">AKTUALNOŚCI</a>
           <a href="#partnerzy">PARTNERZY</a>
           <a href="fundacja.html">FUNDACJA</a>
@@ -39,14 +39,15 @@
           <a href="#kontakt">KONTAKT</a>
         </nav>
 
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
     </header>
 
     <nav class="menu" id="mobileMenu">
-      <a href="#projekty">Projekty</a>
-      <a href="#wsparcie">Wsparcie</a>
-      <a href="#psychoedu">Psychoedu</a>
+      <button class="menu-close" onclick="toggleMenu()" aria-label="Zamknij menu">✕</button>
       <a href="wiedza.html">Wiedza</a>
+      <a href="#psychoedu">Psychoedu</a>
+      <a href="#wsparcie">Wsparcie</a>
+      <a href="#projekty">Projekty</a>
       <a href="#aktualnosci">Aktualności</a>
       <a href="#partnerzy">Partnerzy</a>
       <a href="fundacja.html">Fundacja</a>
@@ -107,61 +108,33 @@
         <h2>psychoedu</h2>
       </div>
       <section class="projects" id="psychoedu" aria-label="Materiały do pobrania">
-        <div class="project">
+        <a class="project" href="https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view?usp=sharing" target="_blank" rel="noopener">
           <div class="image-wrapper">
             <img src="images/psychoedu/prisma.png" alt="Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA" />
           </div>
           <h3>Jak wspierać bliską osobę w kryzysie psychicznym? — PRISMA</h3>
-          <a href="https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view?usp=sharing" class="project-button" target="_blank" download><i class="fas fa-download"></i> Pobierz</a>
-        </div>
+        </a>
 
-        <div class="project">
+        <a class="project" href="https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view?usp=sharing" target="_blank" rel="noopener">
           <div class="image-wrapper">
             <img src="images/psychoedu/pierwsza-pomoc.png" alt="Pierwsza pomoc w nagłych kryzysach psychicznych" />
           </div>
           <h3>Pierwsza pomoc w nagłych kryzysach psychicznych</h3>
-          <a href="https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view?usp=sharing" class="project-button" target="_blank" download><i class="fas fa-download"></i> Pobierz</a>
-        </div>
+        </a>
 
-        <div class="project">
+        <a class="project" href="https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view?usp=sharing" target="_blank" rel="noopener">
           <div class="image-wrapper">
             <img src="images/psychoedu/zdrowie-psychiczne-mam.png" alt="Zdrowie psychiczne dla mam – ciąża, poród, połóg" />
           </div>
           <h3>Zdrowie psychiczne dla mam – ciąża, poród, połóg</h3>
-          <a href="https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view?usp=sharing" class="project-button" target="_blank" download><i class="fas fa-download"></i> Pobierz</a>
-        </div>
+        </a>
 
-        <div class="project">
+        <a class="project" href="https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view?usp=sharing" target="_blank" rel="noopener">
           <div class="image-wrapper">
             <img src="images/psychoedu/higiena-cyfrowa.png" alt="Higiena cyfrowa – jak zachować równowagę online" />
           </div>
           <h3>Higiena cyfrowa – jak zachować równowagę online</h3>
-          <a href="https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view?usp=sharing" class="project-button" target="_blank" download><i class="fas fa-download"></i> Pobierz</a>
-        </div>
-
-        <div class="project">
-          <div class="image-wrapper">
-            <img src="images/plakat.png" alt="Pierwsza (samo)pomoc" />
-          </div>
-          <h3>Pierwsza (samo)pomoc — plakat psychoedukacyjny</h3>
-          <div class="download-buttons">
-            <a href="https://drive.google.com/file/d/1t8uBd5U8M_1JInVhxexXxLSyks7fgVb6/view?usp=sharing" class="download-link" target="_blank" download>A2</a>
-            <a href="https://drive.google.com/file/d/1K2RusF0R9DjweR-a9WdTZ6hkpkXjFIGn/view?usp=sharing" class="download-link" target="_blank" download>A3</a>
-            <a href="https://drive.google.com/file/d/1MVrzPXCpaJBgLE9VXgFNlO-_PEVJSY0l/view?usp=sharing" class="download-link" target="_blank" download>A4</a>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="image-wrapper">
-            <img src="images/takecare.png" alt="Take Care OFF Yourself!" />
-          </div>
-          <h3>Take Care OFF Yourself! — plakat o higienie cyfrowej</h3>
-          <div class="download-buttons">
-            <a href="https://drive.google.com/file/d/1zzDUolJ8pF8tScPF4yzJZ4iECauMotT8/view?usp=sharing" class="download-link" target="_blank" download>A3</a>
-            <a href="https://drive.google.com/file/d/1X4hQGOuIaIx8rHTEGJ8dn_weIZfPxAQ9/view?usp=sharing" class="download-link" target="_blank" download>A4</a>
-            <a href="https://drive.google.com/file/d/1WYmOs-LdxWRmuCXEfM8lwopyncpqix2y/view?usp=sharing" class="download-link" target="_blank" download>A6</a>
-          </div>
-        </div>
+        </a>
       </section>
 
       <section class="trusted-section" id="wsparcie" aria-label="Organizacje, którym możesz zaufać">
@@ -171,27 +144,27 @@
         </div>
         <div class="trusted-grid">
           <article class="trusted-card">
-            <h3 class="trusted-title"><a class="Centrum Wsparcia dla Osób w Stanie Kryzysu Psychicznego" href="https://centrumwsparcia.pl/" target="_blank" rel="noopener">Centrum wsparcia dla osób w stanie kryzysu psychicznego</a></h3>
+            <h3 class="trusted-title"><a href="https://centrumwsparcia.pl/" target="_blank" rel="noopener">Centrum wsparcia dla osób w stanie kryzysu psychicznego</a></h3>
             <p class="trusted-meta">Bezpłatnie • 24/7 • czat • email • telefon</p>
-            <p class="trusted-phone">800 70 2222</p>
+            <p class="trusted-phone"><a href="tel:800702222">800 70 2222</a></p>
           </article>
 
           <article class="trusted-card">
-            <h3 class="trusted-title"><a class="Telefon zaufania dla osób dorosłych w kryzysie emocjonalnym" href="https://116sos.pl/" target="_blank" rel="noopener">Telefon zaufania dla osób dorosłych w kryzysie emocjonalnym</a></h3>
+            <h3 class="trusted-title"><a href="https://116sos.pl/" target="_blank" rel="noopener">Telefon zaufania dla osób dorosłych w kryzysie emocjonalnym</a></h3>
             <p class="trusted-meta">Bezpłatnie • 24/7 • czat • email • telefon</p>
-            <p class="trusted-phone">116 123</p>
+            <p class="trusted-phone"><a href="tel:116123">116 123</a></p>
           </article>
 
           <article class="trusted-card">
-            <h3 class="trusted-title"><a class="Telefon zaufania dla dzieci i młodzieży" href="https://116111.pl/" target="_blank" rel="noopener">Telefon zaufania dla dzieci i młodzieży</a></h3>
+            <h3 class="trusted-title"><a href="https://116111.pl/" target="_blank" rel="noopener">Telefon zaufania dla dzieci i młodzieży</a></h3>
             <p class="trusted-meta">Bezpłatnie • 24/7 • czat • email • telefon</p>
-            <p class="trusted-phone">116 111</p>
+            <p class="trusted-phone"><a href="tel:116111">116 111</a></p>
           </article>
 
           <article class="trusted-card">
-            <h3 class="trusted-title"><a class="Antyprzemocowa linia pomocy Sexed.pl" href="https://sexed.pl/antyprzemocowa-linia/" target="_blank" rel="noopener">Antyprzemocowa linia pomocy Sexed.pl</a></h3>
+            <h3 class="trusted-title"><a href="https://sexed.pl/antyprzemocowa-linia/" target="_blank" rel="noopener">Antyprzemocowa linia pomocy Sexed.pl</a></h3>
             <p class="trusted-meta">Bezpłatnie • pon-nd • 10:00-22:00 • telefon</p>
-            <p class="trusted-phone">720 720 020</p>
+            <p class="trusted-phone"><a href="tel:720720020">720 720 020</a></p>
           </article>
         </div>
       </section>
@@ -201,29 +174,11 @@
         <h2>nasze projekty</h2>
       </div>
       <div class="projects-list" id="projekty">
-        <a href="takecareoffyourself.html" class="project-row">
-          <div class="project-row-thumb"><img src="images/takecare.png" alt="Take Care OFF Yourself" /></div>
-          <div class="project-row-text">
-            <h3>Take Care OFF Yourself</h3>
-            <p>Projekt o higienie cyfrowej i uważnym korzystaniu z ekranów.</p>
-          </div>
-          <span class="project-row-arrow">Dowiedz się więcej →</span>
-        </a>
-
         <a href="https://open.spotify.com/show/7yq7L2H5VwxzbtKMXawCY4" target="_blank" class="project-row">
           <div class="project-row-thumb"><img src="images/podcast.png" alt="Podcast Można Zwariować" /></div>
           <div class="project-row-text">
             <h3>Podcast Można Zwariować</h3>
             <p>Psychoedukacyjny podcast Fundacji Można Zwariować.</p>
-          </div>
-          <span class="project-row-arrow">Dowiedz się więcej →</span>
-        </a>
-
-        <a href="offternoon.html" class="project-row">
-          <div class="project-row-thumb"><img src="images/offternoon.jpg" alt="OFFternoon" /></div>
-          <div class="project-row-text">
-            <h3>OFFternoon</h3>
-            <p>Cykl spotkań budujących społeczność offline, z dala od ekranów.</p>
           </div>
           <span class="project-row-arrow">Dowiedz się więcej →</span>
         </a>
@@ -237,20 +192,38 @@
           <span class="project-row-arrow">Dowiedz się więcej →</span>
         </a>
 
-        <a href="mamtowgrupie.html" class="project-row">
-          <div class="project-row-thumb"><img src="images/grupy3.png" alt="Mam to w grupie!" /></div>
-          <div class="project-row-text">
-            <h3>Mam to w grupie!</h3>
-            <p>Grupy wsparcia łączące osoby mierzące się z podobnymi trudnościami.</p>
-          </div>
-          <span class="project-row-arrow">Dowiedz się więcej →</span>
-        </a>
-
         <a href="kampania.html" class="project-row">
           <div class="project-row-thumb"><img src="images/kampania/poster1.jpg" alt="Można Zwariować i żyć normalnie" /></div>
           <div class="project-row-text">
             <h3>Można Zwariować i żyć normalnie</h3>
             <p>Kampania społeczna o życiu z zaburzeniami psychicznymi — niezależnie od tego, kim jesteś.</p>
+          </div>
+          <span class="project-row-arrow">Dowiedz się więcej →</span>
+        </a>
+
+        <a href="offternoon.html" class="project-row">
+          <div class="project-row-thumb"><img src="images/offternoon.jpg" alt="OFFternoon" /></div>
+          <div class="project-row-text">
+            <h3>OFFternoon</h3>
+            <p>Cykl spotkań budujących społeczność offline, z dala od ekranów.</p>
+          </div>
+          <span class="project-row-arrow">Dowiedz się więcej →</span>
+        </a>
+
+        <a href="takecareoffyourself.html" class="project-row">
+          <div class="project-row-thumb"><img src="images/takecare.png" alt="Take Care OFF" /></div>
+          <div class="project-row-text">
+            <h3>Take Care OFF</h3>
+            <p>Projekt o higienie cyfrowej i uważnym korzystaniu z ekranów.</p>
+          </div>
+          <span class="project-row-arrow">Dowiedz się więcej →</span>
+        </a>
+
+        <a href="mamtowgrupie.html" class="project-row">
+          <div class="project-row-thumb"><img src="images/grupy3.png" alt="Mam to w grupie!" /></div>
+          <div class="project-row-text">
+            <h3>Mam to w grupie!</h3>
+            <p>Grupy wsparcia łączące osoby mierzące się z podobnymi trudnościami.</p>
           </div>
           <span class="project-row-arrow">Dowiedz się więcej →</span>
         </a>
