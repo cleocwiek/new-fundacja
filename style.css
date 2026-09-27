@@ -1375,6 +1375,8 @@ header a img.logo {
 
 .offternoon-video {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .offternoon-hero .offternoon-video iframe {
