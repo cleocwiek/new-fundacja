@@ -271,6 +271,18 @@ section {
   color: var(--paper);
 }
 
+.cta-button-green {
+  border-color: var(--green-500-solid);
+  background: var(--green-500-solid);
+  color: var(--paper);
+}
+
+.cta-button-green:hover {
+  background: var(--green-700);
+  border-color: var(--green-700);
+  color: var(--paper);
+}
+
 /* ---------- Header / Nav ---------- */
 header {
   position: sticky;
@@ -512,6 +524,16 @@ header a img.logo {
     var(--yellow) 0%,
     rgba(255, 220, 56, 0.45) 34%,
     rgba(255, 220, 56, 0) 62%
+  );
+}
+
+/* blue variant (trial on the Take care OFF page) */
+.gradient-zone-blue {
+  background: linear-gradient(
+    100deg,
+    var(--blue-500-solid) 0%,
+    rgba(29, 114, 184, 0.45) 34%,
+    rgba(29, 114, 184, 0) 62%
   );
 }
 
@@ -1420,12 +1442,17 @@ header a img.logo {
 
 .takecareoffyourself-hero {
   padding-bottom: 0;
+  text-align: center;
 }
 
-.takecareoffyourself-logo {
-  max-width: 320px;
-  margin: 0 auto 3rem;
+.takecareoffyourself-hero .takecareoffyourself-content {
+  text-align: left;
+}
+
+.takecareoffyourself-title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .takecareoffyourself-content {
@@ -1455,7 +1482,20 @@ header a img.logo {
 }
 
 .takecareoffyourself-quiz {
-  background: var(--accent-100);
+  background: transparent;
+}
+
+/* white card behind the quiz, same look as the "wspierają nas" box */
+.quiz-box {
+  max-width: 760px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 2.75rem 2.75rem 2.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 720px) {
+  .quiz-box { padding: 2rem 1.25rem 1.75rem; }
 }
 
 .quiz-wrapper {
@@ -1511,7 +1551,7 @@ header a img.logo {
 
 .takecareoffyourself-tips {
   text-align: center;
-  background: var(--cream);
+  background: transparent;
 }
 
 .tips-list {
