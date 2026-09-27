@@ -183,11 +183,24 @@ section {
   background: var(--accent-500);
 }
 
+/* Every section heading on the home page lines up with the
+   "wspierają nas" heading, which sits inside the padded partners box.
+   .section-heading lives outside a <section>, so it adds the section
+   gutter itself (1.75rem, 1.25rem on phones) on top of that inset. */
 .section-heading {
-  max-width: 760px;
+  max-width: calc(var(--container) + 3.5rem);
   margin: 0 auto 3rem;
-  padding: 0 1.75rem;
+  padding: 0 1.75rem 0 calc(1.75rem + 2.75rem);
   text-align: left;
+}
+
+.trusted-heading,
+.instagram-heading {
+  padding-left: 2.75rem;
+}
+
+@media (max-width: 720px) {
+  .section-heading { padding-left: calc(1.25rem + 2.75rem); }
 }
 
 .section-heading h2 {
