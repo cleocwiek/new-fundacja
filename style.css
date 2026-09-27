@@ -232,7 +232,6 @@ section {
 /* ---------- Buttons ---------- */
 .cta-button,
 .kampania-pdf-link,
-.mamtowgrupie-form-link,
 .quiz-submit {
   display: inline-flex;
   align-items: center;
@@ -253,7 +252,6 @@ section {
 
 .cta-button:hover,
 .kampania-pdf-link:hover,
-.mamtowgrupie-form-link:hover,
 .quiz-submit:hover {
   background: var(--ink);
   color: var(--paper);
@@ -1298,22 +1296,32 @@ header a img.logo {
   box-shadow: var(--shadow-card);
 }
 
+/* bottom sign-up box, matching the original moznazwariowac.pl page */
 .mamtowgrupie-cta {
-  max-width: 640px;
-  margin: 1rem auto 0;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
   text-align: center;
-  background: var(--accent-100);
-  border-radius: var(--radius);
-  padding: 2.25rem;
+  background-color: #ffe68b;
+  border-radius: 12px;
 }
 
 .mamtowgrupie-cta p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink);
   margin: 0;
-  font-size: 1.05rem;
 }
 
 .mamtowgrupie-form-link {
-  border-color: var(--accent-700);
+  color: var(--ink);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.mamtowgrupie-form-link:hover {
+  color: #ea6f91;
 }
 
 @media (max-width: 860px) {
