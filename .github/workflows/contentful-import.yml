@@ -3,9 +3,12 @@
 # Needs two repository secrets (Settings → Secrets and variables → Actions):
 #   CONTENTFUL_SPACE_ID          – Space ID (Contentful: Settings → General settings)
 #   CONTENTFUL_MANAGEMENT_TOKEN  – a personal access token (Contentful: Settings → CMA tokens)
-# Articles are imported as drafts. Running it again overwrites the imported
-# articles with the versions from content/wiedza-articles.json, so do not re-run
-# it after editing articles in Contentful.
+# Articles are imported as drafts. Pick which articles file to import:
+#   wiedza-przewodnik-po-zaburzeniach.json – the 14 articles from the
+#     "Przewodnik po zaburzeniach psychicznych" (only adds these, safe to run once)
+#   wiedza-articles.json – the original 62 articles. Do NOT run this one again:
+#     it overwrites those articles with the versions from the file, losing any
+#     edits made in Contentful.
 name: Import artykułów do Contentful
 
 on:
@@ -15,6 +18,14 @@ on:
         description: "Kod domyślnego języka przestrzeni (Contentful: Settings → Locales), np. en-US lub pl"
         required: true
         default: "en-US"
+      articles:
+        description: "Który plik z artykułami zaimportować"
+        required: true
+        type: choice
+        default: "wiedza-przewodnik-po-zaburzeniach.json"
+        options:
+          - "wiedza-przewodnik-po-zaburzeniach.json"
+          - "wiedza-articles.json"
 
 permissions:
   contents: read
@@ -32,7 +43,8 @@ jobs:
       - name: Build import file
         env:
           LOCALE: ${{ inputs.locale }}
-        run: node content/build-contentful-import.mjs "$LOCALE" import.json
+          ARTICLES: ${{ inputs.articles }}
+        run: node content/build-contentful-import.mjs "$LOCALE" import.json "$ARTICLES"
 
       - name: Import into Contentful
         env:

@@ -1,25 +1,23 @@
 // Builds a Contentful import file (for `contentful space import`) from
 // content/wiedza-articles.json.
 //
-//   node content/build-contentful-import.mjs [locale] [output]
+//   node content/build-contentful-import.mjs [locale] [output] [articles]
 //
-// locale  – the default locale code of your Contentful space (default "en-US",
-//           check it in Contentful: Settings → Locales)
-// output  – where to write the file (default content/contentful-import.json)
+// locale   – the default locale code of your Contentful space (default "en-US",
+//            check it in Contentful: Settings → Locales)
+// output   – where to write the file (default content/contentful-import.json)
+// articles – which articles file in content/ to import (default
+//            wiedza-articles.json)
 //
-// The "article" content type is created and published by the import; the
-// articles themselves are imported as DRAFTS so every one can be reviewed in
-// Contentful before it is published on the site.
+// With the default articles file the "article" content type is created and
+// published too. Any other articles file is imported on its own (entries only),
+// so the articles already in Contentful are left untouched. Articles are always
+// imported as DRAFTS so every one can be reviewed in Contentful before it is
+// published on the site.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-
-const here = dirname(fileURLToPath(import.meta.url));
-const locale = process.argv[2] || "en-US";
-const output = process.argv[3] || join(here, "contentful-import.json");
-
-const articles = JSON.parse(readFileSync(join(here, "wiedza-articles.json"), "utf8"));
 
 export const CATEGORIES = [
   "Pierwsza pomoc",
@@ -28,6 +26,19 @@ export const CATEGORIES = [
   "Ciąża i rodzicielstwo",
   "Higiena cyfrowa",
 ];
+
+const here = dirname(fileURLToPath(import.meta.url));
+const locale = process.argv[2] || "en-US";
+const output = process.argv[3] || join(here, "contentful-import.json");
+const articlesFile = process.argv[4] || "wiedza-articles.json";
+const withContentType = articlesFile === "wiedza-articles.json";
+
+const articles = JSON.parse(readFileSync(join(here, articlesFile), "utf8"));
+
+const badCategory = articles.find((a) => !CATEGORIES.includes(a.category));
+if (badCategory) {
+  throw new Error(`Unknown category "${badCategory.category}" in ${badCategory.slug}`);
+}
 
 const field = (id, name, type, extra = {}) => ({
   id,
@@ -96,7 +107,7 @@ const entries = articles.map((a) => ({
 
 writeFileSync(
   output,
-  JSON.stringify({ contentTypes: [contentType], entries }, null, 2) + "\n",
+  JSON.stringify(withContentType ? { contentTypes: [contentType], entries } : { entries }, null, 2) + "\n",
   "utf8"
 );
-console.log(`Wrote ${entries.length} articles (locale ${locale}) to ${output}`);
+console.log(`Wrote ${entries.length} articles from ${articlesFile} (locale ${locale}) to ${output}`);
