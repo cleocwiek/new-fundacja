@@ -234,6 +234,21 @@ var WIEDZA_CATEGORY_COLORS = {
   "jak wspierac bliskich": "cat-navy",
 };
 
+/* Order of the category filter buttons on wiedza.html. Categories not listed
+   here come after these. */
+var WIEDZA_CATEGORY_ORDER = [
+  "pierwsza pomoc",
+  "jak wspierac bliskich",
+  "zdrowie psychiczne",
+  "higiena cyfrowa",
+  "ciaza i rodzicielstwo",
+];
+
+function wiedzaCategoryRank(category) {
+  const i = WIEDZA_CATEGORY_ORDER.indexOf(wiedzaNormalize(category).trim());
+  return i === -1 ? WIEDZA_CATEGORY_ORDER.length : i;
+}
+
 function wiedzaCategoryClass(category) {
   return WIEDZA_CATEGORY_COLORS[wiedzaNormalize(category).trim()] || "";
 }
