@@ -6,8 +6,8 @@ sample articles built into `posts-data.js`.
 
 ## Files
 
-- `wiedza-articles.json` – the 56 articles written from the foundation's four
-  brochures (source of the first import)
+- `wiedza-articles.json` – the 62 articles for the first import: 56 written from
+  the foundation's four brochures plus the 6 original sample articles
 - `wiedza-artykuly-do-przegladu.md` – the same articles as one readable document
   for review, with a list of points to check
 - `build-contentful-import.mjs` – turns `wiedza-articles.json` into a Contentful

@@ -1,6 +1,6 @@
 # Wiedza – artykuły do przeglądu
 
-56 krótkich artykułów przygotowanych na podstawie czterech broszur Fundacji Można Zwariować. Po imporcie do Contentful wszystkie są **szkicami (draft)** – nie pojawią się na stronie, dopóki ich nie opublikujesz.
+62 krótkie artykuły: 56 przygotowanych na podstawie czterech broszur Fundacji Można Zwariować i 6 dotychczasowych przykładowych artykułów ze strony Wiedza. Po imporcie do Contentful wszystkie są **szkicami (draft)** – nie pojawią się na stronie, dopóki ich nie opublikujesz.
 
 ## Na co zwrócić szczególną uwagę przy przeglądzie
 
@@ -15,7 +15,7 @@ Treść opiera się na broszurach. W kilku miejscach dodałem informacje spoza n
 7. **Hormony w ciąży** – liczba „kilkusetkrotnie” pochodzi z broszury; w artykule jest złagodzona („dla części z nich”).
 8. **Gdzie szukać nieodpłatnej pomocy w ciąży i po porodzie** – pominąłem „Fundację Medycyny Prenatalnej im. Ernesta Wójcickiego” z broszury, bo nie udało mi się potwierdzić tej nazwy. Jeśli jest poprawna, można ją dopisać.
 9. **Numery telefonów** – podane za broszurami, bez godzin działania (z dopiskiem, żeby sprawdzić je na stronach organizacji). Warto zweryfikować, czy wszystkie numery są aktualne.
-10. **Obecne przykładowe artykuły** (6 sztuk na stronie teraz, np. o wypaleniu zawodowym) nie są częścią importu i znikną ze strony po podłączeniu Contentful.
+10. **Sześć dotychczasowych artykułów** (Depresja, Kryzys psychiczny, Higiena cyfrowa, Lęk i stany lękowe, Wypalenie zawodowe, Sen a zdrowie psychiczne) nie pochodzi z broszur, więc nie mają linku „Na podstawie:”. Poprawiłem w nich trzy rzeczy: w „Higiena cyfrowa” liczby o czasie przed ekranem przypisane były WHO – zmieniłem na „według różnych badań”, bo nie znalazłem takich danych WHO; nazwę projektu zmieniłem na „Take care OFF”; w „Wypalenie zawodowe” złagodziłem zdanie, że wypalenie „może przejść w depresję”, na „może zwiększać ryzyko depresji”, i dopisałem, że WHO opisuje wypalenie w klasyfikacji ICD-11. Do sprawdzenia zostaje też statystyka „37% osób w wieku 18–34 lat” (ta sama liczba jest na stronie Take care OFF) – warto potwierdzić jej źródło.
 
 Każdy artykuł na stronie kończy się informacją, że ma charakter edukacyjny i nie zastępuje konsultacji ze specjalistą, oraz linkiem „Na podstawie:” do broszury, z której pochodzi.
 
@@ -434,9 +434,30 @@ Na podstawie: Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Moż
 
 ---
 
+### 17. Kryzys psychiczny – pierwsza (samo)pomoc krok po kroku
+
+*Kryzys psychiczny może dotknąć każdego. Poznaj sześć filarów pierwszej (samo)pomocy, które pomagają wrócić do równowagi.*
+
+Kryzys psychiczny to stan silnego napięcia emocjonalnego, w którym dotychczasowe sposoby radzenia sobie przestają wystarczać. Może go wywołać strata, choroba, przeciążenie obowiązkami, trudne wydarzenie życiowe – albo suma wielu mniejszych trudności, które w końcu przelewają czarę. **Kryzys psychiczny może spotkać każdego**, niezależnie od tego, jak silny czy „poukładany” ktoś się wydaje.
+
+Z okazji Światowego Dnia Zdrowia Psychicznego stworzyliśmy kampanię „Pierwsza (samo)pomoc”, która upowszechnia wiedzę o tym, jak reagować w takich momentach – zarówno profilaktycznie, jak i w samym środku kryzysu. Zidentyfikowaliśmy sześć filarów, które realnie wspierają dobrostan psychiczny: **kontakt ze specjalistą, relacje z innymi, psychoedukację, kontakt z naturą, aktywność fizyczną oraz odpowiednią ilość snu i odpoczynku**.
+
+Rozmowa ze specjalistą – psychologiem, terapeutą lub interwentem kryzysowym – daje poczucie bezpieczeństwa i realną pomoc tu i teraz. Nie trzeba mieć postawionej diagnozy, żeby skorzystać z takiego wsparcia. Czasem wystarczy jedna rozmowa, by zobaczyć sytuację z innej perspektywy.
+
+Równie ważne są relacje. Samotność szkodzi zdrowiu tak samo jak przewlekły stres, a bliskość z ludźmi wzmacnia odporność psychiczną. Jeśli jesteś w kryzysie, spróbuj nie zamykać się na innych – nawet krótki kontakt z kimś zaufanym może odciążyć.
+
+Reszta filarów – natura, ruch i sen – brzmią prosto, ale mają udokumentowany wpływ na regenerację układu nerwowego. Krótki spacer, uregulowanie rytmu dobowego czy ograniczenie bodźców przed snem to małe kroki, które realnie pomagają, gdy wszystko wydaje się przytłaczające.
+
+Jeśli Ty lub ktoś w Twoim otoczeniu jest w kryzysie i potrzebuje pomocy natychmiast, skorzystaj z bezpłatnych, całodobowych linii wsparcia wymienionych na naszej stronie głównej w sekcji „Szukasz wsparcia?”.
+
+Słowa kluczowe: kryzys, pierwsza pomoc, wsparcie, profilaktyka  
+Na podstawie: – (dotychczasowy artykuł ze strony)
+
+---
+
 ## Jak wspierać bliskich
 
-### 17. Jak wspierać bliską osobę w depresji
+### 18. Jak wspierać bliską osobę w depresji
 
 *„Weź się w garść” nie pomaga. Zobacz, co naprawdę może wesprzeć osobę w depresji – i kiedy trzeba działać natychmiast.*
 
@@ -467,7 +488,7 @@ Na podstawie: Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Moż
 
 ---
 
-### 18. Jak rozmawiać z osobą, która ma urojenia lub omamy
+### 19. Jak rozmawiać z osobą, która ma urojenia lub omamy
 
 *Kłótnia o to, co jest prawdą, nie pomoże. Zobacz, jak zachować spokój i bezpieczeństwo w kontakcie z osobą w psychozie.*
 
@@ -490,7 +511,7 @@ Na podstawie: Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Moż
 
 ---
 
-### 19. Metoda PRISMA – 6 kroków, jak wspierać bliską osobę w kryzysie
+### 20. Metoda PRISMA – 6 kroków, jak wspierać bliską osobę w kryzysie
 
 *Nie wiesz, jak zareagować, gdy ktoś bliski przechodzi kryzys psychiczny? Akronim PRISMA podpowiada sześć prostych kroków.*
 
@@ -512,7 +533,7 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
-### 20. Jak zapytać kogoś, czy wszystko w porządku? (P jak Pytanie)
+### 21. Jak zapytać kogoś, czy wszystko w porządku? (P jak Pytanie)
 
 *Masz wrażenie, że z bliską osobą dzieje się coś niepokojącego? Zobacz, jak zadać pytanie, które naprawdę otwiera rozmowę.*
 
@@ -536,7 +557,7 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
-### 21. Jak rozmawiać z osobą w kryzysie psychicznym? (R jak Rozmowa)
+### 22. Jak rozmawiać z osobą w kryzysie psychicznym? (R jak Rozmowa)
 
 *Słuchaj, nie oceniaj, nie zakładaj, że wiesz lepiej. Zobacz, jak prowadzić rozmowę, która daje poczucie bezpieczeństwa.*
 
@@ -566,7 +587,7 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
-### 22. Jak szukać rzetelnej wiedzy o zdrowiu psychicznym? (I jak Informacja)
+### 23. Jak szukać rzetelnej wiedzy o zdrowiu psychicznym? (I jak Informacja)
 
 *Dobre źródła pomagają zrozumieć, co się dzieje – ale nie zastąpią specjalisty. Podpowiadamy, jak dzielić się wiedzą odpowiedzialnie.*
 
@@ -589,7 +610,7 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
-### 23. Jak zachęcić kogoś do skorzystania z pomocy psychologa lub psychiatry? (S jak Specjalistyczna pomoc)
+### 24. Jak zachęcić kogoś do skorzystania z pomocy psychologa lub psychiatry? (S jak Specjalistyczna pomoc)
 
 *Lęk, wstyd, niepewność – to częste powody, dla których ludzie odkładają wizytę u specjalisty. Zobacz, jak o tym rozmawiać.*
 
@@ -619,7 +640,7 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
-### 24. Na kim i na czym się oprzeć? Źródła wsparcia na co dzień (M jak Możliwe wsparcie)
+### 25. Na kim i na czym się oprzeć? Źródła wsparcia na co dzień (M jak Możliwe wsparcie)
 
 *Rodzina, przyjaciele, telefony zaufania, ruch, regularny plan dnia – sprawdź, jakie źródła wsparcia warto mieć pod ręką.*
 
@@ -642,7 +663,7 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
-### 25. Akceptacja – dlaczego jest tak ważna w kryzysie psychicznym (A jak Akceptacja)
+### 26. Akceptacja – dlaczego jest tak ważna w kryzysie psychicznym (A jak Akceptacja)
 
 *Poczucie niezrozumienia pogłębia cierpienie i wstyd. Akceptacja daje siłę, by zmienić sytuację.*
 
@@ -664,7 +685,7 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
-### 26. Najpierw człowiek, potem specjalista – jak wspierać mamę w ciąży i po porodzie
+### 27. Najpierw człowiek, potem specjalista – jak wspierać mamę w ciąży i po porodzie
 
 *W czasie ciąży i wczesnego rodzicielstwa bardzo potrzebujemy innych ludzi. Zobacz, jak realnie odciążyć młodą mamę.*
 
@@ -691,7 +712,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ## Zdrowie psychiczne
 
-### 27. Jak mówić o zdrowiu psychicznym bez stygmatyzowania?
+### 28. Jak mówić o zdrowiu psychicznym bez stygmatyzowania?
 
 *„Schizofrenik”, „anorektyczka”, „on jest jakiś chory psychicznie” – słowa mają znaczenie. Zobacz, jak mówić z szacunkiem.*
 
@@ -715,7 +736,7 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
-### 28. Stygmatyzacja zaburzeń psychicznych – czym jest i jak ją przełamywać
+### 29. Stygmatyzacja zaburzeń psychicznych – czym jest i jak ją przełamywać
 
 *Zaburzenia psychiczne wciąż wiążą się z piętnem i wykluczeniem. Psychologia podpowiada, co może to zmienić.*
 
@@ -740,7 +761,7 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
-### 29. Jak często występują zaburzenia psychiczne w Polsce?
+### 30. Jak często występują zaburzenia psychiczne w Polsce?
 
 *Co czwarta dorosła osoba w Polsce w ciągu życia doświadcza jakiejś formy zaburzeń psychicznych. Nie jesteś w tym sam_a.*
 
@@ -763,7 +784,7 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
-### 30. 5 sposobów, by oswajać temat zdrowia psychicznego w swoim otoczeniu
+### 31. 5 sposobów, by oswajać temat zdrowia psychicznego w swoim otoczeniu
 
 *Nie trzeba być specjalistą, żeby zmieniać sposób, w jaki mówimy o zdrowiu psychicznym. Wystarczy zacząć od siebie.*
 
@@ -786,9 +807,85 @@ Na podstawie: Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fu
 
 ---
 
+### 32. Depresja – jak ją rozpoznać i co zrobić dalej?
+
+*Depresja to coś więcej niż chwilowy smutek. Sprawdź, jakie objawy powinny zwrócić Twoją uwagę i jak wygląda pierwszy krok do pomocy.*
+
+Depresja jest jednym z najczęstszych zaburzeń psychicznych na świecie, a mimo to wciąż bywa mylona ze zwykłym gorszym nastrojem. Kluczowa różnica polega na czasie trwania i natężeniu objawów – o depresji mówimy, gdy obniżony nastrój, utrata radości z rzeczy, które wcześniej sprawiały przyjemność, i spadek energii utrzymują się **przez co najmniej dwa tygodnie** i wyraźnie utrudniają codzienne funkcjonowanie.
+
+Do najczęstszych objawów należą: **uczucie smutku, pustki lub beznadziei**, problemy ze snem (bezsenność lub nadmierna senność), zmiany apetytu i wagi, trudności z koncentracją, spadek energii, poczucie winy lub bezwartościowości, a także izolowanie się od bliskich. U części osób pojawiają się również objawy fizyczne – bóle głowy, mięśni czy dolegliwości żołądkowe, które nie mają innej przyczyny medycznej.
+
+Depresja ma wiele twarzy – u niektórych osób dominuje smutek i wycofanie, u innych rozdrażnienie, niepokój lub wręcz spłycenie emocji, gdy nic już „nie rusza”. Dlatego tak ważne jest, by nie oceniać własnego stanu przez pryzmat stereotypu „ciągłego płaczu”, tylko zwracać uwagę na to, **jak bardzo zmieniło się Twoje funkcjonowanie** względem tego, jak wyglądało wcześniej.
+
+Co zrobić, jeśli rozpoznajesz u siebie te objawy? Pierwszym krokiem jest rozmowa – z lekarzem pierwszego kontaktu, psychologiem lub psychiatrą. Diagnoza depresji stawiana jest klinicznie, na podstawie wywiadu, a leczenie najczęściej łączy psychoterapię i, w razie potrzeby, farmakoterapię. Nie trzeba czekać, aż będzie „wystarczająco źle” – im wcześniej zgłosisz się po pomoc, tym łatwiej odzyskać równowagę.
+
+Jeśli martwisz się o kogoś bliskiego, najważniejsze jest, by nie bagatelizować tego, co mówi, i nie zachęcać do „wzięcia się w garść”. Depresja nie jest kwestią silnej woli. Najlepsze, co możesz zrobić, to być obecnym, słuchać bez oceniania i pomóc znaleźć specjalistę, jeśli druga osoba nie ma na to siły.
+
+Słowa kluczowe: depresja, objawy, leczenie, smutek, psychoedukacja  
+Na podstawie: – (dotychczasowy artykuł ze strony)
+
+---
+
+### 33. Lęk i stany lękowe – jak sobie z nimi radzić
+
+*Lęk to naturalna reakcja organizmu, ale bywa też przewlekłym problemem. Poznaj różnicę i sprawdzone sposoby na obniżenie napięcia.*
+
+Lęk sam w sobie nie jest czymś złym – to naturalny mechanizm obronny, który pomagał naszym przodkom przetrwać zagrożenie. Problem pojawia się wtedy, gdy reakcja lękowa uruchamia się **nieproporcjonalnie często lub nieproporcjonalnie silnie** do realnego zagrożenia, i zaczyna ograniczać codzienne funkcjonowanie.
+
+Objawy stanów lękowych mogą być zarówno psychiczne (nadmierne zamartwianie się, poczucie zagrożenia, trudność z „wyłączeniem” myśli), jak i fizyczne – przyspieszone bicie serca, spłycony oddech, napięcie mięśni, problemy żołądkowe czy zawroty głowy. U wielu osób lęk bywa mylony z problemami somatycznymi, zanim zostanie rozpoznany jego prawdziwy charakter.
+
+Kilka strategii, które pomagają obniżyć poziom napięcia w danym momencie: **świadomy, spowolniony oddech** (np. wdech na 4 sekundy, wydech na 6), uziemienie poprzez skupienie się na zmysłach (co widzę, słyszę, czuję pod stopami), ograniczenie kofeiny i używek, a także ruch fizyczny, który pomaga „rozładować” nagromadzoną w ciele energię stresową.
+
+Długofalowo najskuteczniejsza bywa **psychoterapia**, szczególnie nurty pracujące z myślami i przekonaniami leżącymi u podstaw lęku. Jeśli lęk pojawia się często, trwa długo lub znacząco utrudnia Ci funkcjonowanie – pracę, relacje, sen – warto skonsultować się ze specjalistą, zamiast czekać, aż „samo przejdzie”.
+
+Słowa kluczowe: lęk, stres, objawy, regulacja emocji  
+Na podstawie: – (dotychczasowy artykuł ze strony)
+
+---
+
+### 34. Wypalenie zawodowe – jak je rozpoznać, zanim będzie za późno
+
+*Chroniczne przemęczenie, cynizm wobec pracy i spadek poczucia skuteczności to sygnały wypalenia zawodowego. Sprawdź, jak temu zapobiegać.*
+
+Wypalenie zawodowe to zjawisko na tyle powszechne, że Światowa Organizacja Zdrowia opisała je w klasyfikacji ICD-11 jako zespół wynikający z **przewlekłego stresu w miejscu pracy, który nie został skutecznie opanowany**. Nie jest to jednorazowe „zmęczenie po ciężkim tygodniu”, tylko narastający proces.
+
+Trzy główne wymiary wypalenia to: **wyczerpanie emocjonalne** (chroniczne zmęczenie, które nie mija po odpoczynku), **cynizm i dystansowanie się** od pracy oraz osób, z którymi się pracuje, a także **obniżone poczucie skuteczności zawodowej** – wrażenie, że niezależnie od wysiłku, nic z tego nie wynika.
+
+Wypalenie rzadko pojawia się nagle. Zwykle poprzedzają je sygnały ostrzegawcze: rosnąca drażliwość, problemy ze snem, spadek motywacji do rzeczy, które wcześniej sprawiały satysfakcję, izolowanie się od współpracowników czy narastające poczucie, że praca „pochłania” całe życie.
+
+Profilaktyka wypalenia opiera się na kilku filarach: wyznaczaniu realnych granic między pracą a życiem prywatnym, regularnych przerwach w ciągu dnia, dbaniu o relacje poza pracą oraz – jeśli to możliwe – rozmowie z przełożonym o obciążeniu obowiązkami, zanim dojdzie do kryzysu. Warto też pamiętać, że wypalenie **nie jest oznaką słabości**, tylko sygnałem, że system, w którym funkcjonujemy, przez dłuższy czas przekraczał naszą wydolność.
+
+Jeśli rozpoznajesz u siebie kilka z powyższych objawów utrzymujących się od tygodni lub miesięcy, warto skonsultować się z psychologiem – wypalenie pozostawione bez wsparcia może zwiększać ryzyko depresji i innych problemów ze zdrowiem psychicznym.
+
+Słowa kluczowe: wypalenie zawodowe, praca, stres, profilaktyka  
+Na podstawie: – (dotychczasowy artykuł ze strony)
+
+---
+
+### 35. Sen a zdrowie psychiczne – dlaczego regeneracja to nie luksus
+
+*Sen to jeden z filarów pierwszej (samo)pomocy. Zobacz, jak niedobór snu wpływa na nastrój i koncentrację – i jak poprawić jego jakość.*
+
+Sen to absolutna podstawa zdrowia psychicznego – pozwala mózgowi odpocząć, przetworzyć emocje z minionego dnia i wzmocnić odporność na stres. Mimo to bywa jednym z pierwszych elementów, z których rezygnujemy, gdy robi się intensywnie – zawodowo czy prywatnie.
+
+Chroniczny niedobór snu wpływa nie tylko na koncentrację i pamięć, ale też na **regulację emocji** – niewyspani jesteśmy bardziej drażliwi, gorzej radzimy sobie ze stresem i mamy mniejszą odporność na trudne sytuacje. Badania wiążą przewlekłe problemy ze snem ze zwiększonym ryzykiem depresji i zaburzeń lękowych.
+
+Jednym z największych wrogów dobrego snu jest ekran telefonu tuż przed zaśnięciem – zarówno przez emitowane niebieskie światło, jak i przez pobudzające treści, które łatwo wciągają na dłużej, niż planowaliśmy. To jeden z powodów, dla których higiena cyfrowa i higiena snu tak mocno się ze sobą łączą.
+
+Kilka prostych nawyków, które poprawiają jakość snu: stała pora zasypiania i budzenia się (nawet w weekendy), ograniczenie ekranów na godzinę przed snem, unikanie kofeiny w drugiej połowie dnia oraz wprowadzenie krótkiego rytuału wyciszającego – np. czytania książki zamiast scrollowania telefonu.
+
+Jeśli problemy ze snem utrzymują się mimo zadbania o podstawowe nawyki i wyraźnie wpływają na Twoje funkcjonowanie w ciągu dnia, warto porozmawiać o tym z lekarzem lub specjalistą – długotrwała bezsenność bywa zarówno skutkiem, jak i przyczyną pogarszającego się stanu psychicznego.
+
+Poznaj więcej praktycznych wskazówek w naszym poradniku o higienie cyfrowej dostępnym w sekcji Psychoedu na stronie głównej.
+
+Słowa kluczowe: sen, regeneracja, profilaktyka, koncentracja  
+Na podstawie: – (dotychczasowy artykuł ze strony)
+
+---
+
 ## Ciąża i rodzicielstwo
 
-### 31. Emocje w ciąży – trzy psychologiczne trymestry
+### 36. Emocje w ciąży – trzy psychologiczne trymestry
 
 *Psychologia okołoporodowa dzieli ciążę na trzy etapy oswajania się z macierzyństwem: oswajanie, wyobrażenie i przygotowanie.*
 
@@ -807,7 +904,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 32. Poród – ciało i emocje. Dlaczego wsparcie ma tak duże znaczenie
+### 37. Poród – ciało i emocje. Dlaczego wsparcie ma tak duże znaczenie
 
 *Słowa usłyszane podczas porodu kobiety często pamiętają przez całe życie. Dobry poród może wzmacniać, trudny – wymagać szczególnego wsparcia.*
 
@@ -826,7 +923,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 33. Połóg „all inclusive” – dlaczego warto przygotować się na czas po porodzie
+### 38. Połóg „all inclusive” – dlaczego warto przygotować się na czas po porodzie
 
 *„Kiedyś kobiety rodziły w polu i wracały do pracy” – to mit, który szkodzi. Połóg to czas na odpoczynek, opiekę i budowanie relacji z dzieckiem.*
 
@@ -847,7 +944,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 34. Hormony w ciąży i po porodzie – dlaczego to „nie tylko hormony”
+### 39. Hormony w ciąży i po porodzie – dlaczego to „nie tylko hormony”
 
 *Wahania hormonów w ciąży są ogromne i wpływają na samopoczucie. Ale „hormony Ci buzują” nie może być sposobem na zbywanie trudnych emocji.*
 
@@ -866,7 +963,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 35. Baby brain, czyli „mózg ciążowy” – skąd się bierze roztargnienie w ciąży?
+### 40. Baby brain, czyli „mózg ciążowy” – skąd się bierze roztargnienie w ciąży?
 
 *Gubisz słowa, zapominasz o szczegółach, łatwiej Cię rozproszyć? To zjawisko ma swoje wytłumaczenie – i swój sens.*
 
@@ -887,7 +984,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 36. „Jakim będę rodzicem?” – dlaczego w ciąży wracają wspomnienia z dzieciństwa
+### 41. „Jakim będę rodzicem?” – dlaczego w ciąży wracają wspomnienia z dzieciństwa
 
 *Ciąża i wczesne rodzicielstwo to czas, gdy mimowolnie wracamy do własnej historii rodzinnej. Dla jednych to źródło siły, dla innych – trudnych emocji.*
 
@@ -906,7 +1003,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 37. Baby blues – czym jest i ile trwa?
+### 42. Baby blues – czym jest i ile trwa?
 
 *Płacz, rozdrażnienie i huśtawka nastrojów kilka dni po porodzie to częste i naturalne zjawisko. Sprawdź, kiedy warto poszukać pomocy.*
 
@@ -925,7 +1022,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 38. Depresja poporodowa – objawy i gdzie szukać pomocy
+### 43. Depresja poporodowa – objawy i gdzie szukać pomocy
 
 *Depresja poporodowa nie mija sama – ale można ją skutecznie leczyć. Sprawdź, jak ją rozpoznać i od czego zacząć.*
 
@@ -953,7 +1050,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 39. Baby blues czy depresja poporodowa? Jak odróżnić
+### 44. Baby blues czy depresja poporodowa? Jak odróżnić
 
 *Oba stany zaczynają się po porodzie, ale różnią się przebiegiem i tym, czego wymagają. Zobacz najważniejsze różnice.*
 
@@ -981,7 +1078,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 40. Psychoza poporodowa – rzadki, ale bardzo poważny stan
+### 45. Psychoza poporodowa – rzadki, ale bardzo poważny stan
 
 *Psychoza poporodowa występuje u ok. 1–2 na 1000 kobiet po porodzie i wymaga natychmiastowej pomocy. Poznaj objawy.*
 
@@ -1007,7 +1104,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 41. Leczę się psychiatrycznie i jestem w ciąży – co warto wiedzieć
+### 46. Leczę się psychiatrycznie i jestem w ciąży – co warto wiedzieć
 
 *Nie przerywaj leczenia na własną rękę. Porozmawiaj z psychiatrą o ciąży i wspólnie przygotujcie plan.*
 
@@ -1028,7 +1125,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 42. Edynburska Skala Depresji Poporodowej – czym jest?
+### 47. Edynburska Skala Depresji Poporodowej – czym jest?
 
 *To krótki test, który możesz wypełnić samodzielnie. Nie jest diagnozą, ale może być dobrym początkiem rozmowy ze specjalistą.*
 
@@ -1050,7 +1147,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 43. Gdzie szukać nieodpłatnej pomocy psychologicznej w ciąży i po porodzie?
+### 48. Gdzie szukać nieodpłatnej pomocy psychologicznej w ciąży i po porodzie?
 
 *Położna środowiskowa, lekarz pierwszego kontaktu, poradnie i organizacje wspierające mamy – zebraliśmy miejsca, do których możesz się zwrócić.*
 
@@ -1072,7 +1169,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ---
 
-### 44. Ciąża i połóg jako czas zwrócenia się do wewnątrz
+### 49. Ciąża i połóg jako czas zwrócenia się do wewnątrz
 
 *W okresie okołoporodowym nie da się zignorować sygnałów płynących z ciała. To wyzwanie – ale też szansa na większą uważność.*
 
@@ -1098,7 +1195,7 @@ Na podstawie: Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundac
 
 ## Higiena cyfrowa
 
-### 45. Higiena cyfrowa – czym jest i dlaczego jest ważna dla zdrowia psychicznego
+### 50. Higiena cyfrowa – czym jest i dlaczego jest ważna dla zdrowia psychicznego
 
 *Higiena cyfrowa to nie rezygnacja z technologii, tylko świadome zasady korzystania z niej. Sprawdź, jak bycie „zawsze online” wpływa na samopoczucie.*
 
@@ -1122,7 +1219,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 46. Powiadomienia a stres – jak telefon wpływa na napięcie i niepokój
+### 51. Powiadomienia a stres – jak telefon wpływa na napięcie i niepokój
 
 *Każdy dźwięk i wibracja telefonu to sygnał dla organizmu. Zobacz, dlaczego stałe sprawdzanie telefonu może zwiększać napięcie.*
 
@@ -1145,7 +1242,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 47. FOMO – czym jest lęk przed pominięciem i jak wpływa na samoocenę
+### 52. FOMO – czym jest lęk przed pominięciem i jak wpływa na samoocenę
 
 *Strach, że coś ważnego Cię omija, sprawia, że częściej sięgasz po telefon i porównujesz się z innymi. Poznaj zjawisko FOMO.*
 
@@ -1171,7 +1268,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 48. Telefon przed snem – jak ekrany wpływają na zasypianie
+### 53. Telefon przed snem – jak ekrany wpływają na zasypianie
 
 *Scrollowanie w łóżku może utrudniać zasypianie i pogarszać jakość snu. Sprawdź, dlaczego i co zrobić zamiast tego.*
 
@@ -1195,7 +1292,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 49. Telefon a koncentracja – dlaczego trudno się skupić, gdy co chwilę zerkasz na ekran
+### 54. Telefon a koncentracja – dlaczego trudno się skupić, gdy co chwilę zerkasz na ekran
 
 *Każde „tylko sprawdzę” wybija Cię z rytmu. Badania nad przełączaniem uwagi pokazują, ile to kosztuje.*
 
@@ -1217,7 +1314,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 50. Dlaczego tak trudno odłożyć telefon? Dopamina, scroll i nawyki
+### 55. Dlaczego tak trudno odłożyć telefon? Dopamina, scroll i nawyki
 
 *To nie brak silnej woli. Aplikacje są projektowane tak, by przyciągać uwagę. Zobacz, jak działa ten mechanizm.*
 
@@ -1239,7 +1336,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 51. Jak ograniczyć czas przed ekranem? 5 kroków do trybu OFF
+### 56. Jak ograniczyć czas przed ekranem? 5 kroków do trybu OFF
 
 *Zamiast walczyć z telefonem siłą woli, zmień otoczenie i ustawienia. Oto pięć praktycznych kroków.*
 
@@ -1262,7 +1359,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 52. Poranek i wieczór bez telefonu – jak zaplanować rutynę offline
+### 57. Poranek i wieczór bez telefonu – jak zaplanować rutynę offline
 
 *Kilka prostych rytuałów wystarczy, by zacząć i skończyć dzień spokojniej. Podpowiadamy, od czego zacząć.*
 
@@ -1287,7 +1384,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 53. Telefon podczas spotkań – dlaczego warto go schować
+### 58. Telefon podczas spotkań – dlaczego warto go schować
 
 *Zerkanie na ekran w trakcie rozmowy obniża jakość kontaktu. Prosta zmiana, która poprawia relacje.*
 
@@ -1309,7 +1406,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 54. Co robić zamiast scrollowania? Pomysły na aktywności offline
+### 59. Co robić zamiast scrollowania? Pomysły na aktywności offline
 
 *Spacer, planszówki, szydełkowanie, gra na instrumencie – zebraliśmy pomysły na czas bez ekranu, który naprawdę regeneruje.*
 
@@ -1334,7 +1431,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 55. Media społecznościowe a samotność – czy online zastąpi kontakt twarzą w twarz?
+### 60. Media społecznościowe a samotność – czy online zastąpi kontakt twarzą w twarz?
 
 *Jesteśmy „połączeni” jak nigdy wcześniej, a mimo to wiele osób czuje się samotnie. Zobacz, dlaczego tak się dzieje.*
 
@@ -1361,7 +1458,7 @@ Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja 
 
 ---
 
-### 56. Telefon a ciało – ból szyi, pleców, nadgarstków i zmęczone oczy
+### 61. Telefon a ciało – ból szyi, pleców, nadgarstków i zmęczone oczy
 
 *Długie godziny z telefonem odbijają się nie tylko na psychice, ale i na ciele. Sprawdź, jak to zmienić.*
 
@@ -1381,5 +1478,24 @@ Jeśli ból lub dolegliwości utrzymują się, skonsultuj je z lekarzem lub fizj
 
 Słowa kluczowe: ból szyi, postawa, oczy, zmęczenie, telefon, higiena cyfrowa  
 Na podstawie: Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować
+
+---
+
+### 62. Higiena cyfrowa – jak nadmiar ekranu wpływa na samopoczucie
+
+*Przeciętny dorosły spędza przed ekranem ponad 6 godzin dziennie. Sprawdź, jak to wpływa na Twoją psychikę i od czego zacząć zmianę.*
+
+Według różnych badań przeciętny dorosły spędza przed ekranem ponad 6 godzin dziennie, a młodzi dorośli nawet 9. W Polsce aż 37% osób w wieku 18–34 lat przyznaje, że nadmiar bodźców cyfrowych negatywnie wpływa na ich samopoczucie. To nie przypadek – nieustanna dostępność, powiadomienia i przewijanie treści utrzymują układ nerwowy w ciągłej gotowości.
+
+Konsekwencje nadmiaru czasu spędzanego online to między innymi **problemy ze snem, trudności z koncentracją, nasilone stany lękowe czy poczucie osamotnienia** – paradoksalnie, mimo że jesteśmy bardziej „połączeni” niż kiedykolwiek. Scrollowanie mediów społecznościowych tuż po przebudzeniu czy tuż przed snem szczególnie mocno zaburza naturalny rytm dobowy.
+
+Higiena cyfrowa nie oznacza całkowitej rezygnacji z technologii, tylko świadome ustalenie własnych zasad korzystania z niej. Kilka podstawowych praktyk, od których warto zacząć: **ustaw limity aplikacji i wycisz zbędne powiadomienia**, zadbaj o poranną i wieczorną rutynę offline, wyznacz strefy bez ekranów (np. sypialnia czy stół podczas posiłków), ogranicz korzystanie z telefonu podczas spotkań z ludźmi i planuj aktywności analogowe – spacer, sport, książkę.
+
+Warto też zwrócić uwagę na to, *w jaki sposób* korzystamy z ekranu, a nie tylko *ile czasu* mu poświęcamy. Bierne scrollowanie w poszukiwaniu ucieczki od nudy czy stresu działa inaczej niż świadome, ograniczone w czasie korzystanie z konkretnej aplikacji w konkretnym celu.
+
+Jeśli chcesz sprawdzić, jak wygląda Twoja higiena cyfrowa, zapraszamy do wypełnienia krótkiego quizu w ramach naszego projektu **Take care OFF** – znajdziesz go na naszej stronie.
+
+Słowa kluczowe: higiena cyfrowa, ekran, telefon, profilaktyka, sen  
+Na podstawie: – (dotychczasowy artykuł ze strony)
 
 ---

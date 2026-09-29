@@ -1,0 +1,2 @@
+  await p.screenshot({path: process.argv[2]+'/wiedza-post.png', fullPage:true});
+  await p.goto('http://localhost:8765/wiedza.html?post=higiena-cyfrowa'); await p.waitForTimeout(500); console.log('sample:', await p.$eval('
