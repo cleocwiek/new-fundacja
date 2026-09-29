@@ -94,6 +94,9 @@
     WIEDZA_POSTS.forEach(function (post) {
       if (categories.indexOf(post.category) === -1) categories.push(post.category);
     });
+    categories.sort(function (a, b) {
+      return wiedzaCategoryRank(a) - wiedzaCategoryRank(b);
+    });
 
     let html =
       '<button type="button" class="wiedza-tag' +
