@@ -1172,9 +1172,10 @@ header a img.logo {
 }
 
 .kampania-subtitle {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--ink);
-  line-height: 1.8;
+  line-height: 1.6;
+  text-align: left;
   margin-bottom: 2.25rem;
 }
 
@@ -1216,9 +1217,11 @@ header a img.logo {
 }
 
 .kampania-text p {
-  font-size: 1.08rem;
+  font-size: 1rem;
   color: var(--ink);
-  line-height: 1.8;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 1.5rem;
 }
 
 .kampania-partners-content {
@@ -1273,7 +1276,8 @@ header a img.logo {
   margin: 0 auto;
   font-size: 1rem;
   color: var(--ink);
-  line-height: 1.7;
+  line-height: 1.6;
+  text-align: left;
 }
 
 .mamtowgrupie-content {
@@ -1315,6 +1319,8 @@ header a img.logo {
 .mamtowgrupie-content p {
   color: var(--ink);
   font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .offternoon-instagram {
@@ -1733,6 +1739,9 @@ header a img.logo {
 
 .takecareoffyourself-right p {
   color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .takecareoffyourself-quiz {
