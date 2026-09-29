@@ -13,10 +13,6 @@
 
   if (!grid || typeof wiedzaReady === "undefined") return;
 
-  const MONTHS = [
-    "stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
-    "lipca", "sierpnia", "września", "października", "listopada", "grudnia",
-  ];
 
   function escapeHtml(str) {
     const div = document.createElement("div");
@@ -24,15 +20,6 @@
     return div.innerHTML;
   }
 
-  function formatDate(iso) {
-    const parts = (iso || "").split("-");
-    if (parts.length !== 3) return "";
-    const year = parseInt(parts[0], 10);
-    const month = parseInt(parts[1], 10) - 1;
-    const day = parseInt(parts[2], 10);
-    if (!MONTHS[month]) return iso;
-    return day + " " + MONTHS[month] + " " + year;
-  }
 
   function getParams() {
     return new URLSearchParams(window.location.search);
@@ -161,7 +148,6 @@
       '<a class="wiedza-back-link" href="wiedza.html">← Wróć do wiedzy</a>' +
       '<p class="eyebrow wiedza-post-category">' + escapeHtml(post.category) + "</p>" +
       "<h1>" + escapeHtml(post.title) + "</h1>" +
-      '<p class="wiedza-post-date">' + formatDate(post.date) + "</p>" +
       '<div class="wiedza-post-body">' + bodyHtml + "</div>" +
       '<div class="wiedza-post-tags">' + tagsHtml + "</div>" +
       sourceHtml +
