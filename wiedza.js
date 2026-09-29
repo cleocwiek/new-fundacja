@@ -1,8 +1,8 @@
 /* Wiedza page: renders the post grid, category filters, and single-post
    detail view based on URL query params (?q=, ?category=, ?post=).
-   Data currently comes from posts-data.js (static array) — swapping that
-   file for a Contentful fetch later shouldn't require changes here, as
-   long as the resulting posts keep the same shape. */
+   Articles come from posts-data.js, which loads them from Contentful
+   (or uses its built-in sample posts when Contentful isn't configured);
+   rendering waits for `wiedzaReady`. */
 (function () {
   const heroSection = document.querySelector(".wiedza-hero");
   const tagsBar = document.getElementById("wiedzaTags");
@@ -11,7 +11,7 @@
   const postSection = document.getElementById("wiedzaPostSection");
   const searchInput = document.getElementById("wiedzaSearchInput");
 
-  if (!grid || typeof WIEDZA_POSTS === "undefined") return;
+  if (!grid || typeof wiedzaReady === "undefined") return;
 
   const MONTHS = [
     "stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
@@ -57,6 +57,12 @@
       posts = posts.filter(function (post) {
         return post.category === category;
       });
+    }
+
+    if (WIEDZA_LOAD_ERROR) {
+      grid.innerHTML =
+        '<p class="wiedza-empty">Nie udało się wczytać artykułów. Odśwież stronę za chwilę.</p>';
+      return;
     }
 
     if (!posts.length) {
@@ -129,11 +135,21 @@
       return;
     }
 
-    const bodyHtml = post.body
-      .map(function (paragraph) {
-        return "<p>" + paragraph + "</p>";
-      })
-      .join("");
+    const bodyHtml = post.bodyHtml
+      ? post.bodyHtml
+      : (post.body || [])
+          .map(function (paragraph) {
+            return "<p>" + paragraph + "</p>";
+          })
+          .join("");
+
+    const sourceHtml = post.source
+      ? '<p class="wiedza-post-source">Na podstawie: ' +
+        (post.sourceUrl && /^https?:\/\//.test(post.sourceUrl)
+          ? '<a href="' + escapeHtml(post.sourceUrl) + '" target="_blank" rel="noopener">' + escapeHtml(post.source) + "</a>"
+          : escapeHtml(post.source)) +
+        "</p>"
+      : "";
 
     const tagsHtml = (post.tags || [])
       .map(function (tag) {
@@ -148,6 +164,7 @@
       '<p class="wiedza-post-date">' + formatDate(post.date) + "</p>" +
       '<div class="wiedza-post-body">' + bodyHtml + "</div>" +
       '<div class="wiedza-post-tags">' + tagsHtml + "</div>" +
+      sourceHtml +
       '<div class="wiedza-disclaimer">Ten artykuł ma charakter edukacyjny i nie zastępuje konsultacji ze specjalistą. Jeśli Ty lub ktoś bliski potrzebuje wsparcia teraz, skorzystaj z bezpłatnych, całodobowych linii pomocowych wymienionych na stronie głównej w sekcji „Szukasz wsparcia?”.</div>';
 
     if (gridSection) gridSection.style.display = "none";
@@ -175,5 +192,6 @@
     }
   }
 
-  init();
+  grid.innerHTML = '<p class="wiedza-empty">Wczytywanie artykułów…</p>';
+  wiedzaReady.then(init);
 })();

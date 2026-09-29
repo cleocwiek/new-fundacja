@@ -2165,6 +2165,42 @@ header a img.logo {
   color: var(--ink);
 }
 
+.wiedza-post-body ul {
+  margin: 0 0 1.4rem;
+  padding-left: 1.3rem;
+  list-style: disc;
+}
+
+.wiedza-post-body li::marker {
+  color: var(--accent-500);
+}
+
+.wiedza-post-body li {
+  font-size: 1.06rem;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 0.45rem;
+}
+
+.wiedza-post-body h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.35rem;
+  margin: 2rem 0 0.9rem;
+}
+
+.wiedza-post-body a,
+.wiedza-post-source a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.wiedza-post-source {
+  margin-top: 1.75rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
 .wiedza-post-tags {
   display: flex;
   flex-wrap: wrap;
