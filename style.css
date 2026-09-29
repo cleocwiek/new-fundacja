@@ -132,6 +132,12 @@ p { margin: 0 0 1em; color: var(--ink); }
 
 b, strong { font-weight: 700; color: var(--ink); }
 
+/* Menu links jump to a section: stop below the sticky header so the
+   eyebrow and section title are fully visible */
+html {
+  scroll-padding-top: 5.5rem;
+}
+
 /* ---------- Layout ---------- */
 .container {
   max-width: var(--container);
@@ -150,17 +156,17 @@ section {
 /* psychoedu and szukasz wsparcia sit back-to-back with no heading gap
    between them, so their combined padding otherwise doubles up — trim it
    to match the tighter spacing used elsewhere between sections */
-#psychoedu {
+#psychoedu-materialy {
   padding-bottom: 2.75rem;
 }
 
-#wsparcie {
+#wsparcie-sekcja {
   padding-top: 2.75rem;
 }
 
 @media (max-width: 720px) {
-  #psychoedu { padding-bottom: 1.5rem; }
-  #wsparcie { padding-top: 1.5rem; }
+  #psychoedu-materialy { padding-bottom: 1.5rem; }
+  #wsparcie-sekcja { padding-top: 1.5rem; }
 }
 
 .eyebrow {
