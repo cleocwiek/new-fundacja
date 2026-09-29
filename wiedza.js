@@ -13,10 +13,6 @@
 
   if (!grid || typeof wiedzaReady === "undefined") return;
 
-  const MONTHS = [
-    "stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
-    "lipca", "sierpnia", "września", "października", "listopada", "grudnia",
-  ];
 
   function escapeHtml(str) {
     const div = document.createElement("div");
@@ -24,35 +20,51 @@
     return div.innerHTML;
   }
 
-  function formatDate(iso) {
-    const parts = (iso || "").split("-");
-    if (parts.length !== 3) return "";
-    const year = parseInt(parts[0], 10);
-    const month = parseInt(parts[1], 10) - 1;
-    const day = parseInt(parts[2], 10);
-    if (!MONTHS[month]) return iso;
-    return day + " " + MONTHS[month] + " " + year;
-  }
 
   function getParams() {
     return new URLSearchParams(window.location.search);
   }
 
   function renderCard(post) {
+    const href = "wiedza.html?post=" + encodeURIComponent(post.slug);
     return (
       '<article class="wiedza-card">' +
-      '<p class="wiedza-card-category">' + escapeHtml(post.category) + "</p>" +
-      "<h3>" + escapeHtml(post.title) + "</h3>" +
+      '<p class="wiedza-card-category ' + wiedzaCategoryClass(post.category) + '">' + escapeHtml(post.category) + "</p>" +
+      '<h3><a href="' + href + '">' + escapeHtml(post.title) + "</a></h3>" +
       "<p>" + escapeHtml(post.excerpt) + "</p>" +
-      '<a class="wiedza-card-link" href="wiedza.html?post=' +
-      encodeURIComponent(post.slug) +
-      '">Czytaj więcej →</a>' +
+      '<a class="wiedza-card-link" href="' + href + '">Czytaj więcej →</a>' +
       "</article>"
     );
   }
 
+  // Random order that spreads every category evenly through the list:
+  // each category is shuffled, then its posts get evenly spaced positions
+  // (with a random offset) and all posts are sorted by position.
+  function mixedOrder(posts) {
+    const byCategory = {};
+    posts.forEach(function (post) {
+      (byCategory[post.category] = byCategory[post.category] || []).push(post);
+    });
+    const placed = [];
+    Object.keys(byCategory).forEach(function (category) {
+      const group = byCategory[category];
+      for (let i = group.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = group[i]; group[i] = group[j]; group[j] = tmp;
+      }
+      group.forEach(function (post, i) {
+        placed.push({ post: post, key: (i + Math.random()) / group.length });
+      });
+    });
+    placed.sort(function (a, b) { return a.key - b.key; });
+    return placed.map(function (item) { return item.post; });
+  }
+
+  let mixedPosts = null;
+
   function renderGrid(query, category) {
-    let posts = query ? wiedzaSearch(query) : WIEDZA_POSTS.slice();
+    if (!mixedPosts) mixedPosts = mixedOrder(WIEDZA_POSTS);
+    let posts = query ? wiedzaSearch(query) : mixedPosts.slice();
     if (category) {
       posts = posts.filter(function (post) {
         return post.category === category;
@@ -90,7 +102,7 @@
 
     categories.forEach(function (category) {
       html +=
-        '<button type="button" class="wiedza-tag' +
+        '<button type="button" class="wiedza-tag ' + wiedzaCategoryClass(category) +
         (activeCategory === category ? " active" : "") +
         '" data-category="' +
         escapeHtml(category) +
@@ -159,9 +171,10 @@
 
     postSection.innerHTML =
       '<a class="wiedza-back-link" href="wiedza.html">← Wróć do wiedzy</a>' +
-      '<p class="eyebrow wiedza-post-category">' + escapeHtml(post.category) + "</p>" +
+      '<a class="wiedza-card-category wiedza-post-category ' + wiedzaCategoryClass(post.category) +
+      '" href="wiedza.html?category=' + encodeURIComponent(post.category) + '">' +
+      escapeHtml(post.category) + "</a>" +
       "<h1>" + escapeHtml(post.title) + "</h1>" +
-      '<p class="wiedza-post-date">' + formatDate(post.date) + "</p>" +
       '<div class="wiedza-post-body">' + bodyHtml + "</div>" +
       '<div class="wiedza-post-tags">' + tagsHtml + "</div>" +
       sourceHtml +
