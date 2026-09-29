@@ -1868,6 +1868,41 @@ header a img.logo {
   gap: 1rem;
 }
 
+.takecareoffyourself-sources {
+  max-width: 760px;
+  margin: 3.5rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.6;
+  text-align: left;
+}
+
+.takecareoffyourself-sources h4 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.takecareoffyourself-sources ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.takecareoffyourself-sources li + li {
+  margin-top: 0.35rem;
+}
+
+.takecareoffyourself-sources a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 @media (max-width: 860px) {
   .takecareoffyourself-content { grid-template-columns: 1fr; gap: 2rem; }
 }
