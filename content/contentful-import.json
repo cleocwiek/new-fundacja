@@ -1,0 +1,2856 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "id": "article",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "name": "Artykuł (Wiedza)",
+      "description": "Artykuł do bazy wiedzy na stronie wiedza.html",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Tytuł",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug (adres)",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "regexp": {
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "message": "Tylko małe litery bez polskich znaków, cyfry i myślniki"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "category",
+          "name": "Kategoria",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "in": [
+                "Pierwsza pomoc",
+                "Jak wspierać bliskich",
+                "Zdrowie psychiczne",
+                "Ciąża i rodzicielstwo",
+                "Higiena cyfrowa"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "excerpt",
+          "name": "Zajawka (krótki opis)",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "max": 300
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "body",
+          "name": "Treść (Markdown)",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "tags",
+          "name": "Słowa kluczowe (do wyszukiwarki)",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Symbol",
+            "validations": []
+          }
+        },
+        {
+          "id": "date",
+          "name": "Data",
+          "type": "Date",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "source",
+          "name": "Na podstawie (nazwa materiału)",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "sourceUrl",
+          "name": "Na podstawie (link)",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "sys": {
+        "id": "wiedza-mysli-samobojcze-co-robic",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Myśli samobójcze – co zrobić, gdy pojawiają się u Ciebie"
+        },
+        "slug": {
+          "en-US": "mysli-samobojcze-co-robic"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Jeśli masz poczucie, że utknęłaś_eś w sytuacji bez wyjścia i myślisz o odebraniu sobie życia – nie musisz przechodzić przez to sam_a. Sprawdź, gdzie od razu możesz szukać pomocy."
+        },
+        "body": {
+          "en-US": "Myśli samobójcze mogą pojawić się, gdy cierpienie staje się tak duże, że trudno wyobrazić sobie inne wyjście. Możesz czuć, że **utknęłaś_eś w sytuacji bez wyjścia**, że nie masz siły dalej żyć, albo obwiniać się za to, jak się czujesz. To sygnał, że potrzebujesz wsparcia – a nie dowód na to, że coś jest z Tobą „nie tak”.\n\nJeśli pojawiają się u Ciebie takie myśli:\n\n- **Poproś o pomoc bliską osobę dorosłą** – powiedz jej wprost, co się dzieje.\n- **Zadzwoń na telefon zaufania** – numery znajdziesz poniżej.\n- **Zgłoś się do Ośrodka Interwencji Kryzysowej** w swojej okolicy.\n- **Zgłoś się na izbę przyjęć najbliższego szpitala psychiatrycznego** – możesz to zrobić bez skierowania.\n\nJeśli planujesz odebranie sobie życia albo czujesz, że nie jesteś w stanie zadbać teraz o swoje bezpieczeństwo, **zadzwoń pod 112** lub poproś kogoś, żeby zrobił to za Ciebie.\n\nGdzie możesz zadzwonić:\n\n- **112** – numer alarmowy (w sytuacji zagrożenia życia)\n- **999** – pogotowie ratunkowe\n- **800 70 2222** – Centrum Wsparcia dla Osób Dorosłych w Kryzysie Psychicznym\n- **116 123** – Telefon Zaufania dla Osób Dorosłych w Kryzysie Emocjonalnym\n- **116 111** – Telefon Zaufania dla Dzieci i Młodzieży (Fundacja Dajemy Dzieciom Siłę)\n- **22 484 88 01** – Antydepresyjny Telefon Zaufania (Fundacja ITAKA)\n\nGodziny działania telefonów zaufania mogą się różnić – aktualne informacje znajdziesz na ich stronach internetowych. Jeśli zagrożone jest czyjeś życie, zawsze dzwoń pod **112**.\n\nKryzys, nawet bardzo głęboki, można przejść – z pomocą innych ludzi i specjalistów. Nie musisz radzić sobie z tym sam_a."
+        },
+        "tags": {
+          "en-US": [
+            "myśli samobójcze",
+            "samobójstwo",
+            "kryzys",
+            "pomoc teraz",
+            "telefon zaufania"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-pomoc-osobie-z-myslami-samobojczymi",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak pomóc osobie, która mówi o myślach samobójczych"
+        },
+        "slug": {
+          "en-US": "jak-pomoc-osobie-z-myslami-samobojczymi"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Ktoś bliski mówi, że nie chce już żyć? Twoja reakcja ma znaczenie. Zobacz, jak rozmawiać, kiedy dzwonić po pomoc i czego nie robić."
+        },
+        "body": {
+          "en-US": "Kiedy ktoś mówi o myślach samobójczych, łatwo wpaść w panikę albo – przeciwnie – zbagatelizować sprawę. Tymczasem **każdą taką informację warto traktować poważnie**. Rozmowa o samobójstwie nie „podsuwa pomysłu” – może dać drugiej osobie ulgę i poczucie, że nie jest sama.\n\nJak zareagować – w zależności od sytuacji:\n\n- **Jeśli osoba mówi, że ma myśli samobójcze** – rozmawiaj, słuchaj, wspieraj. Zaproponuj wizytę u psychiatry i psychologa, a jeśli to możliwe, pomóż ją umówić i idź razem. Poinformuj najbliższe jej osoby i nie zostawiaj jej bez opieki.\n- **Jeśli osoba mówi o zamiarze lub planach odebrania sobie życia** – zawieź ją do prowadzącego psychiatry albo na izbę przyjęć najbliższego szpitala psychiatrycznego.\n- **Jeśli osoba robi sobie krzywdę** – natychmiast zadzwoń pod **112** lub **999**. Do przyjazdu ratowników nie zostawiaj jej samej i usuń z otoczenia przedmioty, które mogłyby jej zaszkodzić.\n\nPodczas rozmowy nie oceniaj, nie moralizuj i nie obiecuj, że „zachowasz to w tajemnicy” – bezpieczeństwo drugiej osoby jest ważniejsze. Zamiast szukać idealnych słów, po prostu bądź obok i pokaż, że Ci zależy.\n\nMożesz też zasugerować wspólne stworzenie **Planu Bezpieczeństwa** – krótkiej listy osób i miejsc, które pomagają w trudnych chwilach.\n\nPamiętaj, że wspieranie kogoś w kryzysie bywa obciążające. Ty też masz prawo poprosić o pomoc – dla siebie."
+        },
+        "tags": {
+          "en-US": [
+            "myśli samobójcze",
+            "samobójstwo",
+            "jak pomóc",
+            "bliska osoba",
+            "kryzys"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-plan-bezpieczenstwa",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Plan Bezpieczeństwa – czym jest i jak go przygotować"
+        },
+        "slug": {
+          "en-US": "plan-bezpieczenstwa"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Plan Bezpieczeństwa to prosta lista, która w chwili kryzysu podpowiada, co robić dalej. Dowiedz się, co warto w nim zapisać."
+        },
+        "body": {
+          "en-US": "W kryzysie myśli często stają się chaotyczne, a zwykłe decyzje – nawet to, do kogo zadzwonić – wydają się ponad siły. Właśnie dlatego warto przygotować **Plan Bezpieczeństwa wcześniej**, w spokojniejszym momencie, i mieć go zawsze przy sobie (np. w telefonie lub portfelu).\n\nCo warto w nim zapisać:\n\n- **Listę osób, które Cię wspierają** i z którymi zawsze możesz porozmawiać. Powiedz im o swoich trudnościach i poproś, żeby odbierały od Ciebie telefon.\n- **Listę miejsc, które poprawiają Twoje samopoczucie** w gorszych momentach – np. ulubiona kawiarnia, biblioteka czy park.\n- **Numery telefonów zaufania** i adres najbliższego Ośrodka Interwencji Kryzysowej oraz szpitala z izbą przyjęć psychiatryczną.\n- **Numer alarmowy 112** – na wypadek, gdyby Twoje życie było zagrożone.\n\nPlan Bezpieczeństwa nie zastępuje pomocy specjalisty, ale sprawia, że nawet w największym chaosie **wiadomo, co zrobić dalej**. Jeśli jesteś pod opieką psychiatry lub psychoterapeuty, możecie przygotować go razem.\n\nJeśli wspierasz bliską osobę, możesz zaproponować jej stworzenie takiego planu – spokojnie, bez nacisku, jako coś, co po prostu daje poczucie bezpieczeństwa."
+        },
+        "tags": {
+          "en-US": [
+            "plan bezpieczeństwa",
+            "myśli samobójcze",
+            "kryzys",
+            "profilaktyka",
+            "wsparcie"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-proba-samobojcza-jak-zareagowac",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Próba samobójcza – jak zareagować krok po kroku"
+        },
+        "slug": {
+          "en-US": "proba-samobojcza-jak-zareagowac"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "W takiej sytuacji liczy się każda minuta. Sprawdź, co zrobić, zanim przyjadą ratownicy."
+        },
+        "body": {
+          "en-US": "Jeśli jesteś świadkiem próby samobójczej, najważniejsze jest szybkie wezwanie pomocy i zadbanie o bezpieczeństwo – swoje i drugiej osoby.\n\nCo robić:\n\n- **Zadzwoń pod 112 lub 999.** Zachowaj spokój i odpowiadaj na pytania dyspozytora – przekaż wszystkie informacje, o które poprosi. Dyspozytor może też poprowadzić Cię krok po kroku przez pierwszą pomoc.\n- **Jeśli osoba nie oddycha**, rozpocznij resuscytację (30 uciśnięć klatki piersiowej i 2 oddechy ratownicze) i kontynuuj ją do przyjazdu ratowników.\n- **Jeśli osoba oddycha**, udrożnij drogi oddechowe i ułóż ją w pozycji bocznej ustalonej.\n- **Nie zostawiaj jej samej** aż do przybycia ratowników.\n\nPo takim zdarzeniu możesz odczuwać szok, lęk, złość czy poczucie winy – to naturalne reakcje na bardzo trudne doświadczenie. **Zadbaj też o siebie**: porozmawiaj z kimś bliskim, a jeśli emocje nie mijają, skorzystaj z pomocy psychologa lub Ośrodka Interwencji Kryzysowej."
+        },
+        "tags": {
+          "en-US": [
+            "próba samobójcza",
+            "samobójstwo",
+            "pierwsza pomoc",
+            "112",
+            "resuscytacja"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-atak-paniki-objawy-i-co-robic",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Atak paniki – objawy i co robić, gdy Cię dopadnie"
+        },
+        "slug": {
+          "en-US": "atak-paniki-objawy-i-co-robic"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Kołatanie serca, duszność, mętlik w głowie i strach bez wyraźnego powodu? Tak może wyglądać atak paniki. Sprawdź, jak sobie z nim radzić."
+        },
+        "body": {
+          "en-US": "Atak paniki to **nagły, intensywny epizod silnego lęku**, któremu towarzyszą objawy fizyczne i psychiczne. Może pojawić się bez wyraźnej przyczyny i bywa mylony np. z zawałem serca. Zwykle trwa od kilkunastu minut do godziny.\n\nJak może się objawiać:\n\n- czujesz strach, choć nie widzisz ku temu powodu,\n- serce bije szybko, trudno Ci oddychać,\n- drżą Ci ręce i nogi, boli Cię głowa lub brzuch, masz mdłości albo ucisk w klatce piersiowej,\n- masz mętlik w głowie i boisz się, że tracisz nad sobą kontrolę.\n\nCo może pomóc:\n\n- **Skup się na oddechu** – spokojny, wolny oddech pomaga uspokoić układ nerwowy (spróbuj np. oddychania po kwadracie).\n- **Rusz się** – aktywność fizyczna pomaga rozładować napięcie mięśniowe.\n- **Nie zostawaj z tym sam_a** – zadzwoń do bliskiej osoby, opowiedz, co się dzieje, albo poproś, by była z Tobą, aż atak minie.\n- **Spróbuj wizualizacji** – wyobraź sobie spokojne, bezpieczne miejsce.\n\nJeśli czujesz taką potrzebę, możesz zgłosić się na izbę przyjęć. Jeśli nie masz pewności, czy to atak paniki, czy problem z sercem – **nie zgaduj, skonsultuj się z lekarzem**. Gdy ataki się powtarzają, warto porozmawiać z psychiatrą lub psychoterapeutą – napady paniki dobrze poddają się leczeniu."
+        },
+        "tags": {
+          "en-US": [
+            "atak paniki",
+            "panika",
+            "lęk",
+            "objawy",
+            "oddech"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-pomoc-osobie-z-atakiem-paniki",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak pomóc komuś, kto ma atak paniki"
+        },
+        "slug": {
+          "en-US": "jak-pomoc-osobie-z-atakiem-paniki"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Ktoś obok Ciebie nagle zaczyna ciężko oddychać i mówi, że się boi? Zobacz, jak spokojnie towarzyszyć mu w ataku paniki."
+        },
+        "body": {
+          "en-US": "Osoba w trakcie ataku paniki często czuje, że dzieje się z nią coś bardzo złego. Twoja spokojna obecność może jej naprawdę pomóc.\n\nCo możesz zrobić:\n\n- **Zostań z nią** – nie zostawiaj jej samej.\n- **Zachowaj spokój** i zadawaj proste pytania o to, czego potrzebuje.\n- **Bądź przewidywalna_y** – unikaj gwałtownych ruchów, pośpiechu i rozmów, które mogą zwiększać stres.\n- **Zapytaj o leki doraźne** – jeśli osoba ma przepisane leki na wypadek ataku paniki, pomóż jej je znaleźć i przyjąć.\n- **Zachęć do spokojnego oddychania**, np. metodą oddychania po kwadracie – możecie oddychać razem.\n- **Jeśli nie znacie się dobrze**, zaproponuj telefon do kogoś bliskiego tej osobie, np. rodzica, partnera czy przyjaciółki.\n\nUnikaj komunikatów w rodzaju „uspokój się” czy „przesadzasz” – dla osoby w ataku paniki objawy są bardzo realne. Lepiej działa: „Jestem obok. To minie. Oddychajmy razem”.\n\nJeśli masz wątpliwości, czy to atak paniki, czy np. problem z sercem, albo stan osoby się pogarsza – **dzwoń pod 112 lub 999**."
+        },
+        "tags": {
+          "en-US": [
+            "atak paniki",
+            "jak pomóc",
+            "bliska osoba",
+            "lęk",
+            "oddech"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-oddychanie-po-kwadracie",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Oddychanie po kwadracie – prosta technika na uspokojenie"
+        },
+        "slug": {
+          "en-US": "oddychanie-po-kwadracie"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Kiedy stres lub lęk narastają, oddech bywa pierwszym narzędziem, po które możesz sięgnąć. Poznaj technikę oddychania po kwadracie."
+        },
+        "body": {
+          "en-US": "W silnym stresie oddech zwykle przyspiesza i staje się płytki. **Spokojny, wyrównany oddech** jest jednym z najprostszych sposobów, by pomóc układowi nerwowemu się wyciszyć – przydaje się m.in. podczas ataku paniki czy przy objawach somatycznych wywołanych stresem.\n\nOddychanie po kwadracie polega na tym, że **wdech, pauza, wydech i kolejna pauza trwają tyle samo**. Możesz wyobrazić sobie, że rysujesz w myślach kwadrat – każdy bok to jeden etap:\n\n- **wdech** – licząc spokojnie do 4,\n- **pauza** – licząc do 4,\n- **wydech** – licząc do 4,\n- **pauza** – licząc do 4.\n\nPowtórz kilka razy. Jeśli liczenie do 4 jest dla Ciebie za długie, zacznij od krótszych odcinków – ważne, żeby wszystkie etapy były równe i żeby oddech był dla Ciebie komfortowy. Jeśli zakręci Ci się w głowie, wróć do zwykłego oddychania.\n\nTechnikę warto przećwiczyć w spokojnym momencie – wtedy łatwiej sięgnąć po nią, gdy naprawdę jej potrzebujesz. Możesz też oddychać w ten sposób razem z osobą, której pomagasz.\n\nTechniki oddechowe pomagają doraźnie, ale nie zastępują leczenia. Jeśli silny lęk wraca często, warto skonsultować się ze specjalistą."
+        },
+        "tags": {
+          "en-US": [
+            "oddech",
+            "techniki oddechowe",
+            "atak paniki",
+            "stres",
+            "lęk",
+            "relaksacja"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-epizod-maniakalny-objawy",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Epizod maniakalny – jak go rozpoznać i gdzie szukać pomocy"
+        },
+        "slug": {
+          "en-US": "epizod-maniakalny-objawy"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Euforia, mnóstwo energii mimo braku snu, gonitwa myśli i decyzje bez oglądania się na konsekwencje – to mogą być objawy manii."
+        },
+        "body": {
+          "en-US": "Epizod maniakalny to stan, w którym nastrój i energia są **nienaturalnie podwyższone** i wyraźnie zmieniają sposób funkcjonowania. Z zewnątrz – a czasem także od środka – może wyglądać jak „świetna forma”, ale niesie realne ryzyko.\n\nMożliwe objawy:\n\n- poczucie skrajnego zadowolenia, euforii lub mocy,\n- mało jesz i śpisz, a mimo to masz mnóstwo energii,\n- gonitwa myśli – myślenie jest przyspieszone, chaotyczne, wielowątkowe,\n- łatwo się rozpraszasz,\n- wszystko Cię ekscytuje, a decyzje podejmujesz bez myślenia o konsekwencjach.\n\nCo zrobić, jeśli zauważasz u siebie te objawy:\n\n- **Jak najszybciej skontaktuj się z lekarzem psychiatrą.**\n- Jeśli masz tylko chwilowy „przebłysk” świadomości, że coś jest nie tak – **od razu powiadom bliską osobę** lub zgłoś się na izbę przyjęć szpitala psychiatrycznego.\n\nMania może pojawić się m.in. w przebiegu choroby afektywnej dwubiegunowej. Właściwe leczenie pozwala dobrze funkcjonować i zapobiegać kolejnym epizodom – dlatego tak ważna jest szybka konsultacja."
+        },
+        "tags": {
+          "en-US": [
+            "mania",
+            "epizod maniakalny",
+            "choroba afektywna dwubiegunowa",
+            "objawy",
+            "psychiatra"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-wspierac-osobe-w-manii",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak wspierać bliską osobę w epizodzie manii"
+        },
+        "slug": {
+          "en-US": "jak-wspierac-osobe-w-manii"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Bliska osoba jest pobudzona, nie śpi, ma dziesiątki pomysłów na minutę? Zobacz, jak reagować spokojnie i bezpiecznie."
+        },
+        "body": {
+          "en-US": "Osoba w epizodzie maniakalnym często nie widzi, że dzieje się z nią coś niepokojącego – czuje się świetnie i może nie rozumieć Twojej troski. Dlatego tak ważny jest spokój i cierpliwość.\n\nJak możesz pomóc:\n\n- **Zachęć do jak najszybszego kontaktu z psychiatrą** – a jeśli to możliwe, pomóż umówić wizytę.\n- **Zachowaj spokój** – unikaj podnoszenia głosu i gwałtownych gestów.\n- **Nie mów przykrych rzeczy, nie oskarżaj** i nie podważaj doświadczeń tej osoby, nawet jeśli wydają Ci się nierealne.\n- **Nie wykluczaj jej z życia rodzinnego** – poczucie odrzucenia może pogłębić kryzys.\n\nJeśli osoba swoim zachowaniem **bezpośrednio zagraża sobie lub innym**, zadzwoń pod **112** lub **999**. W takiej sytuacji, zgodnie z przepisami, możliwa jest hospitalizacja psychiatryczna także bez jej zgody.\n\nWspieranie kogoś w manii bywa wyczerpujące. Zadbaj też o własne granice i odpoczynek – i nie wahaj się poprosić o pomoc innych bliskich lub specjalistów."
+        },
+        "tags": {
+          "en-US": [
+            "mania",
+            "epizod maniakalny",
+            "jak pomóc",
+            "bliska osoba",
+            "choroba afektywna dwubiegunowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-epizod-depresyjny-kiedy-pilna-pomoc",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ciężki epizod depresji – kiedy potrzebna jest pilna pomoc"
+        },
+        "slug": {
+          "en-US": "epizod-depresyjny-kiedy-pilna-pomoc"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Gdy smutek jest tak duży, że nie masz siły wstać, umyć się ani zjeść posiłku – to sygnał, by jak najszybciej sięgnąć po pomoc."
+        },
+        "body": {
+          "en-US": "Depresja może mieć różne nasilenie. Są jednak sytuacje, w których **nie warto czekać** i trzeba jak najszybciej poszukać pomocy.\n\nSygnały, że to ciężki epizod depresji:\n\n- odczuwasz ogromne cierpienie, które uniemożliwia Ci udział w codziennym życiu,\n- nie masz siły umyć się ani zjeść posiłku,\n- nie możesz spać,\n- nic nie sprawia Ci radości,\n- czujesz wszechogarniający smutek bez wyraźnej przyczyny,\n- pojawiają się myśli samobójcze.\n\nCo zrobić:\n\n- **Powiedz bliskiej osobie, co się dzieje**, i poproś o pomoc.\n- **Jeśli jesteś w leczeniu** – jak najszybciej skontaktuj się ze swoim psychiatrą.\n- **Jeśli nie jesteś w leczeniu, a Twój stan jest ciężki** – zgłoś się na izbę przyjęć szpitala z oddziałem psychiatrycznym.\n- Możesz też zgłosić się do **Ośrodka Interwencji Kryzysowej** lub zadzwonić na telefon zaufania.\n\nJeśli pojawiają się myśli o odebraniu sobie życia i czujesz, że nie jesteś bezpieczna_y, **zadzwoń pod 112**.\n\nDepresję można skutecznie leczyć. To, że dziś trudno w to uwierzyć, jest częścią choroby – a nie prawdą o Twojej przyszłości."
+        },
+        "tags": {
+          "en-US": [
+            "depresja",
+            "epizod depresyjny",
+            "smutek",
+            "kryzys",
+            "psychiatra",
+            "pomoc teraz"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-wspierac-osobe-w-depresji",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak wspierać bliską osobę w depresji"
+        },
+        "slug": {
+          "en-US": "jak-wspierac-osobe-w-depresji"
+        },
+        "category": {
+          "en-US": "Jak wspierać bliskich"
+        },
+        "excerpt": {
+          "en-US": "„Weź się w garść” nie pomaga. Zobacz, co naprawdę może wesprzeć osobę w depresji – i kiedy trzeba działać natychmiast."
+        },
+        "body": {
+          "en-US": "Gdy ktoś bliski choruje na depresję, łatwo poczuć bezradność. Nie musisz mieć gotowych odpowiedzi – **Twoja obecność i pomoc są kluczowe**.\n\nCo pomaga:\n\n- **Nie bagatelizuj problemu.** Depresja to choroba, a nie kwestia słabej woli.\n- **Zachęć do wizyty u psychiatry** – a jeśli to możliwe, zawieź lub zaprowadź na nią.\n- **Przypominaj, że depresję można skutecznie leczyć** i że ta osoba wiele dla Ciebie znaczy.\n- **Zachęcaj do prostych codziennych aktywności**, np. spaceru czy drobnych prac domowych – ale nigdy na siłę.\n- **Zauważaj i doceniaj najdrobniejsze oznaki poprawy.**\n\nCzego unikać:\n\n- **Nie zmuszaj do „otrząśnięcia się”** ani „wzięcia się w garść”.\n- Nie porównuj z innymi („inni mają gorzej”) i nie obwiniaj.\n\nKiedy działać natychmiast:\n\n- Jeśli osoba **robi sobie krzywdę** – zadzwoń pod **112** lub **999**, nie zostawiaj jej samej i usuń z otoczenia przedmioty, którymi mogłaby się skrzywdzić.\n- Jeśli osoba **mówi o zamiarze odebrania sobie życia** – zawieź ją do prowadzącego psychiatry lub na izbę przyjęć szpitala z oddziałem psychiatrycznym.\n\nPamiętaj też o sobie. Wspieranie kogoś w depresji to maraton – masz prawo do odpoczynku i własnego wsparcia."
+        },
+        "tags": {
+          "en-US": [
+            "depresja",
+            "jak pomóc",
+            "bliska osoba",
+            "wsparcie",
+            "epizod depresyjny"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-objawy-psychotyczne-jak-reagowac",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Objawy psychotyczne – jak je rozpoznać i jak reagować"
+        },
+        "slug": {
+          "en-US": "objawy-psychotyczne-jak-reagowac"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Głosy, których nie słyszą inni, poczucie bycia śledzonym, przekonania niezgodne z rzeczywistością – to mogą być objawy psychotyczne. Sprawdź, co wtedy robić."
+        },
+        "body": {
+          "en-US": "Objawy psychotyczne to stan, w którym **kontakt z rzeczywistością jest ograniczony**. Osoba może doświadczać rzeczy, których nie doświadczają inni, i być w pełni przekonana o ich prawdziwości.\n\nMożliwe objawy:\n\n- słyszenie głosów, omamy słuchowe, dotykowe lub węchowe,\n- urojenia – np. przekonanie, że ktoś spiskuje, podsłuchuje albo nagrywa ukrytą kamerą,\n- mówienie o rzeczach niezgodnych z rzeczywistością z pełnym przekonaniem,\n- brak poczucia choroby.\n\nJeśli to dotyczy Ciebie: w epizodzie psychotycznym może pojawić się chwilowy „przebłysk” świadomości, że coś jest nie tak. Wtedy najlepiej **jak najszybciej zadzwonić pod 112 lub 999** albo zgłosić się do najbliższego szpitala z oddziałem psychiatrycznym. W tej sytuacji skutecznie pomóc mogą tylko specjaliści.\n\nJeśli to dotyczy bliskiej osoby:\n\n- Jeśli **chce współpracować** – zgłoś się z nią do szpitala z oddziałem psychiatrycznym lub do psychiatry.\n- Jeśli **zagraża sobie lub innym** – natychmiast zadzwoń pod **112** lub **999** i nie zostawiaj jej samej. W takiej sytuacji możliwa jest hospitalizacja także bez jej zgody.\n\nPsychoza jest stanem, który wymaga leczenia – i który można leczyć. Szybka pomoc zwiększa szanse na dobry powrót do zdrowia."
+        },
+        "tags": {
+          "en-US": [
+            "psychoza",
+            "objawy psychotyczne",
+            "urojenia",
+            "omamy",
+            "halucynacje",
+            "psychiatra"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-rozmawiac-z-osoba-z-urojeniami",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak rozmawiać z osobą, która ma urojenia lub omamy"
+        },
+        "slug": {
+          "en-US": "jak-rozmawiac-z-osoba-z-urojeniami"
+        },
+        "category": {
+          "en-US": "Jak wspierać bliskich"
+        },
+        "excerpt": {
+          "en-US": "Kłótnia o to, co jest prawdą, nie pomoże. Zobacz, jak zachować spokój i bezpieczeństwo w kontakcie z osobą w psychozie."
+        },
+        "body": {
+          "en-US": "Dla osoby doświadczającej urojeń czy omamów to, co przeżywa, jest **całkowicie realne**. Próby przekonania jej, że „to nieprawda”, zwykle nie działają – a mogą wzbudzić lęk lub złość.\n\nJak rozmawiać:\n\n- **Zachowaj spokój.** Mów spokojnym głosem, unikaj podnoszenia głosu i gwałtownych gestów.\n- **Nie wdawaj się w kłótnie** na temat urojeń czy omamów – może to wzbudzić agresję.\n- **Nie mów przykrych rzeczy i nie oskarżaj** tej osoby z powodu choroby.\n- Zamiast oceniać treść przeżyć, możesz odnieść się do emocji: „Widzę, że bardzo się boisz. Jestem obok”.\n- **Zachęcaj do kontaktu ze specjalistą** – jeśli osoba chce współpracować, pomóż jej dotrzeć do psychiatry lub szpitala.\n\nJeśli osoba zachowuje się agresywnie wobec siebie lub innych, **zadzwoń pod 112 lub 999** i zadbaj o bezpieczeństwo – swoje i innych.\n\nWspieranie bliskiej osoby w psychozie jest bardzo trudne emocjonalnie. Warto poszukać wsparcia także dla siebie – np. w grupach dla rodzin i bliskich osób chorujących psychicznie."
+        },
+        "tags": {
+          "en-US": [
+            "psychoza",
+            "urojenia",
+            "omamy",
+            "jak pomóc",
+            "bliska osoba",
+            "rozmowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-objawy-somatyczne-stres",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Objawy somatyczne – gdy ciało reaguje na stres"
+        },
+        "slug": {
+          "en-US": "objawy-somatyczne-stres"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Ból brzucha, ucisk w klatce, duszności – a badania nic nie wykazują? Długotrwały stres może dawać bardzo realne objawy w ciele."
+        },
+        "body": {
+          "en-US": "Długotrwały stres i napięcie emocjonalne mogą dawać **bardzo realne objawy fizyczne**, mimo że badania nie wykazują choroby narządów. Mogą dotyczyć różnych układów – pokarmowego, oddechowego, krążenia czy moczowo-płciowego.\n\nPrzykładowe objawy:\n\n- ból brzucha i głowy,\n- ucisk w klatce piersiowej,\n- duszności, suchość w ustach,\n- nadmierne pocenie się, uczucie zimna lub gorąca,\n- drżenie rąk i nóg.\n\nBardzo ważne: **najpierw zawsze wyklucz przyczyny fizyczne** – skonsultuj objawy z lekarzem. Nie zakładaj z góry, że „to tylko stres”, zwłaszcza gdy objawy są nowe, silne lub dotyczą np. klatki piersiowej.\n\nJeśli lekarz potwierdził, że objawy wynikają ze stresu:\n\n- **skup się na oddechu** – np. oddychanie po kwadracie,\n- **podejmij aktywność fizyczną**, by rozładować napięcie,\n- **wypróbuj techniki wizualizacji** lub relaksacji.\n\nJeśli wspierasz kogoś w takiej sytuacji, bądź obok, zachowaj spokój i zapytaj, czego potrzebuje. Możesz przypomnieć, że badania nie wykazały nieprawidłowości, a objawy są reakcją na stres – co nie znaczy, że są „wymyślone”.\n\nJeśli objawy wracają lub utrudniają codzienne życie, warto porozmawiać z psychologiem lub psychoterapeutą o tym, co może być źródłem napięcia."
+        },
+        "tags": {
+          "en-US": [
+            "objawy somatyczne",
+            "stres",
+            "ciało",
+            "napięcie",
+            "psychosomatyka"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-zachowania-agresywne-w-kryzysie",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Zachowania agresywne w kryzysie – jak zadbać o bezpieczeństwo"
+        },
+        "slug": {
+          "en-US": "zachowania-agresywne-w-kryzysie"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Gdy ktoś w kryzysie emocjonalnym staje się fizycznie agresywny, priorytetem jest bezpieczeństwo wszystkich. Sprawdź, jak się zachować."
+        },
+        "body": {
+          "en-US": "Zdarza się, że osoba w bardzo trudnym stanie emocjonalnym staje się **fizycznie agresywna wobec otoczenia**. To sytuacja, w której trzeba działać od razu.\n\nCo robić:\n\n- **Zadzwoń po pogotowie i policję** – **112**, **999** lub **997**.\n- **Nie próbuj interweniować samodzielnie.** Może to być niebezpieczne zarówno dla Ciebie, jak i dla osoby w kryzysie.\n- **Zachowaj bezpieczny dystans** do przyjazdu służb.\n- **Nie prowokuj** – mów spokojnie, nie podnoś głosu i unikaj gwałtownych ruchów.\n\nPriorytetem jest **bezpieczeństwo wszystkich obecnych** – także Twoje. Nie musisz „ogarnąć” tej sytuacji sam_a – od tego są służby.\n\nPo takim zdarzeniu możesz potrzebować czasu, by dojść do siebie. Rozmowa z kimś bliskim lub z psychologiem (np. w Ośrodku Interwencji Kryzysowej) może pomóc poukładać to, co się wydarzyło."
+        },
+        "tags": {
+          "en-US": [
+            "agresja",
+            "zachowania agresywne",
+            "bezpieczeństwo",
+            "112",
+            "kryzys"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-numery-alarmowe-i-telefony-zaufania",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Gdzie dzwonić w kryzysie psychicznym – numery alarmowe i telefony zaufania"
+        },
+        "slug": {
+          "en-US": "numery-alarmowe-i-telefony-zaufania"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Zebraliśmy w jednym miejscu najważniejsze numery: alarmowe, pogotowia i bezpłatnych telefonów zaufania dla dorosłych, dzieci i młodzieży."
+        },
+        "body": {
+          "en-US": "W kryzysie trudno szukać informacji – dlatego warto zapisać najważniejsze numery wcześniej, np. w telefonie lub w swoim Planie Bezpieczeństwa.\n\n**W sytuacji zagrożenia życia lub zdrowia:**\n\n- **112** – numer alarmowy\n- **999** – pogotowie ratunkowe\n- **997** – policja\n\n**Telefony zaufania i wsparcia:**\n\n- **800 70 2222** – Centrum Wsparcia dla Osób Dorosłych w Kryzysie Psychicznym\n- **116 123** – Telefon Zaufania dla Osób Dorosłych w Kryzysie Emocjonalnym\n- **116 111** – Telefon Zaufania dla Dzieci i Młodzieży (Fundacja Dajemy Dzieciom Siłę)\n- **22 484 88 01** – Antydepresyjny Telefon Zaufania (Fundacja ITAKA)\n\nGodziny działania telefonów zaufania mogą się różnić – aktualne informacje znajdziesz na ich stronach internetowych.\n\nRozmowa z telefonem zaufania nie wymaga skierowania ani „wystarczająco poważnego” powodu. Możesz zadzwonić, gdy potrzebujesz po prostu porozmawiać – albo gdy martwisz się o kogoś bliskiego."
+        },
+        "tags": {
+          "en-US": [
+            "telefon zaufania",
+            "numery alarmowe",
+            "112",
+            "pomoc teraz",
+            "kryzys",
+            "wsparcie"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-gdzie-szukac-pomocy-w-kryzysie",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Gdzie szukać pomocy w kryzysie psychicznym?"
+        },
+        "slug": {
+          "en-US": "gdzie-szukac-pomocy-w-kryzysie"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "Ośrodek Interwencji Kryzysowej, poradnia zdrowia psychicznego czy izba przyjęć? Sprawdź, dokąd się zwrócić – w zależności od sytuacji."
+        },
+        "body": {
+          "en-US": "Pomoc w kryzysie psychicznym można znaleźć w kilku miejscach. To, gdzie się zgłosić, zależy od tego, jak pilna jest sytuacja.\n\n**Gdy jest zagrożone życie lub zdrowie – od razu:**\n\n- zadzwoń pod **112** lub **999**,\n- albo zgłoś się na **izbę przyjęć szpitala z oddziałem psychiatrycznym** (nie potrzebujesz skierowania).\n\n**Gdy potrzebujesz szybkiego wsparcia w trudnej sytuacji:**\n\n- **Ośrodek Interwencji Kryzysowej (OIK)** – miejsce, w którym możesz otrzymać bezpłatną pomoc psychologiczną w sytuacji kryzysu. Adres najbliższego ośrodka znajdziesz w internecie lub w urzędzie gminy.\n- **Telefony zaufania** – np. **800 70 2222** lub **116 123** (dla dorosłych), **116 111** (dla dzieci i młodzieży).\n\n**Gdy potrzebujesz leczenia lub dłuższego wsparcia:**\n\n- **Poradnia Zdrowia Psychicznego** – możesz tam uzyskać pomoc psychiatry, a często także psychologa i psychoterapeuty.\n- **Lekarz pierwszego kontaktu** – może być dobrym pierwszym krokiem, jeśli nie wiesz, od czego zacząć.\n\nJeśli jesteś już w leczeniu, w pogorszeniu stanu warto jak najszybciej skontaktować się ze swoim psychiatrą prowadzącym.\n\nNie ma „zbyt błahego” powodu, by poprosić o pomoc. Im wcześniej po nią sięgniesz, tym łatwiej wrócić do równowagi."
+        },
+        "tags": {
+          "en-US": [
+            "gdzie szukać pomocy",
+            "ośrodek interwencji kryzysowej",
+            "poradnia zdrowia psychicznego",
+            "szpital psychiatryczny",
+            "kryzys"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-hospitalizacja-psychiatryczna-bez-zgody",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Kiedy możliwa jest hospitalizacja psychiatryczna bez zgody?"
+        },
+        "slug": {
+          "en-US": "hospitalizacja-psychiatryczna-bez-zgody"
+        },
+        "category": {
+          "en-US": "Pierwsza pomoc"
+        },
+        "excerpt": {
+          "en-US": "W wyjątkowych sytuacjach osoba w kryzysie psychicznym może zostać przyjęta do szpitala bez swojej zgody. Wyjaśniamy, kiedy tak się dzieje."
+        },
+        "body": {
+          "en-US": "Leczenie psychiatryczne – także w szpitalu – co do zasady odbywa się **za zgodą pacjenta**. Polskie prawo (ustawa o ochronie zdrowia psychicznego) przewiduje jednak wyjątki.\n\nHospitalizacja bez zgody jest możliwa przede wszystkim wtedy, gdy osoba z powodu zaburzeń psychicznych **bezpośrednio zagraża własnemu życiu albo życiu lub zdrowiu innych osób**. W takiej sytuacji można wezwać pomoc pod numerem **112** lub **999**. Decyzję o przyjęciu do szpitala podejmuje lekarz, a sprawa podlega kontroli sądu.\n\nKiedy tak może się zdarzyć – przykłady z praktyki kryzysowej:\n\n- osoba w epizodzie psychotycznym zachowuje się agresywnie wobec siebie lub innych,\n- osoba w epizodzie maniakalnym swoim zachowaniem bezpośrednio naraża swoje życie lub życie innych,\n- osoba podejmuje działania zagrażające jej życiu.\n\nWażne: to rozwiązanie na sytuacje wyjątkowe. Jeśli osoba w kryzysie **chce współpracować**, najlepiej po prostu towarzyszyć jej w dotarciu do psychiatry lub na izbę przyjęć.\n\nTen tekst ma charakter informacyjny. W konkretnej sytuacji prawnej warto skonsultować się z lekarzem lub prawnikiem, a w nagłym przypadku – z dyspozytorem numeru alarmowego."
+        },
+        "tags": {
+          "en-US": [
+            "hospitalizacja",
+            "szpital psychiatryczny",
+            "bez zgody",
+            "prawo",
+            "bezpieczeństwo",
+            "kryzys"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Pierwsza pomoc w nagłych kryzysach psychicznych – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1ys7moNHUGmXeyTDCe5k1jp7f_pBhKyRo/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-metoda-prisma",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Metoda PRISMA – 6 kroków, jak wspierać bliską osobę w kryzysie"
+        },
+        "slug": {
+          "en-US": "metoda-prisma"
+        },
+        "category": {
+          "en-US": "Jak wspierać bliskich"
+        },
+        "excerpt": {
+          "en-US": "Nie wiesz, jak zareagować, gdy ktoś bliski przechodzi kryzys psychiczny? Akronim PRISMA podpowiada sześć prostych kroków."
+        },
+        "body": {
+          "en-US": "Kiedy ktoś bliski przechodzi kryzys psychiczny, często chcemy pomóc, ale nie wiemy jak. Z pomocą przychodzi akronim **PRISMA** – sześć kroków, które pozwalają spojrzeć na sytuację z perspektywy osoby w trudności i realnie ją wesprzeć.\n\n- **P jak Pytanie** – zapytaj, czy wszystko w porządku i czy ktoś nie potrzebuje pomocy.\n- **R jak Rozmowa** – słuchaj uważnie, bez oceniania, z szacunkiem dla granic drugiej osoby.\n- **I jak Informacja** – podziel się rzetelnymi źródłami wiedzy o tym, co się dzieje.\n- **S jak Specjalistyczna pomoc** – porozmawiajcie o wsparciu psychologa, psychoterapeuty lub psychiatry.\n- **M jak Możliwe wsparcie** – zastanówcie się razem, na kim i na czym można się oprzeć na co dzień.\n- **A jak Akceptacja** – pokaż, że kryzys może przydarzyć się każdemu i nie trzeba przechodzić go samotnie.\n\nNie musisz być specjalistą, żeby pomóc. Często najważniejsze jest to, że **ktoś zauważył, zapytał i był obok**.\n\nPamiętaj jednak, że wsparcie bliskich nie zastąpi pomocy specjalistycznej. Jeśli życie lub zdrowie kogoś jest zagrożone, dzwoń pod **112**."
+        },
+        "tags": {
+          "en-US": [
+            "PRISMA",
+            "jak pomóc",
+            "bliska osoba",
+            "kryzys",
+            "wsparcie",
+            "rozmowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-zapytac-czy-wszystko-w-porzadku",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak zapytać kogoś, czy wszystko w porządku? (P jak Pytanie)"
+        },
+        "slug": {
+          "en-US": "jak-zapytac-czy-wszystko-w-porzadku"
+        },
+        "category": {
+          "en-US": "Jak wspierać bliskich"
+        },
+        "excerpt": {
+          "en-US": "Masz wrażenie, że z bliską osobą dzieje się coś niepokojącego? Zobacz, jak zadać pytanie, które naprawdę otwiera rozmowę."
+        },
+        "body": {
+          "en-US": "Czasem widzimy, że ktoś bliski jest bardziej zestresowany, napięty, smutny albo „nieobecny” – ale nie wiemy, czy wypada zapytać. **Warto.** Samo poczucie, że ktoś jest gotów wysłuchać, może być źródłem wsparcia.\n\nOsoby w kryzysie psychicznym nie zawsze są gotowe od razu się otworzyć. Szczera troska i uwaga pomagają im jednak w końcu sięgnąć po pomoc.\n\nPrzykłady pytań, które zapraszają do rozmowy:\n\n- „Mam wrażenie, że ostatnio jesteś smutniejsza_y. Czy coś się dzieje?”\n- „Nie chcę naciskać na rozmowę, ale martwię się o Ciebie.”\n- „Może to zabrzmi dziwnie, ale naprawdę chcę wiedzieć, co u Ciebie słychać.”\n- „Wydaje mi się, że coś się dzieje. Chcesz o tym porozmawiać?”\n\nJeśli usłyszysz „wszystko okej”, nie naciskaj – ale daj znać, że Twoje drzwi są otwarte: „Dobrze. Gdybyś kiedyś chciał_a pogadać, jestem”. Czasem druga osoba wraca do rozmowy po kilku dniach.\n\nTo pierwszy krok metody **PRISMA** – kolejnym jest uważna rozmowa."
+        },
+        "tags": {
+          "en-US": [
+            "PRISMA",
+            "pytanie",
+            "rozmowa",
+            "jak zacząć rozmowę",
+            "bliska osoba",
+            "troska"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-rozmawiac-z-osoba-w-kryzysie",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak rozmawiać z osobą w kryzysie psychicznym? (R jak Rozmowa)"
+        },
+        "slug": {
+          "en-US": "jak-rozmawiac-z-osoba-w-kryzysie"
+        },
+        "category": {
+          "en-US": "Jak wspierać bliskich"
+        },
+        "excerpt": {
+          "en-US": "Słuchaj, nie oceniaj, nie zakładaj, że wiesz lepiej. Zobacz, jak prowadzić rozmowę, która daje poczucie bezpieczeństwa."
+        },
+        "body": {
+          "en-US": "Kiedy ktoś zdecyduje się opowiedzieć o tym, co przeżywa, Twoim zadaniem nie jest „naprawienie” sytuacji. Najważniejsze to zapewnić **uwagę, zrozumienie i poczucie bezpieczeństwa**.\n\nJak rozmawiać:\n\n- **Słuchaj aktywnie** – skup się na drugiej osobie, a nie na tym, co zaraz powiesz.\n- **Nie oceniaj** i nie zakładaj, że wiesz, co dana osoba przeżywa.\n- **Jeśli czegoś nie rozumiesz – poproś o wyjaśnienie.**\n- **Nie naciskaj** i szanuj granice drugiej osoby, ale pokaż, że szczerze zależy Ci na jej zrozumieniu.\n\nZdania, które mogą pomóc:\n\n- „Ta sytuacja brzmi na naprawdę trudną.”\n- „Przykro mi, że tego doświadczasz.”\n- „Jak się czułaś_eś, kiedy to się zdarzyło?”\n- „Czy to, przez co przechodzisz, wpływa na Twój sen albo koncentrację w pracy?”\n- „Nieważne, przez co przechodzisz – jestem obok.”\n\nUnikaj szybkich rad („po prostu przestań o tym myśleć”), porównań („inni mają gorzej”) i bagatelizowania („przesadzasz”). Nawet jeśli płyną z dobrej intencji, mogą sprawić, że druga osoba poczuje się niezrozumiana.\n\nTo drugi krok metody **PRISMA**."
+        },
+        "tags": {
+          "en-US": [
+            "PRISMA",
+            "rozmowa",
+            "aktywne słuchanie",
+            "empatia",
+            "bliska osoba",
+            "wsparcie"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-rzetelne-zrodla-wiedzy-o-zdrowiu-psychicznym",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak szukać rzetelnej wiedzy o zdrowiu psychicznym? (I jak Informacja)"
+        },
+        "slug": {
+          "en-US": "rzetelne-zrodla-wiedzy-o-zdrowiu-psychicznym"
+        },
+        "category": {
+          "en-US": "Jak wspierać bliskich"
+        },
+        "excerpt": {
+          "en-US": "Dobre źródła pomagają zrozumieć, co się dzieje – ale nie zastąpią specjalisty. Podpowiadamy, jak dzielić się wiedzą odpowiedzialnie."
+        },
+        "body": {
+          "en-US": "Wiedza pomaga oswoić to, co trudne. Kiedy wiemy, że podobne doświadczenia mają też inni i że istnieją skuteczne sposoby radzenia sobie z nimi, **łatwiej przestać się wstydzić i sięgnąć po pomoc**.\n\nDlatego jednym z kroków metody PRISMA jest **podzielenie się rzetelnymi źródłami informacji** – o danej trudności i o tym, jak sobie z nią radzić.\n\nNa co zwracać uwagę:\n\n- **Sprawdzaj, kto jest autorem** – czy to specjaliści, instytucje zdrowia publicznego, organizacje, które opierają się na aktualnej wiedzy naukowej?\n- **Uważaj na obietnice „cudownych” rozwiązań** i treści, które zniechęcają do leczenia.\n- **Nie diagnozuj na podstawie artykułu** – ani siebie, ani innych.\n\nPamiętaj: informacje mają służyć przełamywaniu tabu i poszerzaniu wiedzy o zaburzeniach psychicznych – **nie mogą zastąpić kontaktu ze specjalistą**.\n\nNikt z nas nie wie wszystkiego, a wiedza o zdrowiu psychicznym stale się rozwija. Jeśli czegoś nie jesteś pewna_y, nie bój się zadawać pytań i szukać odpowiedzi."
+        },
+        "tags": {
+          "en-US": [
+            "PRISMA",
+            "psychoedukacja",
+            "źródła wiedzy",
+            "informacja",
+            "rzetelność"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-zachecic-do-pomocy-specjalisty",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak zachęcić kogoś do skorzystania z pomocy psychologa lub psychiatry? (S jak Specjalistyczna pomoc)"
+        },
+        "slug": {
+          "en-US": "jak-zachecic-do-pomocy-specjalisty"
+        },
+        "category": {
+          "en-US": "Jak wspierać bliskich"
+        },
+        "excerpt": {
+          "en-US": "Lęk, wstyd, niepewność – to częste powody, dla których ludzie odkładają wizytę u specjalisty. Zobacz, jak o tym rozmawiać."
+        },
+        "body": {
+          "en-US": "Profesjonalne wsparcie i leczenie to **najskuteczniejsze sposoby radzenia sobie z poważnym kryzysem psychicznym**. Mimo to wiele osób długo zwleka z wizytą u specjalisty – z lęku, wstydu albo przekonania, że „to nie jest wystarczająco poważne”.\n\nJak możesz pomóc:\n\n- **Porozmawiaj o możliwości uzyskania profesjonalnej pomocy** – spokojnie, bez nacisku.\n- **Jeśli druga osoba chce** – zaproponuj pomoc w zaplanowaniu konsultacji terapeutycznej lub psychiatrycznej, a w poważniejszej sytuacji w dotarciu na pogotowie.\n- **Jeśli pojawia się lęk, niepewność lub wstyd** – zapytaj o wątpliwości. Wyjaśnij, że korzystanie z pomocy specjalisty nie jest powodem do wstydu.\n\nZdania, które mogą pomóc:\n\n- „Słyszę, jak Ci jest ciężko. Myślę, że warto porozmawiać o tym ze specjalistą.”\n- „Nie ma złego powodu, żeby skonsultować stan swojego zdrowia psychicznego. Psychoterapia może pomóc w wielu trudnościach.”\n\nGdzie można uzyskać specjalistyczną pomoc:\n\n- Poradnie Zdrowia Psychicznego,\n- Ośrodki Interwencji Kryzysowej,\n- oddziały psychiatryczne (w nagłych sytuacjach – izba przyjęć).\n\nTo czwarty krok metody **PRISMA**."
+        },
+        "tags": {
+          "en-US": [
+            "PRISMA",
+            "psycholog",
+            "psychiatra",
+            "psychoterapia",
+            "specjalista",
+            "jak pomóc"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-zrodla-wsparcia-na-co-dzien",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Na kim i na czym się oprzeć? Źródła wsparcia na co dzień (M jak Możliwe wsparcie)"
+        },
+        "slug": {
+          "en-US": "zrodla-wsparcia-na-co-dzien"
+        },
+        "category": {
+          "en-US": "Jak wspierać bliskich"
+        },
+        "excerpt": {
+          "en-US": "Rodzina, przyjaciele, telefony zaufania, ruch, regularny plan dnia – sprawdź, jakie źródła wsparcia warto mieć pod ręką."
+        },
+        "body": {
+          "en-US": "W kryzysie łatwo zapomnieć, że wokół są ludzie i rzeczy, które mogą pomóc. Dlatego warto razem z osobą w trudności zastanowić się, **jakie źródła wsparcia ma na co dzień**.\n\nPomyślcie o trzech obszarach:\n\n- **Na kim można się oprzeć?** – np. rodzina, przyjaciele, partner lub partnerka.\n- **Gdzie szukać pomocy?** – np. telefony zaufania: **800 70 2222**, **116 123** (dla dorosłych), **116 111** (dla dzieci i młodzieży) czy **22 484 88 01** (Antydepresyjny Telefon Zaufania Fundacji ITAKA).\n- **Co wzmacnia w trudnym czasie?** – np. medytacja, sport, regularny plan dnia.\n\nTaką listę dobrze jest zapisać – np. w formie Planu Bezpieczeństwa – żeby w gorszym momencie nie trzeba było jej sobie przypominać.\n\nPamiętaj jednak, że **te źródła wsparcia nie zastąpią pomocy specjalistycznej**. Są jej ważnym uzupełnieniem – pomagają przetrwać trudne dni i wracać do równowagi.\n\nTo piąty krok metody **PRISMA**."
+        },
+        "tags": {
+          "en-US": [
+            "PRISMA",
+            "wsparcie",
+            "codzienność",
+            "relacje",
+            "telefon zaufania",
+            "zasoby"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-akceptacja-w-kryzysie-psychicznym",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Akceptacja – dlaczego jest tak ważna w kryzysie psychicznym (A jak Akceptacja)"
+        },
+        "slug": {
+          "en-US": "akceptacja-w-kryzysie-psychicznym"
+        },
+        "category": {
+          "en-US": "Jak wspierać bliskich"
+        },
+        "excerpt": {
+          "en-US": "Poczucie niezrozumienia pogłębia cierpienie i wstyd. Akceptacja daje siłę, by zmienić sytuację."
+        },
+        "body": {
+          "en-US": "Rozmowa, rzetelne informacje, pomoc w kontakcie ze specjalistą i codzienne wsparcie pomagają przejść przez trudny czas kryzysu. Równie ważne jest jednak coś, co trudno zmierzyć – **akceptacja**.\n\nPoczucie niezrozumienia i odizolowania często **pogłębia cierpienie i wstyd**, a to jeszcze bardziej odcina nas od innych. Kiedy ktoś pokazuje nam, że kryzys może przydarzyć się każdemu i że nie trzeba przeżywać go samotnie, możemy nie tylko poczuć się lepiej, ale też **odnaleźć w sobie siłę, by zmienić sytuację**.\n\nJak okazywać akceptację:\n\n- nie oceniaj i nie szukaj winnych,\n- traktuj emocje drugiej osoby jako prawdziwe i ważne – nawet jeśli nie do końca je rozumiesz,\n- pokazuj, że zaburzenie psychiczne nie jest jedyną rzeczą, która określa tę osobę,\n- bądź obok także wtedy, gdy poprawa przychodzi powoli.\n\nTo ostatni krok metody **PRISMA** – i ten, który spina wszystkie pozostałe."
+        },
+        "tags": {
+          "en-US": [
+            "PRISMA",
+            "akceptacja",
+            "wstyd",
+            "samotność",
+            "wsparcie",
+            "empatia"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-mowic-o-zdrowiu-psychicznym",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak mówić o zdrowiu psychicznym bez stygmatyzowania?"
+        },
+        "slug": {
+          "en-US": "jak-mowic-o-zdrowiu-psychicznym"
+        },
+        "category": {
+          "en-US": "Zdrowie psychiczne"
+        },
+        "excerpt": {
+          "en-US": "„Schizofrenik”, „anorektyczka”, „on jest jakiś chory psychicznie” – słowa mają znaczenie. Zobacz, jak mówić z szacunkiem."
+        },
+        "body": {
+          "en-US": "Sposób, w jaki mówimy o zdrowiu psychicznym, wpływa na to, czy osoby w kryzysie odważą się poprosić o pomoc. **Język może wykluczać – albo wspierać.**\n\nKilka zasad, które pomagają:\n\n- **Mów o osobie, a nie o diagnozie.** Zamiast „anorektyczka” – „osoba z zaburzeniami odżywiania”. Zamiast „schizofrenik” – „osoba chorująca na schizofrenię”. Zaburzenie psychiczne nie jest jedyną rzeczą, która określa daną osobę.\n- **Reaguj na krzywdzące komunikaty**, np. „ona jest jakaś chora psychicznie” czy „to jakiś schizofrenik” użyte jako obelga.\n- **Nie używaj nazw zaburzeń jako określeń nastroju czy charakteru** („ale mam dziś depresję”, „jestem taka bipolarna”) – to spłyca doświadczenia osób, które naprawdę chorują.\n\nCo jeszcze możesz zrobić, by oswajać temat zdrowia psychicznego:\n\n- **Rozmawiaj otwarcie** o zdrowiu i zaburzeniach psychicznych – im więcej o tym mówimy, tym mniej to tabu.\n- **Mów o swoich doświadczeniach** – w miarę możliwości i własnego poczucia komfortu. Prawdziwe historie przemawiają do ludzi bardziej niż dane.\n- **Edukuj się** i dbaj o jakość źródeł.\n- **Pielęgnuj empatię** – doświadczenia i emocje innych są tak samo prawdziwe i ważne jak Twoje."
+        },
+        "tags": {
+          "en-US": [
+            "stygmatyzacja",
+            "język",
+            "tabu",
+            "zdrowie psychiczne",
+            "szacunek"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-stygmatyzacja-zaburzen-psychicznych",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Stygmatyzacja zaburzeń psychicznych – czym jest i jak ją przełamywać"
+        },
+        "slug": {
+          "en-US": "stygmatyzacja-zaburzen-psychicznych"
+        },
+        "category": {
+          "en-US": "Zdrowie psychiczne"
+        },
+        "excerpt": {
+          "en-US": "Zaburzenia psychiczne wciąż wiążą się z piętnem i wykluczeniem. Psychologia podpowiada, co może to zmienić."
+        },
+        "body": {
+          "en-US": "Zaburzenia psychiczne są jedną z silniejszych przyczyn **wykluczenia społecznego** – zjawisko piętna (ang. *stigma*) wokół zdrowia psychicznego opisuje m.in. Światowa Organizacja Zdrowia (WHO). Stygmatyzacja sprawia, że osoby w kryzysie wstydzą się mówić o swoich trudnościach i odkładają sięgnięcie po pomoc.\n\nCo może to zmienić? Psychologia podsuwa dwie ważne wskazówki:\n\n- **Hipoteza kontaktu** – relacje między grupami prowadzą do zmniejszenia uprzedzeń, jeśli kontakt opiera się na równym statusie, współpracy i wspólnych celach. Kiedy znamy kogoś, kto choruje psychicznie, trudniej nam myśleć stereotypami.\n- **Efekt habituacji**, czyli przyzwyczajenia – reakcja na bodziec słabnie, gdy się on powtarza. Jeśli regularnie słyszymy, że osoby doświadczające kryzysu psychicznego są wśród nas i jest ich wiele, z czasem zaburzenia psychiczne przestają być czymś „dziwnym”.\n\nCo możesz zrobić:\n\n- rozmawiać o zdrowiu psychicznym otwarcie – także w internecie,\n- podawać dalej dobre przykłady i rzetelną wiedzę,\n- reagować na krzywdzący język,\n- jeśli czujesz się z tym komfortowo – dzielić się własnym doświadczeniem.\n\nDotarcie do każdej pojedynczej osoby ma znaczenie."
+        },
+        "tags": {
+          "en-US": [
+            "stygmatyzacja",
+            "tabu",
+            "wykluczenie",
+            "zdrowie psychiczne",
+            "społeczeństwo"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-czesto-wystepuja-zaburzenia-psychiczne",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak często występują zaburzenia psychiczne w Polsce?"
+        },
+        "slug": {
+          "en-US": "jak-czesto-wystepuja-zaburzenia-psychiczne"
+        },
+        "category": {
+          "en-US": "Zdrowie psychiczne"
+        },
+        "excerpt": {
+          "en-US": "Co czwarta dorosła osoba w Polsce w ciągu życia doświadcza jakiejś formy zaburzeń psychicznych. Nie jesteś w tym sam_a."
+        },
+        "body": {
+          "en-US": "Zaburzenia psychiczne są dużo częstsze, niż wielu osobom się wydaje. Według badania **EZOP II** (Instytut Psychiatrii i Neurologii) **co czwarta dorosła osoba w Polsce** w ciągu życia doświadcza jakiejś formy zaburzeń psychicznych.\n\nTo oznacza, że prawdopodobnie ktoś z Twojego otoczenia – w rodzinie, w pracy, wśród znajomych – już teraz mierzy się z kryzysem. Albo że Ty sam_a masz lub miałaś_eś takie doświadczenie.\n\nDlaczego warto o tym wiedzieć?\n\n- **Bo zaburzenia psychiczne to nie „problem nielicznych”**, tylko część ludzkiego doświadczenia – tak jak choroby ciała.\n- **Bo wzajemna uważność może zmniejszyć ryzyko poważnego kryzysu** – im szybciej ktoś zauważy trudności i zareaguje, tym łatwiej o pomoc.\n- **Bo świadomość skali pomaga przełamywać wstyd** – skoro doświadcza tego tak wiele osób, nie ma powodu, by się ukrywać.\n\nDobrostan psychiczny jest podstawą naszego zdrowia. Stwórzmy świat, który będzie dla wszystkich przyjazny i wspierający.\n\nWyniki badania EZOP II znajdziesz na stronie ezop.edu.pl."
+        },
+        "tags": {
+          "en-US": [
+            "statystyki",
+            "EZOP",
+            "zaburzenia psychiczne",
+            "Polska",
+            "zdrowie psychiczne"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-zacznij-oswajac-temat-zdrowia-psychicznego",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "5 sposobów, by oswajać temat zdrowia psychicznego w swoim otoczeniu"
+        },
+        "slug": {
+          "en-US": "zacznij-oswajac-temat-zdrowia-psychicznego"
+        },
+        "category": {
+          "en-US": "Zdrowie psychiczne"
+        },
+        "excerpt": {
+          "en-US": "Nie trzeba być specjalistą, żeby zmieniać sposób, w jaki mówimy o zdrowiu psychicznym. Wystarczy zacząć od siebie."
+        },
+        "body": {
+          "en-US": "Twoje otoczenie – dom, praca, grupa znajomych, a także przestrzeń w internecie – to dobre miejsce, by pokazywać, że o zdrowiu psychicznym można mówić normalnie. Oto pięć sposobów:\n\n**1. Rozmawiaj otwarcie o zdrowiu i zaburzeniach psychicznych.** Im więcej o tym mówimy, tym bardziej temat przestaje być tabu. Ludzki umysł jest fascynujący – a wzajemna edukacja bywa naprawdę ciekawa.\n\n**2. Mów o swoich doświadczeniach** – w miarę możliwości i własnego komfortu. Prawdziwe historie przemawiają do ludzi bardziej niż dane i fakty. Twoja opowieść może pomóc komuś zrozumieć, jak złożony jest ten temat.\n\n**3. Dbaj o język.** Mów „osoba z zaburzeniami odżywiania” zamiast „anorektyczka”. Reaguj na komunikaty typu „to jakiś schizofrenik”.\n\n**4. Edukuj się i poszerzaj wiedzę.** Nikt nie wie wszystkiego, a wiedza o zdrowiu psychicznym stale się rozwija. Zadawaj pytania i dbaj o jakość źródeł.\n\n**5. Pielęgnuj empatię.** Nawet jeśli nie rozumiesz, co przeżywa druga osoba, jej doświadczenia i emocje są tak samo prawdziwe i ważne jak Twoje.\n\nMałe zmiany w codziennych rozmowach sumują się w dużą zmianę społeczną."
+        },
+        "tags": {
+          "en-US": [
+            "tabu",
+            "zdrowie psychiczne",
+            "rozmowa",
+            "empatia",
+            "psychoedukacja"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Jak wspierać bliską osobę w kryzysie psychicznym? PRISMA – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1dH6vZEk3X3gKUA7QLHs_zhx847miFxQl/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-emocje-w-ciazy-trymestry-psychologiczne",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Emocje w ciąży – trzy psychologiczne trymestry"
+        },
+        "slug": {
+          "en-US": "emocje-w-ciazy-trymestry-psychologiczne"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Psychologia okołoporodowa dzieli ciążę na trzy etapy oswajania się z macierzyństwem: oswajanie, wyobrażenie i przygotowanie."
+        },
+        "body": {
+          "en-US": "Psychologia okołoporodowa, podobnie jak medycyna, dzieli ciążę na trzy trymestry – ale chodzi w niej o **etapy psychologicznego oswajania się z macierzyństwem**, a nie o rozwój płodu.\n\n**I trymestr: oswajanie.** Wiele kobiet dowiaduje się o ciąży około piątego tygodnia, a z poinformowaniem otoczenia często czeka dłużej. Ten dość samotny początek bywa pełen skupienia na ciele i wypatrywania objawów, ale też obaw – przed poronieniem, zmianami w pracy, a czasem przed własnymi, przytłaczającymi uczuciami. Jak to będzie? Co na to partner? Jak sobie poradzimy? Towarzyszy temu ogromny wysiłek energetyczny ciała.\n\n**II trymestr: wyobrażenie.** Kiedy pojawiają się pierwsze ruchy dziecka, uwaga przenosi się z ciąży na dziecko. Wyobraźnia zaczyna intensywnie pracować: kim jesteś? Jak będzie wyglądać nasze pierwsze spotkanie? Ten czas bywa nazywany „złotym okresem ciąży”, ale emocjonalnie dla wielu kobiet może być wymagający – to bardzo indywidualne.\n\n**III trymestr: przygotowanie.** Psychologicznie zaczyna się, gdy pojawia się myśl: „gdyby dziecko urodziło się teraz, byłoby za wcześnie, ale już by przeżyło”. Wyobrażenia słabną, a ich miejsce zajmuje kompletowanie wyprawki i przygotowania do porodu.\n\nKażda ciąża przebiega inaczej, a **cała gama – często sprzecznych – emocji jest w tym czasie czymś normalnym**. Jeśli jednak trudne emocje przeważają, warto porozmawiać z psychologiem specjalizującym się w tematyce okołoporodowej."
+        },
+        "tags": {
+          "en-US": [
+            "ciąża",
+            "emocje w ciąży",
+            "trymestr",
+            "psychologia okołoporodowa",
+            "macierzyństwo"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-porod-cialo-i-emocje",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Poród – ciało i emocje. Dlaczego wsparcie ma tak duże znaczenie"
+        },
+        "slug": {
+          "en-US": "porod-cialo-i-emocje"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Słowa usłyszane podczas porodu kobiety często pamiętają przez całe życie. Dobry poród może wzmacniać, trudny – wymagać szczególnego wsparcia."
+        },
+        "body": {
+          "en-US": "Poród to czas **radykalnego otwarcia się ciała**, ale też zwiększonej wrażliwości i wyczulenia na emocjonalny klimat otoczenia. Słowa usłyszane podczas porodu kobiety zwykle zapamiętują na całe życie. Dlatego tak duże znaczenie ma najlepsze możliwe wsparcie – także emocjonalne.\n\nDoświadczenie dobrego porodu może wzmocnić kobietę i stać się – jak opisuje to autorka i doula Justyna Dąbrowska – **„trampoliną w macierzyństwo”**.\n\nBywa jednak inaczej. **Trudny poród lub trauma porodowa** mogą utrudnić stawanie się mamą. To nie jest kwestia „przesadzania” ani słabości – to doświadczenie, które wymaga szczególnego rodzaju wsparcia.\n\nJeśli wspomnienia porodu wracają, budzą silny lęk, smutek czy złość albo utrudniają Ci codzienne funkcjonowanie i budowanie relacji z dzieckiem, **warto rozważyć konsultację z psychologiem lub psychoterapeutą specjalizującym się w tematyce okołoporodowej**.\n\nJeśli wspierasz bliską osobę po porodzie – daj jej przestrzeń, by mogła opowiedzieć o tym doświadczeniu tak, jak je przeżyła, bez oceniania i bez „najważniejsze, że dziecko zdrowe”."
+        },
+        "tags": {
+          "en-US": [
+            "poród",
+            "trauma porodowa",
+            "emocje",
+            "wsparcie",
+            "macierzyństwo"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-polog-all-inclusive",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Połóg „all inclusive” – dlaczego warto przygotować się na czas po porodzie"
+        },
+        "slug": {
+          "en-US": "polog-all-inclusive"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "„Kiedyś kobiety rodziły w polu i wracały do pracy” – to mit, który szkodzi. Połóg to czas na odpoczynek, opiekę i budowanie relacji z dzieckiem."
+        },
+        "body": {
+          "en-US": "Mówi się o nim coraz więcej, ale wciąż bywa przemilczany, zaniedbany i zaskakujący. **Połóg jest ważny nie tylko dla ciała kobiety, ale też dla budowania relacji z dzieckiem.**\n\n„Kiedyś kobiety rodziły w polu, a potem wracały do pracy” – brzmi znajomo? Takie historie rzeczywiście się zdarzały, ale **nie były normą**, a szybki powrót do pracy nie miał nic wspólnego z „siłą kobiety” – bywał wymuszony przez wojnę i głód. W tradycyjnych społecznościach na całym świecie młoda mama nie zostaje sama – dostaje równie czułą opiekę jak jej nowo narodzone dziecko.\n\nDziś nie zawsze możemy liczyć na „pomoc wioski”. Dlatego warto – w miarę możliwości – **wcześniej zadbać o zasoby na czas połogu**. Propagujemy hasło **#połógallinclusive**:\n\n- zabezpiecz swój czas i budżet na ten okres, podobnie jak na coroczne wakacje,\n- zaplanuj, kto może pomóc przy posiłkach, zakupach czy obowiązkach domowych,\n- ustal z bliskimi, jak mogą Cię odciążyć.\n\nTo nie pora na dociskanie samej siebie. **Nie musisz udowadniać, że „ogarnęłaś”**, dałaś radę czy szybko „wróciłaś do formy”. Daj sobie czas i spokój."
+        },
+        "tags": {
+          "en-US": [
+            "połóg",
+            "po porodzie",
+            "odpoczynek",
+            "wsparcie",
+            "macierzyństwo",
+            "przygotowanie"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-hormony-w-ciazy-i-po-porodzie",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Hormony w ciąży i po porodzie – dlaczego to „nie tylko hormony”"
+        },
+        "slug": {
+          "en-US": "hormony-w-ciazy-i-po-porodzie"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Wahania hormonów w ciąży są ogromne i wpływają na samopoczucie. Ale „hormony Ci buzują” nie może być sposobem na zbywanie trudnych emocji."
+        },
+        "body": {
+          "en-US": "W ciąży i po porodzie poziom niektórych hormonów może zmieniać się nawet **wielokrotnie – dla części z nich kilkusetkrotnie** w porównaniu z okresem sprzed ciąży (dokładne wartości zależą od hormonu). To zjawisko fizjologiczne i naturalne, ale bywa dotkliwe – trudno, by nie wpływało na samopoczucie.\n\nArgument hormonalny bywa jednak **zbyt często wykorzystywany do bagatelizowania trudnych emocji** przyszłej lub młodej mamy. Zamiast zrozumienia słyszy: „Ale hormony Ci buzują!”.\n\nTymczasem ciąża i narodziny dziecka to ogromne wyzwanie i **całkowita zmiana dotychczasowego życia**. To zupełnie normalne i zrozumiałe, że towarzyszy temu cała gama – często sprzecznych – emocji: radość i smutek, czułość i złość, spokój i niepewność.\n\nCzego potrzebuje kobieta w tym czasie? **Wsparcia, empatii i akceptacji** – a nie wyjaśniania wszystkiego hormonami.\n\nJeśli trudne emocje dominują przez dłuższy czas albo utrudniają codzienne funkcjonowanie, warto porozmawiać ze specjalistą. Przeczytaj też, czym różni się baby blues od depresji poporodowej."
+        },
+        "tags": {
+          "en-US": [
+            "hormony",
+            "ciąża",
+            "po porodzie",
+            "emocje",
+            "wsparcie"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-baby-brain-mozg-ciazowy",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Baby brain, czyli „mózg ciążowy” – skąd się bierze roztargnienie w ciąży?"
+        },
+        "slug": {
+          "en-US": "baby-brain-mozg-ciazowy"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Gubisz słowa, zapominasz o szczegółach, łatwiej Cię rozproszyć? To zjawisko ma swoje wytłumaczenie – i swój sens."
+        },
+        "body": {
+          "en-US": "„Pamiętam, jak w drugiej ciąży weszłam do przychodni i radośnie powiedziałam do położnej: jestem! A ona na to: świetnie, ale jak się pani nazywa i do kogo jest pani umówiona?” – to właśnie zjawisko, które w popkulturze nazywa się **baby brain**.\n\nIm bardziej zaawansowana ciąża, tym częściej kobieta bywa bardziej wrażliwa i emocjonalna. Może gubić słowa (i nie tylko), zapominać o szczegółach, trudniej jej trzymać się harmonogramu, łatwiej się zagapić czy rozkojarzyć.\n\nTen stan nie pojawia się bez powodu. Psychoanalityk **Donald Winnicott** opisał go jako **pierwotne zaabsorbowanie macierzyńskie** – swego rodzaju „autostradę” do budowania relacji z dzieckiem.\n\nNiemowlę nie mówi – komunikacja z nim opiera się na emocjach. Dlatego młodzi rodzice na jakiś czas **zamieniają dorosłe, analityczne podejście na odczuwanie**. Mija to w miarę, jak dziecko dorasta, a jego komunikaty stają się coraz bardziej zrozumiałe i słowne.\n\nNie obwiniaj się o pomyłki, spóźnienia czy zapominalstwo. **Nie walcz z tym, co naturalne** – potraktuj to jako drogę, która zbliża Cię do Twojego dziecka.\n\nJeśli jednak problemy z pamięcią czy koncentracją są bardzo nasilone albo towarzyszą im inne niepokojące objawy, porozmawiaj o tym z lekarzem."
+        },
+        "tags": {
+          "en-US": [
+            "baby brain",
+            "ciąża",
+            "pamięć",
+            "koncentracja",
+            "Winnicott",
+            "macierzyństwo"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jakim-bede-rodzicem-historia-rodzinna",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "„Jakim będę rodzicem?” – dlaczego w ciąży wracają wspomnienia z dzieciństwa"
+        },
+        "slug": {
+          "en-US": "jakim-bede-rodzicem-historia-rodzinna"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Ciąża i wczesne rodzicielstwo to czas, gdy mimowolnie wracamy do własnej historii rodzinnej. Dla jednych to źródło siły, dla innych – trudnych emocji."
+        },
+        "body": {
+          "en-US": "Kim będzie moje dziecko? Jakim będę rodzicem? Ciąża i wczesne rodzicielstwo to czas, w którym często **mimowolnie wracamy pamięcią do własnej historii rodzinnej**. Analizujemy, porównujemy, wspominamy: jak to jest być małym dzieckiem? Czego ono potrzebuje? Jak było u mnie? Czy ktoś reagował na moje potrzeby – i czy robił to czule, czy mechanicznie?\n\n**Dla niektórych osób** powrót do tych wspomnień staje się źródłem siły i oparcia.\n\n**Inaczej bywa u osób**, które w dzieciństwie doświadczyły zaniedbania, przemocy, traumy albo miały rodzica niedojrzałego emocjonalnie. **Trudne doświadczenia z dzieciństwa mogą odżywać z nową siłą w okresie rodzicielstwa** – pojawia się lęk, smutek, złość albo obawa, że „powtórzę to samo”.\n\nJeśli to Twoje doświadczenie, **szczególnie warto rozważyć wsparcie psychoterapeutyczne**. To nie znaczy, że będziesz złym rodzicem – wręcz przeciwnie: przyglądanie się swojej historii to jeden z najlepszych prezentów, jaki możesz dać sobie i dziecku.\n\nPamiętaj też słowa z naszej broszury: „Pamiętaj, aby sobie sprzyjać. Nie atakuj się, nie wymagaj niemożliwego, bądź swoim sprzymierzeńcem”."
+        },
+        "tags": {
+          "en-US": [
+            "rodzicielstwo",
+            "ciąża",
+            "dzieciństwo",
+            "historia rodzinna",
+            "trauma",
+            "psychoterapia"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-baby-blues",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Baby blues – czym jest i ile trwa?"
+        },
+        "slug": {
+          "en-US": "baby-blues"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Płacz, rozdrażnienie i huśtawka nastrojów kilka dni po porodzie to częste i naturalne zjawisko. Sprawdź, kiedy warto poszukać pomocy."
+        },
+        "body": {
+          "en-US": "**Baby blues** to stan naturalnych, choć intensywnych zmian nastroju po porodzie. Najczęściej zaczyna się **w 2.–3. dobie po porodzie i trwa kilka dni**.\n\nW tym czasie młoda mama może przeżywać dużo smutku, złości czy płaczliwości – ale pojawiają się też **błogość, wdzięczność i radość**. Właśnie ta zmienność jest charakterystyczna dla baby blues.\n\nBaby blues **zwykle mija samoistnie**, a w tym czasie najczęściej wystarcza pomoc i obecność najbliższych: odciążenie w obowiązkach, możliwość odpoczynku, wysłuchanie bez oceniania.\n\nKiedy warto poszukać profesjonalnej pomocy? **Jeśli negatywne emocje dominują w samopoczuciu dłużej niż do ok. 10.–14. doby po porodzie** – to może być sygnał depresji poporodowej, która sama nie mija i wymaga wsparcia specjalisty.\n\nNatychmiastowej pomocy wymagają natomiast objawy takie jak **urojenia, halucynacje, zachowania nieadekwatne do sytuacji, myśli samobójcze lub myśli o skrzywdzeniu dziecka** – dzwoń wtedy pod **112**."
+        },
+        "tags": {
+          "en-US": [
+            "baby blues",
+            "po porodzie",
+            "połóg",
+            "nastrój",
+            "depresja poporodowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-depresja-poporodowa",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Depresja poporodowa – objawy i gdzie szukać pomocy"
+        },
+        "slug": {
+          "en-US": "depresja-poporodowa"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Depresja poporodowa nie mija sama – ale można ją skutecznie leczyć. Sprawdź, jak ją rozpoznać i od czego zacząć."
+        },
+        "body": {
+          "en-US": "Po porodzie wiele kobiet przeżywa huśtawkę emocji – to naturalne. W **depresji poporodowej** nie ma jednak tej zmienności: **dominują trudne emocje**, spada energia, pojawia się utrata zainteresowania życiem i stałe przygnębienie.\n\nMożliwe sygnały:\n\n- przygnębienie, smutek lub pustka, które nie mijają,\n- brak energii i sił na codzienne czynności,\n- utrata zainteresowania rzeczami, które wcześniej były ważne,\n- trudne emocje dominujące dłużej niż ok. 10.–14. dobę po porodzie.\n\n**Depresja poporodowa nie mija sama – wymaga pomocy.** Pierwszym krokiem powinna być konsultacja psychoterapeutyczna (najlepiej z osobą specjalizującą się w tematyce okołoporodowej). Podczas niej okaże się, czy potrzebna jest też pomoc psychiatry.\n\nKto jest w grupie większego ryzyka? Między innymi kobiety, które **wcześniej doświadczały zaburzeń psychicznych** – choć na szczęście nie oznacza to, że depresja poporodowa na pewno się pojawi.\n\nBezpłatną pomoc możesz uzyskać m.in. u położnej środowiskowej, lekarza pierwszego kontaktu, w Poradni Zdrowia Psychicznego lub Ośrodku Interwencji Kryzysowej.\n\nJeśli pojawiają się myśli samobójcze lub myśli o skrzywdzeniu dziecka, **dzwoń pod 112** – to sytuacja wymagająca natychmiastowej pomocy.\n\nDepresja poporodowa to choroba, a nie porażka czy „bycie złą matką”. Sięgnięcie po pomoc to troska o siebie i o dziecko."
+        },
+        "tags": {
+          "en-US": [
+            "depresja poporodowa",
+            "po porodzie",
+            "połóg",
+            "depresja",
+            "pomoc",
+            "macierzyństwo"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-baby-blues-czy-depresja-poporodowa",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Baby blues czy depresja poporodowa? Jak odróżnić"
+        },
+        "slug": {
+          "en-US": "baby-blues-czy-depresja-poporodowa"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Oba stany zaczynają się po porodzie, ale różnią się przebiegiem i tym, czego wymagają. Zobacz najważniejsze różnice."
+        },
+        "body": {
+          "en-US": "Po porodzie łatwo pomylić naturalną huśtawkę nastrojów z depresją – a to dwa różne stany.\n\n**Baby blues:**\n\n- zaczyna się zwykle w **2.–3. dobie po porodzie** i trwa **kilka dni**,\n- nastrój jest **zmienny** – obok smutku i złości pojawiają się też błogość, wdzięczność i radość,\n- **mija samoistnie**, a wystarcza zwykle wsparcie bliskich.\n\n**Depresja poporodowa:**\n\n- trudne emocje **dominują** – brak tej zmienności,\n- spadek energii, utrata zainteresowania życiem, stałe przygnębienie,\n- utrzymuje się dłużej – sygnałem ostrzegawczym jest przewaga trudnych emocji **po ok. 10.–14. dobie po porodzie**,\n- **nie mija sama – wymaga pomocy specjalisty.**\n\nJeśli nie masz pewności, co się z Tobą dzieje, możesz wypełnić **Edynburską Skalę Depresji Poporodowej** – to nie diagnoza, ale dobry punkt wyjścia do rozmowy ze specjalistą.\n\nIstnieje też rzadki, ale bardzo poważny stan – **psychoza poporodowa** – przy której mogą pojawić się urojenia, halucynacje czy myśli o skrzywdzeniu siebie lub dziecka. Wymaga ona natychmiastowej pomocy: **dzwoń pod 112**."
+        },
+        "tags": {
+          "en-US": [
+            "baby blues",
+            "depresja poporodowa",
+            "po porodzie",
+            "różnice",
+            "połóg"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-psychoza-poporodowa",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Psychoza poporodowa – rzadki, ale bardzo poważny stan"
+        },
+        "slug": {
+          "en-US": "psychoza-poporodowa"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Psychoza poporodowa występuje u ok. 1–2 na 1000 kobiet po porodzie i wymaga natychmiastowej pomocy. Poznaj objawy."
+        },
+        "body": {
+          "en-US": "Psychoza poporodowa występuje **rzadko – u około 1–2 na 1000 kobiet po porodzie** (ok. 0,1–0,2%) – ale jest **stanem bardzo poważnym**, który wymaga natychmiastowej pomocy. Rozwija się zwykle **w ciągu pierwszych dwóch tygodni po porodzie**.\n\nMożliwe objawy:\n\n- zachowanie nieadekwatne do sytuacji,\n- urojenia (np. przekonania niezgodne z rzeczywistością),\n- halucynacje (np. słyszenie lub widzenie rzeczy, których nie ma),\n- myśli samobójcze lub myśli o skrzywdzeniu dziecka.\n\n**Psychoza poporodowa wymaga natychmiastowej interwencji medycznej i pomocy psychiatrycznej.** Jeśli zauważasz takie objawy u siebie lub u bliskiej osoby:\n\n- zadzwoń pod **112** lub **999**,\n- albo od razu jedź na izbę przyjęć szpitala z oddziałem psychiatrycznym,\n- nie zostawiaj mamy samej z dzieckiem do czasu uzyskania pomocy.\n\nPsychoza poporodowa **jest uleczalna**, a szybka pomoc ma ogromne znaczenie – dla mamy i dla dziecka. To choroba, a nie wina ani słabość kobiety."
+        },
+        "tags": {
+          "en-US": [
+            "psychoza poporodowa",
+            "po porodzie",
+            "psychoza",
+            "pomoc teraz",
+            "112"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-leczenie-psychiatryczne-w-ciazy",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Leczę się psychiatrycznie i jestem w ciąży – co warto wiedzieć"
+        },
+        "slug": {
+          "en-US": "leczenie-psychiatryczne-w-ciazy"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Nie przerywaj leczenia na własną rękę. Porozmawiaj z psychiatrą o ciąży i wspólnie przygotujcie plan."
+        },
+        "body": {
+          "en-US": "Jeśli jesteś w trakcie leczenia psychiatrycznego i dowiadujesz się o ciąży (albo ją planujesz), naturalne jest, że pojawiają się pytania i obawy. Najważniejsza zasada: **nie przerywaj leczenia pochopnie ani na własną rękę.**\n\nCo warto zrobić:\n\n- **Poinformuj psychiatrę o ciąży** – im wcześniej, tym lepiej.\n- **Sprawdźcie razem, czy farmakoterapia powinna zostać zmodyfikowana.** Istnieją leki, które mogą być stosowane w ciąży i podczas karmienia piersią – ale decyzję o ich wyborze zawsze podejmuje lekarz, biorąc pod uwagę Twoją sytuację.\n- **Stwórzcie plan działania na wypadek nasilenia objawów** – kogo powiadomić, gdzie się zgłosić, co zrobić.\n\nJeśli wcześniej doświadczałaś zaburzeń psychicznych, jesteś w grupie **zwiększonego ryzyka depresji poporodowej** (co nie oznacza, że na pewno Cię ona dotknie). Tym bardziej warto zadbać o wsparcie – specjalistów i bliskich – już w czasie ciąży i po porodzie.\n\nTen tekst nie jest poradą medyczną. W sprawie leków zawsze konsultuj się ze swoim lekarzem prowadzącym."
+        },
+        "tags": {
+          "en-US": [
+            "ciąża",
+            "leki",
+            "farmakoterapia",
+            "psychiatra",
+            "karmienie piersią",
+            "leczenie"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-edynburska-skala-depresji-poporodowej",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Edynburska Skala Depresji Poporodowej – czym jest?"
+        },
+        "slug": {
+          "en-US": "edynburska-skala-depresji-poporodowej"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "To krótki test, który możesz wypełnić samodzielnie. Nie jest diagnozą, ale może być dobrym początkiem rozmowy ze specjalistą."
+        },
+        "body": {
+          "en-US": "**Edynburska Skala Depresji Poporodowej** (ang. *Edinburgh Postnatal Depression Scale*, EPDS) to krótki kwestionariusz, który możesz wypełnić samodzielnie. Pytania dotyczą Twojego samopoczucia w ostatnich dniach – np. tego, czy potrafisz się śmiać i cieszyć, czy odczuwasz niepokój albo czy trudno Ci sobie radzić.\n\nWażne, by pamiętać:\n\n- **to nie jest diagnoza** i nie zastępuje badania przez specjalistę,\n- to raczej **okazja do autorefleksji** i **punkt wyjścia do rozmowy** z położną, lekarzem lub psychologiem.\n\nJeśli wynik Cię niepokoi – albo po prostu czujesz, że coś jest nie tak – porozmawiaj o tym ze specjalistą. Nie musisz czekać, aż będzie „wystarczająco źle”.\n\nJeśli w odpowiedziach pojawiają się myśli o zrobieniu sobie krzywdy, **nie czekaj – skontaktuj się z pomocą od razu** (w nagłej sytuacji zadzwoń pod **112**).\n\nZłe samopoczucie po porodzie zawsze jest sygnałem potrzeby pomocy – najpierw bliskich, a jeśli to nie wystarcza, specjalisty zdrowia psychicznego."
+        },
+        "tags": {
+          "en-US": [
+            "depresja poporodowa",
+            "test",
+            "EPDS",
+            "skala edynburska",
+            "po porodzie",
+            "autorefleksja"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-wspierac-mame-po-porodzie",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Najpierw człowiek, potem specjalista – jak wspierać mamę w ciąży i po porodzie"
+        },
+        "slug": {
+          "en-US": "jak-wspierac-mame-po-porodzie"
+        },
+        "category": {
+          "en-US": "Jak wspierać bliskich"
+        },
+        "excerpt": {
+          "en-US": "W czasie ciąży i wczesnego rodzicielstwa bardzo potrzebujemy innych ludzi. Zobacz, jak realnie odciążyć młodą mamę."
+        },
+        "body": {
+          "en-US": "W czasie ciąży i wczesnego rodzicielstwa **bardzo potrzebujemy innych ludzi**. Oczekiwanie od młodej mamy całkowitej samodzielności to zadanie ponad siły.\n\n**Złe samopoczucie zawsze jest sygnałem potrzeby pomocy** – najpierw pomocy bliskich. Jeśli jesteś mamą: poproś kogoś, przy kim czujesz się bezpiecznie, o wspólny czas, rozmowę albo odciążenie w obowiązkach.\n\nJeśli jesteś osobą bliską, możesz:\n\n- **przejąć konkretne obowiązki** – posiłki, zakupy, pranie, starsze rodzeństwo,\n- **dać czas na sen i odpoczynek**,\n- **wysłuchać bez oceniania** i bez „wszystko będzie dobrze” – także wtedy, gdy mama mówi o trudnych emocjach,\n- **nie tłumaczyć wszystkiego hormonami** – emocje młodej mamy są prawdziwe i ważne,\n- **zauważać sygnały**, że potrzebna jest pomoc specjalisty – np. gdy trudne emocje dominują dłużej niż ok. 2 tygodnie po porodzie.\n\nJeśli wsparcie bliskich to za mało albo nie ma do kogo się zwrócić – **bez wahania warto skorzystać z pomocy specjalisty zdrowia psychicznego**.\n\n„Wszystko przyjdzie w swoim czasie. Daj sobie i dziecku ten czas, ciesz się nim bez oczekiwań.”"
+        },
+        "tags": {
+          "en-US": [
+            "wsparcie",
+            "młoda mama",
+            "po porodzie",
+            "ciąża",
+            "bliscy",
+            "połóg"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-bezplatna-pomoc-w-ciazy-i-po-porodzie",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Gdzie szukać nieodpłatnej pomocy psychologicznej w ciąży i po porodzie?"
+        },
+        "slug": {
+          "en-US": "bezplatna-pomoc-w-ciazy-i-po-porodzie"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "Położna środowiskowa, lekarz pierwszego kontaktu, poradnie i organizacje wspierające mamy – zebraliśmy miejsca, do których możesz się zwrócić."
+        },
+        "body": {
+          "en-US": "Jeśli w ciąży lub po porodzie czujesz, że trudne emocje Cię przerastają, nie musisz od razu szukać prywatnej wizyty. Bezpłatną pomoc możesz uzyskać m.in. tu:\n\n- **Położna środowiskowa** – odwiedza mamę po porodzie i może pomóc zauważyć niepokojące sygnały.\n- **Lekarz pierwszego kontaktu** – dobry pierwszy krok, jeśli nie wiesz, od czego zacząć.\n- **Ośrodek Interwencji Kryzysowej** – bezpłatne wsparcie psychologiczne w trudnej sytuacji.\n- **Poradnia Zdrowia Psychicznego** – pomoc psychiatry i często także psychologów.\n\nWsparcia mamom udzielają też organizacje pozarządowe, m.in. **Stowarzyszenie Dwie Kreski**, **Fundacja Mama na Huśtawce** czy **Fundacja Twarze Depresji**. Sprawdź na ich stronach, jakie formy pomocy obecnie oferują.\n\nW nagłej sytuacji – np. przy myślach samobójczych, myślach o skrzywdzeniu dziecka, urojeniach czy halucynacjach – **dzwoń pod 112** lub jedź na izbę przyjęć szpitala z oddziałem psychiatrycznym.\n\n„Jeśli pojawią się trudności, jest dużo miejsc, ludzi i rąk gotowych nieść pomoc. Nie bójcie się po nią sięgać.”"
+        },
+        "tags": {
+          "en-US": [
+            "gdzie szukać pomocy",
+            "ciąża",
+            "po porodzie",
+            "bezpłatna pomoc",
+            "depresja poporodowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-okres-okoloporodowy-uwaznosc-na-cialo",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Ciąża i połóg jako czas zwrócenia się do wewnątrz"
+        },
+        "slug": {
+          "en-US": "okres-okoloporodowy-uwaznosc-na-cialo"
+        },
+        "category": {
+          "en-US": "Ciąża i rodzicielstwo"
+        },
+        "excerpt": {
+          "en-US": "W okresie okołoporodowym nie da się zignorować sygnałów płynących z ciała. To wyzwanie – ale też szansa na większą uważność."
+        },
+        "body": {
+          "en-US": "Współczesny świat często wymusza odrywanie się od potrzeb organizmu: zaprzeczanie fizjologii, ignorowanie zmęczenia, panowanie nad wyglądem.\n\nW okresie okołoporodowym – jak w żadnym innym – **nie da się jednak nie zauważyć sygnałów płynących z ciała**. Senność, zmęczenie, zmiany w ciele, potrzeba odpoczynku czy bliskości stają się bardzo wyraźne.\n\nTo może być **szansa na pogłębienie uważności i wewnętrznego dialogu** – na nauczenie się słuchania siebie. Ale dla wielu kobiet to także bardzo wymagające doświadczenie, zwłaszcza jeśli wcześniej były przyzwyczajone do „działania mimo wszystko”.\n\nCo może pomóc:\n\n- **pozwól sobie przez to przejść** – bez oceniania, że „powinnaś” mieć więcej siły,\n- **traktuj zmęczenie jako informację**, a nie jako słabość,\n- **proś o pomoc** w obowiązkach, żeby mieć przestrzeń na odpoczynek,\n- **bądź dla siebie wyrozumiała** – tak, jak byłabyś dla przyjaciółki w tej samej sytuacji.\n\nJeśli jednak zmęczeniu towarzyszy długotrwały smutek, utrata zainteresowania życiem czy brak energii, porozmawiaj ze specjalistą – to mogą być objawy depresji."
+        },
+        "tags": {
+          "en-US": [
+            "ciąża",
+            "połóg",
+            "uważność",
+            "ciało",
+            "zmęczenie",
+            "macierzyństwo"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Zdrowie psychiczne dla mam – ciąża, poród, połóg – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1O34Plb5wRDuKD5qvX75muHB6kGhdKzjv/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-higiena-cyfrowa-czym-jest",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Higiena cyfrowa – czym jest i dlaczego jest ważna dla zdrowia psychicznego"
+        },
+        "slug": {
+          "en-US": "higiena-cyfrowa-czym-jest"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Higiena cyfrowa to nie rezygnacja z technologii, tylko świadome zasady korzystania z niej. Sprawdź, jak bycie „zawsze online” wpływa na samopoczucie."
+        },
+        "body": {
+          "en-US": "Powiadomienie, scroll, kolejne powiadomienie… Telefon potrafi wciągać bardziej, niż nam się wydaje. **Higiena cyfrowa** to świadome dbanie o to, jak, kiedy i po co korzystamy z telefonu i innych ekranów – tak, by technologia nam służyła, a nie nami rządziła.\n\nJaką cenę możemy płacić za bycie „zawsze online”?\n\n- **Więcej stresu** – ciągłe powiadomienia mogą wywoływać w organizmie reakcję stresową.\n- **Gorszy sen** – korzystanie z ekranów wieczorem może utrudniać zasypianie.\n- **Trudności z koncentracją** – częste zerkanie na telefon rozbija uwagę.\n- **Porównywanie się z innymi** i lęk przed tym, że coś nas omija (FOMO).\n- **Mniej kontaktów twarzą w twarz** – a więc większe ryzyko poczucia samotności.\n- **Dolegliwości fizyczne** – ból szyi, pleców, nadgarstków i oczu.\n\nHigiena cyfrowa nie oznacza całkowitej rezygnacji z technologii. Chodzi o **małe, codzienne wybory**: wyciszenie powiadomień, strefy bez telefonu, poranek i wieczór offline czy więcej aktywności analogowych.\n\nO zdrowie psychiczne można dbać także w drobnych, codziennych wyborach – takich jak świadome korzystanie z technologii."
+        },
+        "tags": {
+          "en-US": [
+            "higiena cyfrowa",
+            "telefon",
+            "ekran",
+            "media społecznościowe",
+            "stres",
+            "profilaktyka"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-powiadomienia-a-stres",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Powiadomienia a stres – jak telefon wpływa na napięcie i niepokój"
+        },
+        "slug": {
+          "en-US": "powiadomienia-a-stres"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Każdy dźwięk i wibracja telefonu to sygnał dla organizmu. Zobacz, dlaczego stałe sprawdzanie telefonu może zwiększać napięcie."
+        },
+        "body": {
+          "en-US": "Ciągłe powiadomienia i sygnały dobiegające z telefonu mogą wywoływać w organizmie **reakcję stresową** – związaną m.in. ze wzrostem poziomu kortyzolu, czyli jednego z hormonów stresu.\n\nOsoby, które stale sprawdzają telefon, często odczuwają **napięcie i niepokój** i mają większe trudności z opanowaniem stresu. Nic dziwnego – układ nerwowy, który co chwilę dostaje sygnał „coś się dzieje”, trudno wycisza się i odpoczywa.\n\nCo możesz zrobić:\n\n- **Wycisz powiadomienia** z mniej istotnych aplikacji – zostaw tylko te naprawdę potrzebne.\n- **Korzystaj z trybu „nie przeszkadzać”**, np. podczas pracy, posiłków czy wieczorem.\n- **Sprawdzaj wiadomości w wybranych momentach**, zamiast reagować na każde powiadomienie od razu.\n\nMniej bodźców to mniej momentów, w których odrywasz się od tego, co robisz – i więcej przestrzeni na spokój oraz koncentrację.\n\nJeśli jednak napięcie i niepokój utrzymują się niezależnie od telefonu, warto porozmawiać o tym ze specjalistą."
+        },
+        "tags": {
+          "en-US": [
+            "powiadomienia",
+            "stres",
+            "kortyzol",
+            "telefon",
+            "higiena cyfrowa",
+            "niepokój"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-fomo-lek-przed-pominieciem",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "FOMO – czym jest lęk przed pominięciem i jak wpływa na samoocenę"
+        },
+        "slug": {
+          "en-US": "fomo-lek-przed-pominieciem"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Strach, że coś ważnego Cię omija, sprawia, że częściej sięgasz po telefon i porównujesz się z innymi. Poznaj zjawisko FOMO."
+        },
+        "body": {
+          "en-US": "**FOMO** (ang. *fear of missing out*) to lęk przed pominięciem czegoś ważnego – wydarzenia, informacji, aktywności znajomych. To on sprawia, że trudno odłożyć telefon: „a może właśnie coś się dzieje?”.\n\nPolubienia, komentarze i reakcje dają poczucie akceptacji i przynależności. Chęć bycia na bieżąco z tym, co robią inni, **wzmacnia FOMO** – i sprawia, że sprawdzamy telefon coraz częściej.\n\nJak FOMO może wpływać na samopoczucie?\n\n- **Częściej porównujemy się z innymi** – zwykle z wyidealizowanym obrazem ich życia.\n- Może to **obniżać samoocenę**.\n- Wiąże się też ze **zwiększonym ryzykiem obniżenia nastroju**.\n\nCo może pomóc:\n\n- zauważ, **kiedy i dlaczego sięgasz po telefon** – z nudów, z przyzwyczajenia, z niepokoju?\n- ustaw **limity dla aplikacji społecznościowych**,\n- przypominaj sobie, że w mediach społecznościowych widzimy **wybrane fragmenty** cudzego życia,\n- **inwestuj w kontakty offline** – spotkanie z przyjaciółką daje więcej poczucia przynależności niż kolejna godzina scrollowania."
+        },
+        "tags": {
+          "en-US": [
+            "FOMO",
+            "media społecznościowe",
+            "porównywanie się",
+            "samoocena",
+            "higiena cyfrowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-ekrany-a-sen",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Telefon przed snem – jak ekrany wpływają na zasypianie"
+        },
+        "slug": {
+          "en-US": "ekrany-a-sen"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Scrollowanie w łóżku może utrudniać zasypianie i pogarszać jakość snu. Sprawdź, dlaczego i co zrobić zamiast tego."
+        },
+        "body": {
+          "en-US": "Ekrany emitują m.in. **światło niebieskie**, które może zaburzać wydzielanie **melatoniny** – hormonu regulującego sen. W efekcie trudniej zasnąć, a sen bywa gorszej jakości. Do tego dochodzą treści, które pobudzają emocje i sprawiają, że „jeszcze jeden film” zamienia się w godzinę.\n\nA sen to podstawa zdrowia psychicznego – pozwala mózgowi odpocząć, przetworzyć emocje i wzmocnić odporność na stres.\n\nJak zadbać o wieczór bez ekranu:\n\n- **Trzymaj telefon z dala od łóżka** – najlepiej w innym pokoju.\n- **Ustaw budzik analogowy**, żeby nie potrzebować telefonu przy łóżku.\n- **Zaplanuj wieczorny rytuał offline** – książka, rozciąganie, kilka minut spokojnego oddechu, journaling.\n- **Wyznacz godzinę**, po której nie sięgasz już po telefon.\n\nRano też warto zacząć bez ekranu – otwórz okno albo wyjdź na chwilę na zewnątrz. Naturalne światło pomaga regulować rytm dobowy.\n\nJeśli problemy ze snem utrzymują się mimo zmian nawyków, porozmawiaj z lekarzem – bezsenność bywa też objawem innych trudności, np. depresji czy zaburzeń lękowych."
+        },
+        "tags": {
+          "en-US": [
+            "sen",
+            "ekran",
+            "telefon",
+            "melatonina",
+            "wieczorna rutyna",
+            "higiena cyfrowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-telefon-a-koncentracja",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Telefon a koncentracja – dlaczego trudno się skupić, gdy co chwilę zerkasz na ekran"
+        },
+        "slug": {
+          "en-US": "telefon-a-koncentracja"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Każde „tylko sprawdzę” wybija Cię z rytmu. Badania nad przełączaniem uwagi pokazują, ile to kosztuje."
+        },
+        "body": {
+          "en-US": "Częste przerwy na sprawdzanie telefonu **zakłócają koncentrację** i utrudniają zadania, które wymagają pełnego skupienia. Badania nad przełączaniem uwagi (tzw. *task switching*) pokazują, że częste przerwy **zwiększają liczbę błędów** i **wydłużają czas potrzebny na powrót do zadania**.\n\nCzęść badań wskazuje też, że **sama obecność telefonu w polu widzenia** – nawet wyciszonego – może obniżać zdolność koncentracji i pamięć roboczą.\n\nCo pomaga odzyskać skupienie:\n\n- **Schowaj telefon** – do szuflady, torby albo do innego pokoju, gdy potrzebujesz się skupić.\n- **Wycisz powiadomienia** lub włącz tryb „nie przeszkadzać”.\n- **Pracuj w blokach czasu** i sprawdzaj wiadomości dopiero w przerwach.\n- **Sprawdź, ile czasu naprawdę spędzasz na telefonie** – funkcja „czas przed ekranem” w smartfonie pokaże Ci konkretne liczby.\n\nTrudności z koncentracją mogą mieć też inne przyczyny – np. przewlekły stres, niedobór snu, depresję czy ADHD. Jeśli utrzymują się mimo zmian, warto skonsultować się ze specjalistą."
+        },
+        "tags": {
+          "en-US": [
+            "koncentracja",
+            "uwaga",
+            "praca",
+            "task switching",
+            "telefon",
+            "higiena cyfrowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-dlaczego-trudno-odlozyc-telefon",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Dlaczego tak trudno odłożyć telefon? Dopamina, scroll i nawyki"
+        },
+        "slug": {
+          "en-US": "dlaczego-trudno-odlozyc-telefon"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "To nie brak silnej woli. Aplikacje są projektowane tak, by przyciągać uwagę. Zobacz, jak działa ten mechanizm."
+        },
+        "body": {
+          "en-US": "Jeśli masz wrażenie, że telefon „sam” trafia Ci do ręki – nie jesteś wyjątkiem. **Wygląd i działanie aplikacji sprzyjają nawykowemu, częstemu korzystaniu z telefonu.**\n\nJak to działa?\n\n- **Układ nagrody** – każde powiadomienie, polubienie czy nowa treść może aktywować w mózgu układ nagrody związany z dopaminą, neuroprzekaźnikiem ważnym dla odczuwania przyjemności i motywacji. Z czasem mózg zaczyna kojarzyć aplikację z przyjemnością – i chce do niej wracać.\n- **Dostępność i atrakcyjność** – treści są krótkie i szybko się zmieniają, co sprzyja przeskakiwaniu między postami i ciągłemu przewijaniu w poszukiwaniu nowości.\n- **Wpływ społeczny i FOMO** – polubienia i komentarze dają poczucie akceptacji, a chęć bycia na bieżąco wzmacnia lęk przed pominięciem czegoś ważnego.\n- **Trudniejsza kontrola impulsów** – część badań sugeruje, że nadmierne korzystanie z aplikacji może utrudniać samokontrolę, przez co trudniej przestać przewijać, nawet gdy się tego chce.\n\nDobra wiadomość: skoro to mechanizm, a nie „słaba wola”, **można go świadomie osłabiać** – limitami aplikacji, wyciszaniem powiadomień i strefami bez telefonu.\n\nJeśli korzystanie z telefonu wymyka Ci się spod kontroli i wyraźnie utrudnia codzienne życie, warto porozmawiać o tym ze specjalistą."
+        },
+        "tags": {
+          "en-US": [
+            "dopamina",
+            "scroll",
+            "nawyk",
+            "uzależnienie od telefonu",
+            "media społecznościowe",
+            "higiena cyfrowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-jak-ograniczyc-czas-przed-ekranem",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Jak ograniczyć czas przed ekranem? 5 kroków do trybu OFF"
+        },
+        "slug": {
+          "en-US": "jak-ograniczyc-czas-przed-ekranem"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Zamiast walczyć z telefonem siłą woli, zmień otoczenie i ustawienia. Oto pięć praktycznych kroków."
+        },
+        "body": {
+          "en-US": "Ograniczanie telefonu „na siłę” rzadko działa na dłużej. Lepiej działa **świadome zmienianie nawyków** – krok po kroku.\n\n**1. Sprawdź, ile czasu naprawdę spędzasz na telefonie.** Większość smartfonów ma funkcję „czas przed ekranem”, która pokazuje, ile czasu spędzasz w poszczególnych aplikacjach. To Twój punkt wyjścia.\n\n**2. Zadaj sobie pytanie: „dlaczego sięgam po telefon?”.** Z nudów, z przyzwyczajenia, żeby rozładować napięcie, a może po informację lub kontakt? Świadomość powodów pomaga wprowadzać zmiany mądrze, a nie na siłę.\n\n**3. Ustaw limity aplikacji.** Po określonym czasie dostęp zostanie zablokowany – to pomaga ograniczyć impulsywne sprawdzanie mediów społecznościowych.\n\n**4. Wycisz powiadomienia.** Włącz tryb „nie przeszkadzać” albo wyłącz powiadomienia z mniej ważnych aplikacji. Mniej bodźców to więcej koncentracji.\n\n**5. Wyznacz strefy bez przewijania.** Wybierz miejsca w domu, w których nie korzystasz z ekranów – np. stół podczas posiłków, fotel do czytania albo łazienkę. Zacznij od jednej strefy i stopniowo dodawaj kolejne.\n\nNie chodzi o perfekcję. Każda mała zmiana to krok w stronę zdrowszej relacji z ekranem."
+        },
+        "tags": {
+          "en-US": [
+            "czas przed ekranem",
+            "limity aplikacji",
+            "powiadomienia",
+            "tryb OFF",
+            "higiena cyfrowa",
+            "nawyki"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-poranna-i-wieczorna-rutyna-bez-telefonu",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Poranek i wieczór bez telefonu – jak zaplanować rutynę offline"
+        },
+        "slug": {
+          "en-US": "poranna-i-wieczorna-rutyna-bez-telefonu"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Kilka prostych rytuałów wystarczy, by zacząć i skończyć dzień spokojniej. Podpowiadamy, od czego zacząć."
+        },
+        "body": {
+          "en-US": "To, jak zaczynasz i kończysz dzień, ma duży wpływ na Twoją koncentrację i spokój. **Poranna i wieczorna rutyna bez telefonu** to jeden z najprostszych sposobów na zdrowszą relację z ekranem.\n\nPomysły na poranek:\n\n- **Otwórz okno, wyjdź na balkon albo na spacer** – naturalne światło pomaga regulować rytm dobowy.\n- **Zrób kilka prostych ćwiczeń** – skłony, krążenia ramion, skręty tułowia – żeby pobudzić ciało.\n- **Zjedz śniadanie bez rozpraszaczy**, skupiając się na smaku i zapachu. Jedzenie bez ekranu pomaga też lepiej rozpoznawać sygnały sytości.\n\nPomysły na wieczór i noc:\n\n- **Trzymaj telefon z dala od łóżka**, najlepiej w innym pokoju – żeby nie sięgać po niego automatycznie po przebudzeniu.\n- **Ustaw budzik analogowy**, by nie zaczynać dnia od ekranu.\n- **Zaplanuj chwilę dla siebie** – kilka minut spokojnego oddechu, journaling lub krótką medytację.\n\nNie musisz wprowadzać wszystkiego naraz. Wybierz jeden rytuał, sprawdź, jak się z nim czujesz, i dopiero potem dodaj kolejny."
+        },
+        "tags": {
+          "en-US": [
+            "poranna rutyna",
+            "wieczorna rutyna",
+            "sen",
+            "tryb OFF",
+            "higiena cyfrowa",
+            "uważność"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-telefon-podczas-spotkan",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Telefon podczas spotkań – dlaczego warto go schować"
+        },
+        "slug": {
+          "en-US": "telefon-podczas-spotkan"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Zerkanie na ekran w trakcie rozmowy obniża jakość kontaktu. Prosta zmiana, która poprawia relacje."
+        },
+        "body": {
+          "en-US": "Ograniczenie korzystania z telefonu podczas spotkań to **prosty sposób na poprawę jakości relacji**. Kiedy rozmawiasz z drugą osobą, a co chwilę zerkasz na ekran, druga strona dostaje sygnał: „to, co mówisz, nie jest dla mnie najważniejsze”.\n\nCzęść badań wskazuje też, że **sama obecność telefonu w polu widzenia** – nawet wyciszonego – może obniżać zdolność koncentracji i pamięć roboczą. Trudniej wtedy naprawdę słuchać.\n\nCo możesz zrobić:\n\n- **Schowaj telefon do kieszeni lub torby** na czas spotkania.\n- **Skup się wyłącznie na rozmówcy** i na tym, co chce Ci przekazać.\n- **Nie odpisuj na wiadomości** w trakcie rozmowy – jeśli czekasz na coś ważnego, uprzedź o tym na początku.\n- **Umówcie się ze znajomymi** na spotkania bez telefonów na stole.\n\nUważna obecność to jedna z najcenniejszych rzeczy, jakie możemy dać bliskim – i jeden z najlepszych sposobów, by budować relacje, które wspierają nasze zdrowie psychiczne."
+        },
+        "tags": {
+          "en-US": [
+            "relacje",
+            "spotkania",
+            "telefon",
+            "uważność",
+            "higiena cyfrowa",
+            "rozmowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-aktywnosci-offline-pomysly",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Co robić zamiast scrollowania? Pomysły na aktywności offline"
+        },
+        "slug": {
+          "en-US": "aktywnosci-offline-pomysly"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Spacer, planszówki, szydełkowanie, gra na instrumencie – zebraliśmy pomysły na czas bez ekranu, który naprawdę regeneruje."
+        },
+        "body": {
+          "en-US": "Łatwiej ograniczyć telefon, gdy masz pomysł, **czym zastąpić scrollowanie**. Warto świadomie wprowadzić do planu dnia zajęcia, które nie wymagają ekranu – takie, które pozwalają się zresetować i zrelaksować.\n\nKilka propozycji:\n\n- **Spacer na świeżym powietrzu** – kontakt z naturą wiąże się z obniżeniem poziomu stresu i korzystnie wpływa na samopoczucie.\n- **Sport i ruch** – bieganie, rower, joga. Wybierz to, co sprawia Ci przyjemność.\n- **Czytanie** książek i czasopism.\n- **Krzyżówki, wykreślanki, sudoku** – angażują pamięć i koncentrację.\n- **Gry planszowe i puzzle.**\n- **Aktywności twórcze** – malowanie, kolorowanki, szydełkowanie.\n- **Nauka gry na instrumencie.**\n- **Czas z bliskimi** – wspólny spacer, gotowanie, gra planszowa.\n- **Grupa wsparcia** – np. spotkania grup wsparcia Fundacji Można Zwariować.\n\nSpisz własną listę rzeczy, które sprawiają Ci radość – i miej ją pod ręką na moment, gdy odruchowo sięgasz po telefon."
+        },
+        "tags": {
+          "en-US": [
+            "aktywności offline",
+            "hobby",
+            "natura",
+            "ruch",
+            "tryb OFF",
+            "higiena cyfrowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-media-spolecznosciowe-a-samotnosc",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Media społecznościowe a samotność – czy online zastąpi kontakt twarzą w twarz?"
+        },
+        "slug": {
+          "en-US": "media-spolecznosciowe-a-samotnosc"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Jesteśmy „połączeni” jak nigdy wcześniej, a mimo to wiele osób czuje się samotnie. Zobacz, dlaczego tak się dzieje."
+        },
+        "body": {
+          "en-US": "Im więcej czasu spędzamy w świecie wirtualnym, **tym mniej zostaje go na kontakty twarzą w twarz**. Łatwiej wtedy o izolację i poczucie samotności – nawet jeśli w telefonie mamy setki znajomych.\n\nW dłuższej perspektywie może to:\n\n- **utrudniać budowanie głębokich relacji**,\n- **obniżać naszą aktywność**,\n- **sprzyjać lękowi społecznemu** – im rzadziej spotykamy się z ludźmi na żywo, tym trudniejsze może się to wydawać.\n\nRelacje z innymi to jeden z najważniejszych filarów zdrowia psychicznego. Kontakt online może być wartościowy – zwłaszcza gdy bliscy są daleko – ale **nie zastąpi w pełni bycia razem**.\n\nCo możesz zrobić:\n\n- **zaplanuj spotkanie** zamiast kolejnej wymiany wiadomości,\n- **podczas spotkań odłóż telefon** i skup się na rozmowie,\n- **szukaj społeczności offline** – zajęcia, wolontariat, grupy wsparcia.\n\nJeśli samotność jest dla Ciebie trudna i długotrwała, warto porozmawiać o tym z psychologiem – to częste doświadczenie i nie ma w nim nic wstydliwego."
+        },
+        "tags": {
+          "en-US": [
+            "samotność",
+            "relacje",
+            "media społecznościowe",
+            "lęk społeczny",
+            "higiena cyfrowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "wiedza-telefon-a-dolegliwosci-fizyczne",
+        "type": "Entry",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Telefon a ciało – ból szyi, pleców, nadgarstków i zmęczone oczy"
+        },
+        "slug": {
+          "en-US": "telefon-a-dolegliwosci-fizyczne"
+        },
+        "category": {
+          "en-US": "Higiena cyfrowa"
+        },
+        "excerpt": {
+          "en-US": "Długie godziny z telefonem odbijają się nie tylko na psychice, ale i na ciele. Sprawdź, jak to zmienić."
+        },
+        "body": {
+          "en-US": "Długotrwałe korzystanie z telefonu może powodować **ból szyi, pleców, nadgarstków i oczu**, a także ogólne **zmęczenie fizyczne**. Pochylona głowa, zgarbione plecy i wzrok utkwiony w małym ekranie przez wiele godzin dziennie to duże obciążenie dla ciała.\n\nA ciało i psychika są ze sobą ściśle powiązane – przewlekły ból czy zmęczenie mogą pogarszać nastrój i utrudniać koncentrację.\n\nCo może pomóc:\n\n- **rób regularne przerwy** od ekranu i wtedy zmieniaj pozycję,\n- **podnieś telefon wyżej**, zamiast mocno pochylać głowę,\n- **poruszaj się** – kilka skłonów, krążeń ramion czy skrętów tułowia w ciągu dnia robi różnicę,\n- **daj odpocząć oczom** – co jakiś czas popatrz w dal,\n- **ogranicz czas przed ekranem** – np. limitami aplikacji.\n\nJeśli ból lub dolegliwości utrzymują się, skonsultuj je z lekarzem lub fizjoterapeutą."
+        },
+        "tags": {
+          "en-US": [
+            "ból szyi",
+            "postawa",
+            "oczy",
+            "zmęczenie",
+            "telefon",
+            "higiena cyfrowa"
+          ]
+        },
+        "date": {
+          "en-US": "2026-09-29"
+        },
+        "source": {
+          "en-US": "Higiena cyfrowa – jak zachować równowagę online – Fundacja Można Zwariować"
+        },
+        "sourceUrl": {
+          "en-US": "https://drive.google.com/file/d/1wUWBpvicBmy4-w4uSs5lAGBhzBgagpvX/view"
+        }
+      }
+    }
+  ]
+}

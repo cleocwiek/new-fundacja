@@ -1,0 +1,50 @@
+# One-off import of the Wiedza articles into Contentful.
+# Run it from GitHub: Actions → "Import artykułów do Contentful" → Run workflow.
+# Needs two repository secrets (Settings → Secrets and variables → Actions):
+#   CONTENTFUL_SPACE_ID          – Space ID (Contentful: Settings → General settings)
+#   CONTENTFUL_MANAGEMENT_TOKEN  – a personal access token (Contentful: Settings → CMA tokens)
+# Articles are imported as drafts. Running it again overwrites the imported
+# articles with the versions from content/wiedza-articles.json, so do not re-run
+# it after editing articles in Contentful.
+name: Import artykułów do Contentful
+
+on:
+  workflow_dispatch:
+    inputs:
+      locale:
+        description: "Kod domyślnego języka przestrzeni (Contentful: Settings → Locales), np. en-US lub pl"
+        required: true
+        default: "en-US"
+
+permissions:
+  contents: read
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build import file
+        env:
+          LOCALE: ${{ inputs.locale }}
+        run: node content/build-contentful-import.mjs "$LOCALE" import.json
+
+      - name: Import into Contentful
+        env:
+          SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          CMA_TOKEN: ${{ secrets.CONTENTFUL_MANAGEMENT_TOKEN }}
+        run: |
+          if [ -z "$SPACE_ID" ] || [ -z "$CMA_TOKEN" ]; then
+            echo "Brak sekretów CONTENTFUL_SPACE_ID lub CONTENTFUL_MANAGEMENT_TOKEN" >&2
+            exit 1
+          fi
+          npx --yes contentful-cli@4 space import \
+            --space-id "$SPACE_ID" \
+            --environment-id master \
+            --management-token "$CMA_TOKEN" \
+            --content-file import.json

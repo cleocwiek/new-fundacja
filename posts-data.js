@@ -1,13 +1,21 @@
 /* =========================================================
    Wiedza — baza artykułów o zdrowiu psychicznym
-   Statyczne dane na start; struktura jest przygotowana pod
-   łatwe podpięcie CMS-a (np. Contentful) w przyszłości —
-   docelowo ta tablica zostanie zastąpiona wynikiem zapytania
-   do API, ale kształt pojedynczego obiektu posta może zostać
-   taki sam.
+
+   Artykuły są pobierane z Contentful (typ treści "article"),
+   gdy w contentful-config.js są uzupełnione spaceId i
+   deliveryToken. Dopóki konfiguracji nie ma, strona korzysta
+   z przykładowych artykułów zapisanych poniżej.
+
+   Globalne API używane przez script.js (wyszukiwarka na stronie
+   głównej) i wiedza.js (strona Wiedza):
+     WIEDZA_POSTS     – aktualna lista artykułów
+     wiedzaReady      – Promise, który rozwiązuje się po wczytaniu
+     wiedzaSearch()   – wyszukiwanie
+     WIEDZA_LOAD_ERROR – true, jeśli Contentful nie odpowiedział
    ========================================================= */
 
-const WIEDZA_POSTS = [
+/* Przykładowe artykuły – używane tylko bez konfiguracji Contentful */
+var WIEDZA_FALLBACK_POSTS = [
   {
     slug: "depresja",
     category: "Zaburzenia psychiczne",
@@ -107,22 +115,143 @@ const WIEDZA_POSTS = [
   },
 ];
 
+var WIEDZA_CONFIG = window.CONTENTFUL_CONFIG || {};
+var WIEDZA_USES_CONTENTFUL = !!(WIEDZA_CONFIG.spaceId && WIEDZA_CONFIG.deliveryToken);
+var WIEDZA_POSTS = WIEDZA_USES_CONTENTFUL ? [] : WIEDZA_FALLBACK_POSTS.slice();
+var WIEDZA_LOAD_ERROR = false;
+
 /* Simple text-normalization helper shared by search + listing logic */
 function wiedzaNormalize(str) {
   return (str || "")
     .toString()
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "");
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/ł/g, "l");
 }
 
+function wiedzaEscapeHtml(str) {
+  return (str == null ? "" : String(str))
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/* Minimal Markdown → HTML for article bodies written in Contentful:
+   paragraphs (blank line between), "- " lists, "### " subheadings,
+   **bold**, *italic* and [links](https://...). Everything else is
+   escaped, so the body can never inject HTML into the page. */
+function wiedzaInlineMarkdown(text) {
+  return wiedzaEscapeHtml(text)
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, function (_, label, url) {
+      return '<a href="' + url + '" target="_blank" rel="noopener">' + label + "</a>";
+    })
+    .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
+    .replace(/(^|[^*])\*([^*\s][^*]*?)\*(?!\*)/g, "$1<i>$2</i>");
+}
+
+function wiedzaMarkdown(md) {
+  const blocks = (md || "").replace(/\r\n/g, "\n").split(/\n\s*\n/);
+  return blocks
+    .map(function (block) {
+      const lines = block.split("\n").map(function (l) { return l.trim(); }).filter(Boolean);
+      if (!lines.length) return "";
+      if (lines.every(function (l) { return /^[-*] /.test(l); })) {
+        return (
+          "<ul>" +
+          lines.map(function (l) { return "<li>" + wiedzaInlineMarkdown(l.slice(2)) + "</li>"; }).join("") +
+          "</ul>"
+        );
+      }
+      if (lines.length === 1 && /^#{1,4} /.test(lines[0])) {
+        return "<h3>" + wiedzaInlineMarkdown(lines[0].replace(/^#{1,4} /, "")) + "</h3>";
+      }
+      return "<p>" + wiedzaInlineMarkdown(lines.join(" ")) + "</p>";
+    })
+    .join("");
+}
+
+function wiedzaStripHtml(html) {
+  return (html || "").replace(/<[^>]+>/g, " ");
+}
+
+function wiedzaFromContentful(item) {
+  const f = item.fields || {};
+  const body = f.body || "";
+  return {
+    slug: f.slug,
+    category: f.category || "",
+    title: f.title || "",
+    excerpt: f.excerpt || "",
+    date: (f.date || "").slice(0, 10),
+    tags: f.tags || [],
+    bodyHtml: wiedzaMarkdown(body),
+    bodyText: body.replace(/[*#\[\]()_]/g, " "),
+    source: f.source || "",
+    sourceUrl: f.sourceUrl || "",
+  };
+}
+
+var wiedzaReady = (function () {
+  if (!WIEDZA_USES_CONTENTFUL) return Promise.resolve(WIEDZA_POSTS);
+
+  const url =
+    "https://cdn.contentful.com/spaces/" +
+    encodeURIComponent(WIEDZA_CONFIG.spaceId) +
+    "/environments/" +
+    encodeURIComponent(WIEDZA_CONFIG.environment || "master") +
+    "/entries?content_type=article&limit=1000&order=-fields.date,fields.title" +
+    "&access_token=" +
+    encodeURIComponent(WIEDZA_CONFIG.deliveryToken);
+
+  return fetch(url)
+    .then(function (res) {
+      if (!res.ok) throw new Error("Contentful HTTP " + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      WIEDZA_POSTS = (data.items || [])
+        .map(wiedzaFromContentful)
+        .filter(function (post) { return post.slug && post.title; });
+      return WIEDZA_POSTS;
+    })
+    .catch(function (err) {
+      console.error("Nie udało się wczytać artykułów z Contentful:", err);
+      WIEDZA_LOAD_ERROR = true;
+      WIEDZA_POSTS = [];
+      return WIEDZA_POSTS;
+    });
+})();
+
+/* Search: every word of the query has to appear somewhere in the article;
+   matches in the title count most, then tags/category, excerpt and body. */
 function wiedzaSearch(query, limit) {
-  const q = wiedzaNormalize(query).trim();
-  if (!q) return [];
-  return WIEDZA_POSTS.filter((post) => {
-    const haystack = wiedzaNormalize(
-      [post.title, post.excerpt, post.category, (post.tags || []).join(" ")].join(" ")
-    );
-    return haystack.includes(q);
-  }).slice(0, limit || WIEDZA_POSTS.length);
+  const words = wiedzaNormalize(query).trim().split(/\s+/).filter(Boolean);
+  if (!words.length) return [];
+
+  const scored = [];
+  WIEDZA_POSTS.forEach(function (post, index) {
+    const fields = [
+      [wiedzaNormalize(post.title), 5],
+      [wiedzaNormalize((post.tags || []).join(" ") + " " + post.category), 3],
+      [wiedzaNormalize(post.excerpt), 2],
+      [wiedzaNormalize(post.bodyText || wiedzaStripHtml((post.body || []).join(" "))), 1],
+    ];
+    let score = 0;
+    for (let w = 0; w < words.length; w++) {
+      let best = 0;
+      for (let i = 0; i < fields.length; i++) {
+        if (fields[i][0].indexOf(words[w]) !== -1 && fields[i][1] > best) best = fields[i][1];
+      }
+      if (!best) return;
+      score += best;
+    }
+    scored.push({ post: post, score: score, index: index });
+  });
+
+  scored.sort(function (a, b) {
+    return b.score - a.score || a.index - b.index;
+  });
+  return scored.slice(0, limit || scored.length).map(function (s) { return s.post; });
 }
