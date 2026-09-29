@@ -2136,6 +2136,18 @@ header a img.logo {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.wiedza-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wiedza-card h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 .wiedza-empty {

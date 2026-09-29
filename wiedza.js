@@ -26,20 +26,45 @@
   }
 
   function renderCard(post) {
+    const href = "wiedza.html?post=" + encodeURIComponent(post.slug);
     return (
       '<article class="wiedza-card">' +
       '<p class="wiedza-card-category ' + wiedzaCategoryClass(post.category) + '">' + escapeHtml(post.category) + "</p>" +
-      "<h3>" + escapeHtml(post.title) + "</h3>" +
+      '<h3><a href="' + href + '">' + escapeHtml(post.title) + "</a></h3>" +
       "<p>" + escapeHtml(post.excerpt) + "</p>" +
-      '<a class="wiedza-card-link" href="wiedza.html?post=' +
-      encodeURIComponent(post.slug) +
-      '">Czytaj więcej →</a>' +
+      '<a class="wiedza-card-link" href="' + href + '">Czytaj więcej →</a>' +
       "</article>"
     );
   }
 
+  // Random order that spreads every category evenly through the list:
+  // each category is shuffled, then its posts get evenly spaced positions
+  // (with a random offset) and all posts are sorted by position.
+  function mixedOrder(posts) {
+    const byCategory = {};
+    posts.forEach(function (post) {
+      (byCategory[post.category] = byCategory[post.category] || []).push(post);
+    });
+    const placed = [];
+    Object.keys(byCategory).forEach(function (category) {
+      const group = byCategory[category];
+      for (let i = group.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = group[i]; group[i] = group[j]; group[j] = tmp;
+      }
+      group.forEach(function (post, i) {
+        placed.push({ post: post, key: (i + Math.random()) / group.length });
+      });
+    });
+    placed.sort(function (a, b) { return a.key - b.key; });
+    return placed.map(function (item) { return item.post; });
+  }
+
+  let mixedPosts = null;
+
   function renderGrid(query, category) {
-    let posts = query ? wiedzaSearch(query) : WIEDZA_POSTS.slice();
+    if (!mixedPosts) mixedPosts = mixedOrder(WIEDZA_POSTS);
+    let posts = query ? wiedzaSearch(query) : mixedPosts.slice();
     if (category) {
       posts = posts.filter(function (post) {
         return post.category === category;
