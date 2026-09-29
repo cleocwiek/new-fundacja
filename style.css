@@ -132,6 +132,12 @@ p { margin: 0 0 1em; color: var(--ink); }
 
 b, strong { font-weight: 700; color: var(--ink); }
 
+/* Menu links jump to a section: stop below the sticky header so the
+   eyebrow and section title are fully visible */
+html {
+  scroll-padding-top: 5.5rem;
+}
+
 /* ---------- Layout ---------- */
 .container {
   max-width: var(--container);
@@ -150,17 +156,17 @@ section {
 /* psychoedu and szukasz wsparcia sit back-to-back with no heading gap
    between them, so their combined padding otherwise doubles up — trim it
    to match the tighter spacing used elsewhere between sections */
-#psychoedu {
+#psychoedu-materialy {
   padding-bottom: 2.75rem;
 }
 
-#wsparcie {
+#wsparcie-sekcja {
   padding-top: 2.75rem;
 }
 
 @media (max-width: 720px) {
-  #psychoedu { padding-bottom: 1.5rem; }
-  #wsparcie { padding-top: 1.5rem; }
+  #psychoedu-materialy { padding-bottom: 1.5rem; }
+  #wsparcie-sekcja { padding-top: 1.5rem; }
 }
 
 .eyebrow {
@@ -1166,9 +1172,10 @@ header a img.logo {
 }
 
 .kampania-subtitle {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--ink);
-  line-height: 1.8;
+  line-height: 1.6;
+  text-align: left;
   margin-bottom: 2.25rem;
 }
 
@@ -1210,9 +1217,11 @@ header a img.logo {
 }
 
 .kampania-text p {
-  font-size: 1.08rem;
+  font-size: 1rem;
   color: var(--ink);
-  line-height: 1.8;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 1.5rem;
 }
 
 .kampania-partners-content {
@@ -1267,7 +1276,8 @@ header a img.logo {
   margin: 0 auto;
   font-size: 1rem;
   color: var(--ink);
-  line-height: 1.7;
+  line-height: 1.6;
+  text-align: left;
 }
 
 .mamtowgrupie-content {
@@ -1309,6 +1319,8 @@ header a img.logo {
 .mamtowgrupie-content p {
   color: var(--ink);
   font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .offternoon-instagram {
@@ -1727,6 +1739,9 @@ header a img.logo {
 
 .takecareoffyourself-right p {
   color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .takecareoffyourself-quiz {
