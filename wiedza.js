@@ -28,7 +28,7 @@
   function renderCard(post) {
     return (
       '<article class="wiedza-card">' +
-      '<p class="wiedza-card-category">' + escapeHtml(post.category) + "</p>" +
+      '<p class="wiedza-card-category ' + wiedzaCategoryClass(post.category) + '">' + escapeHtml(post.category) + "</p>" +
       "<h3>" + escapeHtml(post.title) + "</h3>" +
       "<p>" + escapeHtml(post.excerpt) + "</p>" +
       '<a class="wiedza-card-link" href="wiedza.html?post=' +
@@ -77,7 +77,7 @@
 
     categories.forEach(function (category) {
       html +=
-        '<button type="button" class="wiedza-tag' +
+        '<button type="button" class="wiedza-tag ' + wiedzaCategoryClass(category) +
         (activeCategory === category ? " active" : "") +
         '" data-category="' +
         escapeHtml(category) +
@@ -146,7 +146,9 @@
 
     postSection.innerHTML =
       '<a class="wiedza-back-link" href="wiedza.html">← Wróć do wiedzy</a>' +
-      '<p class="eyebrow wiedza-post-category">' + escapeHtml(post.category) + "</p>" +
+      '<a class="wiedza-card-category wiedza-post-category ' + wiedzaCategoryClass(post.category) +
+      '" href="wiedza.html?category=' + encodeURIComponent(post.category) + '">' +
+      escapeHtml(post.category) + "</a>" +
       "<h1>" + escapeHtml(post.title) + "</h1>" +
       '<div class="wiedza-post-body">' + bodyHtml + "</div>" +
       '<div class="wiedza-post-tags">' + tagsHtml + "</div>" +

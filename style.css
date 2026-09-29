@@ -2081,13 +2081,38 @@ header a img.logo {
   box-shadow: var(--shadow-soft);
 }
 
-.wiedza-card-category {
-  font-size: 0.72rem;
+.wiedza-card-category,
+.wiedza-card .wiedza-card-category {
+  display: inline-block;
+  font-size: 0.7rem;
+  line-height: 1.4;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-700);
-  margin-bottom: 0.7rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: var(--cat-color, var(--accent-100));
+  color: var(--cat-text, var(--accent-700));
+  margin-bottom: 0.9rem;
+}
+
+/* Category colours (Wiedza): filter buttons, card labels, article label */
+.cat-green  { --cat-color: var(--green-500-solid); --cat-text: #fff; }
+.cat-pink   { --cat-color: var(--pink-500-solid);  --cat-text: var(--ink); }
+.cat-blue   { --cat-color: var(--blue-500-solid);  --cat-text: #fff; }
+.cat-yellow { --cat-color: var(--yellow);          --cat-text: var(--ink); }
+.cat-navy   { --cat-color: var(--navy-500-solid);  --cat-text: #fff; }
+
+.wiedza-tag[class*="cat-"] {
+  border-color: var(--cat-color);
+  color: var(--ink);
+}
+
+.wiedza-tag[class*="cat-"]:hover,
+.wiedza-tag[class*="cat-"].active {
+  background: var(--cat-color);
+  border-color: var(--cat-color);
+  color: var(--cat-text);
 }
 
 .wiedza-card h3 {
@@ -2142,7 +2167,7 @@ header a img.logo {
 }
 
 .wiedza-post-category {
-  justify-content: flex-start;
+  margin-bottom: 1rem;
 }
 
 .wiedza-post-section h1 {

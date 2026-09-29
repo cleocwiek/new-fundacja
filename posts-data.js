@@ -224,6 +224,20 @@ var wiedzaReady = (function () {
     });
 })();
 
+/* Category → colour class (see .cat-* in style.css). Categories not listed
+   here simply get the neutral style. */
+var WIEDZA_CATEGORY_COLORS = {
+  "pierwsza pomoc": "cat-green",
+  "ciaza i rodzicielstwo": "cat-pink",
+  "higiena cyfrowa": "cat-blue",
+  "zdrowie psychiczne": "cat-yellow",
+  "jak wspierac bliskich": "cat-navy",
+};
+
+function wiedzaCategoryClass(category) {
+  return WIEDZA_CATEGORY_COLORS[wiedzaNormalize(category).trim()] || "";
+}
+
 /* Search: every word of the query has to appear somewhere in the article;
    matches in the title count most, then tags/category, excerpt and body. */
 function wiedzaSearch(query, limit) {
