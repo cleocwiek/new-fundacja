@@ -1335,9 +1335,17 @@ header a img.logo {
 }
 
 /* bottom sign-up box, matching the original moznazwariowac.pl page */
+.mamtowgrupie-zone {
+  padding-bottom: 4rem;
+}
+
+.mamtowgrupie-zone .mamtowgrupie-content {
+  padding-bottom: 2rem;
+}
+
 .mamtowgrupie-cta {
   max-width: 800px;
-  margin: 3rem auto;
+  margin: 0 auto;
   padding: 2rem 1rem;
   text-align: center;
   background-color: #ffe68b;
@@ -1345,7 +1353,7 @@ header a img.logo {
 }
 
 .mamtowgrupie-cta p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
   color: var(--ink);
@@ -1364,6 +1372,7 @@ header a img.logo {
 
 @media (max-width: 860px) {
   .mamtowgrupie-content { grid-template-columns: 1fr; gap: 2.5rem; }
+  .mamtowgrupie-cta { margin: 0 1.25rem; padding: 1.5rem 1.25rem; }
 }
 
 /* =========================================================
@@ -1379,7 +1388,7 @@ header a img.logo {
 .offternoon-logo {
   max-width: 100%;
   height: auto;
-  max-height: 200px;
+  max-height: 180px;
   display: block;
   margin: 0 auto 2rem auto;
 }
@@ -1846,6 +1855,10 @@ header a img.logo {
   font-size: 1.2rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--line);
+}
+
+.takecareoffyourself-guide {
+  margin-top: 0.5rem;
 }
 
 .takecareoffyourself-downloads {
