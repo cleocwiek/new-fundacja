@@ -10,6 +10,9 @@ sample articles built into `posts-data.js`.
   the foundation's four brochures plus the 6 original sample articles
 - `wiedza-artykuly-do-przegladu.md` – the same articles as one readable document
   for review, with a list of points to check
+- `wiedza-przewodnik-po-zaburzeniach.json` – 14 more articles (Zdrowie
+  psychiczne) from the campaign's "Przewodnik po zaburzeniach psychicznych";
+  `przewodnik-artykuly-do-przegladu.md` is the review document for them
 - `build-contentful-import.mjs` – turns `wiedza-articles.json` into a Contentful
   import file (`contentful-import.json`, locale `en-US`)
 - `../.github/workflows/contentful-import.yml` – GitHub Action that runs the import
@@ -35,8 +38,18 @@ sample articles built into `posts-data.js`.
    (`spaceId`, `deliveryToken`). This token is read-only and is meant to be public.
 8. Optional: delete the CMA token from step 3 once the import is done.
 
-Do not run the import workflow again after editing articles in Contentful – it
-overwrites the imported articles with the versions from `wiedza-articles.json`.
+Do not run the import workflow with `wiedza-articles.json` again after editing
+articles in Contentful – it overwrites the imported articles with the versions
+from that file.
+
+## Importing the Przewodnik articles
+
+GitHub → Actions → "Import artykułów do Contentful" → Run workflow → locale as
+before, articles file `wiedza-przewodnik-po-zaburzeniach.json` → Run. It only
+adds these 14 articles as drafts (no other article or the content type is
+changed). Review and publish them in Contentful. The CMA token secret must still
+be valid – if you deleted it, create a new one and update the
+`CONTENTFUL_MANAGEMENT_TOKEN` secret first.
 
 ## Adding an article later
 
