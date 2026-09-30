@@ -203,9 +203,11 @@ var WIEDZA_PODCAST_CATEGORY = "Podcast";
 function wiedzaFromPodcast(ep) {
   const text = (ep.description || "").replace(/\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/[*#]/g, "");
   const firstParagraph = text.split(/\n\s*\n/)[0].replace(/\s+/g, " ").trim();
-  const excerpt = firstParagraph.length > 200
-    ? firstParagraph.slice(0, 200).replace(/\s+\S*$/, "") + "…"
-    : firstParagraph;
+  const excerpt = !firstParagraph
+    ? "Odcinek podcastu Można Zwariować."
+    : firstParagraph.length > 200
+      ? firstParagraph.slice(0, 200).replace(/\s+\S*$/, "") + "…"
+      : firstParagraph;
   const safeUrl = function (url) { return /^https?:\/\//.test(url || "") ? url : ""; };
   return {
     slug: ep.slug,
@@ -306,25 +308,49 @@ function wiedzaCategoryClass(category) {
   return WIEDZA_CATEGORY_COLORS[wiedzaNormalize(category).trim()] || "";
 }
 
-/* Search: every word of the query has to appear somewhere in the article;
-   matches in the title count most, then tags/category, excerpt and body. */
+/* Search: every word of the query has to match the start of a word in the
+   post; matches in the title count most, then tags/category, excerpt and
+   body. A query word typed with Polish letters must match them ("lęk" finds
+   "lęku", not "leki"); typed without them it matches both ("lek"). */
+function wiedzaSearchFields(post) {
+  if (!post._searchFields) {
+    const texts = [
+      post.title,
+      (post.tags || []).join(" ") + " " + post.category,
+      post.excerpt,
+      post.bodyText || wiedzaStripHtml((post.body || []).join(" ")),
+    ];
+    const weights = [5, 3, 2, 1];
+    post._searchFields = texts.map(function (text, i) {
+      const lower = " " + (text || "").toString().toLowerCase().replace(/[^0-9a-ząćęłńóśźż]+/g, " ");
+      return { exact: lower, folded: wiedzaNormalize(lower), weight: weights[i] };
+    });
+  }
+  return post._searchFields;
+}
+
 function wiedzaSearch(query, limit) {
-  const words = wiedzaNormalize(query).trim().split(/\s+/).filter(Boolean);
+  const words = query
+    .toString()
+    .toLowerCase()
+    .split(/[^0-9a-ząćęłńóśźż]+/)
+    .filter(Boolean)
+    .map(function (word) {
+      const folded = wiedzaNormalize(word);
+      return folded === word ? { text: " " + word, key: "folded" } : { text: " " + word, key: "exact" };
+    });
   if (!words.length) return [];
 
   const scored = [];
   WIEDZA_POSTS.forEach(function (post, index) {
-    const fields = [
-      [wiedzaNormalize(post.title), 5],
-      [wiedzaNormalize((post.tags || []).join(" ") + " " + post.category), 3],
-      [wiedzaNormalize(post.excerpt), 2],
-      [wiedzaNormalize(post.bodyText || wiedzaStripHtml((post.body || []).join(" "))), 1],
-    ];
+    const fields = wiedzaSearchFields(post);
     let score = 0;
     for (let w = 0; w < words.length; w++) {
       let best = 0;
       for (let i = 0; i < fields.length; i++) {
-        if (fields[i][0].indexOf(words[w]) !== -1 && fields[i][1] > best) best = fields[i][1];
+        if (fields[i][words[w].key].indexOf(words[w].text) !== -1 && fields[i].weight > best) {
+          best = fields[i].weight;
+        }
       }
       if (!best) return;
       score += best;
