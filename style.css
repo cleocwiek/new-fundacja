@@ -1571,6 +1571,34 @@ header a img.logo {
   color: var(--red-500-solid);
 }
 
+/* FMZ x Tymbark page (reuses the Magnum/OFFternoon layout) */
+.tymbark-hero .tymbark-text {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  text-align: left;
+}
+
+.tymbark-videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: var(--container);
+  margin: 0 auto 2rem;
+}
+
+.tymbark-videos iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: #000;
+}
+
+@media (max-width: 860px) {
+  .tymbark-videos { grid-template-columns: 1fr; }
+}
+
 /* FMZ x Magnum page (reuses the OFFternoon layout) */
 .magnum-title {
   max-width: 820px;

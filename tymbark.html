@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wiedza - Fundacja Można Zwariować</title>
+    <title>FMZ x Tymbark - Fundacja Można Zwariować</title>
     <link rel="stylesheet" href="style.css?v=26" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <link
@@ -28,7 +28,7 @@
       </a>
 
       <nav class="desktop-nav">
-        <a href="#">WIEDZA</a>
+        <a href="wiedza.html">WIEDZA</a>
         <a href="index.html#psychoedu">PSYCHOEDU</a>
         <a href="index.html#wsparcie">WSPARCIE</a>
         <a href="index.html#projekty">PROJEKTY</a>
@@ -36,7 +36,7 @@
         <a href="index.html#partnerzy">PARTNERZY</a>
         <a href="fundacja.html">FUNDACJA</a>
         <a href="http://poradniamoznazwariowac.pl/" target="_blank">PORADNIA</a>
-        <a href="index.html#kontakt">KONTAKT</a>
+        <a href="#kontakt">KONTAKT</a>
       </nav>
 
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -44,7 +44,7 @@
 
     <nav class="menu" id="mobileMenu">
       <button class="menu-close" onclick="toggleMenu()" aria-label="Zamknij menu">✕</button>
-      <a href="#">Wiedza</a>
+      <a href="wiedza.html">Wiedza</a>
       <a href="index.html#psychoedu">Psychoedu</a>
       <a href="index.html#wsparcie">Wsparcie</a>
       <a href="index.html#projekty">Projekty</a>
@@ -52,42 +52,78 @@
       <a href="index.html#partnerzy">Partnerzy</a>
       <a href="fundacja.html">Fundacja</a>
       <a href="http://poradniamoznazwariowac.pl/" target="_blank">Poradnia</a>
-      <a href="index.html#kontakt">Kontakt</a>
+      <a href="#kontakt">Kontakt</a>
     </nav>
 
     <main class="container">
-      <div class="gradient-zone">
-      <section class="wiedza-hero">
-        <p class="eyebrow">Baza wiedzy</p>
-        <h1>Wiedza</h1>
-        <p class="wiedza-hero-subtitle">
-          Zebraliśmy w jednym miejscu najważniejsze informacje o zdrowiu
-          psychicznym z naszych materiałów, kampanii i poradników. Wpisz
-          hasło, którego szukasz, np. „depresja” lub „higiena cyfrowa”.
-        </p>
-        <div class="wiedza-search-wrapper hero-search-wrapper">
-          <form class="hero-search" id="wiedzaSearchForm" role="search" autocomplete="off">
-            <input
-              type="text"
-              id="wiedzaSearchInput"
-              placeholder="Szukaj w bazie wiedzy…"
-              aria-label="Szukaj w bazie wiedzy"
-            />
-            <button type="submit" class="hero-search-submit" aria-label="Szukaj">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
-          <div class="search-suggestions" id="wiedzaSearchSuggestions"></div>
+      <div class="gradient-zone gradient-zone-green">
+      <section class="offternoon-hero magnum-hero tymbark-hero">
+        <p class="eyebrow" style="justify-content:center;">Współpraca</p>
+        <h1 class="magnum-title">
+          <span class="kampania-claim">FMZ x Tymbark</span>
+        </h1>
+
+        <div class="magnum-logos">
+          <img src="images/partnerzy/2.png" alt="Tymbark" />
+        </div>
+
+        <div class="offternoon-description tymbark-text">
+          <p>
+            Wyjątkowy cykl rozmów, który powstał we współpracy Fundacji Można
+            Zwariować i marki Tymbark. Rozmawiamy w nim z młodymi twórcami
+            internetowymi o tym, jak zachować balans we współczesnym,
+            pędzącym świecie, i o ich <b>„micro joys”</b> – drobnych chwilach
+            radości, które od razu poprawiają nastrój.
+          </p>
+          <p>
+            Micro joys to małe momenty, które przydarzają się każdemu z nas:
+            ciepłe słońce na skórze w zimowy dzień, miłe słowo od nieznajomej
+            osoby, same zielone światła w drodze do pracy. Łatwo je przeoczyć,
+            bo nasza uwaga naturalnie częściej zatrzymuje się na tym, co
+            trudne. Zauważanie ich to prosty sposób na
+            <b>praktykowanie wdzięczności w codzienności</b>.
+          </p>
+          <p>
+            Praktyka wdzięczności nie wymaga wiele czasu. Wystarczy na koniec
+            dnia zapisać albo przypomnieć sobie trzy dobre rzeczy, które się
+            wydarzyły – nawet bardzo drobne. Badania pokazują, że regularne
+            ćwiczenie wdzięczności może poprawiać samopoczucie, a z czasem
+            sprawia, że łatwiej dostrzegamy to, co dobre. Wdzięczność nie
+            zastąpi pomocy specjalisty, gdy dzieje się coś trudnego, ale może
+            być jednym z codziennych sposobów dbania o siebie.
+          </p>
+          <p>
+            Gośćmi cyklu byli: <b>Krystian Stasiewicz</b> – twórca znany na
+            TikToku jako @krisbringsfun, <b>Jasmina Workert</b> – podcasterka,
+            youtuberka i influencerka, oraz <b>Karolina Byrgiel</b> –
+            tiktokerka i influencerka.
+          </p>
+        </div>
+
+        <div class="tymbark-videos">
+          <iframe
+            src="https://www.youtube.com/embed/dU28C2M5x88"
+            title="FMZ x Tymbark – odcinek 1"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/Ch_oNYPmXIw"
+            title="FMZ x Tymbark – odcinek 2"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/9jv9wAgCg5w"
+            title="FMZ x Tymbark – odcinek 3"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
       </section>
-
-      <div class="wiedza-tags" id="wiedzaTags"></div>
-
-      <section class="wiedza-grid-section" id="wiedzaGridSection">
-        <div class="wiedza-grid" id="wiedzaGrid"></div>
-      </section>
-
-      <section class="wiedza-post-section" id="wiedzaPostSection" style="display: none"></section>
       </div>
     </main>
 
@@ -151,9 +187,6 @@
       </div>
     </footer>
 
-    <script src="contentful-config.js?v=2"></script>
-    <script src="posts-data.js?v=6"></script>
     <script src="script.js?v=3"></script>
-    <script src="wiedza.js?v=9"></script>
   </body>
 </html>
