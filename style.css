@@ -209,6 +209,16 @@ section {
   .section-heading { padding-left: calc(1.25rem + 2.75rem); }
 }
 
+/* a heading that follows a list instead of a <section> gets the same space
+   above it as every other section (see section padding) */
+.projects-list + .section-heading {
+  margin-top: 5.5rem;
+}
+
+@media (max-width: 720px) {
+  .projects-list + .section-heading { margin-top: 3.25rem; }
+}
+
 .section-heading h2 {
   text-transform: lowercase;
   font-variant-caps: normal;
@@ -399,6 +409,18 @@ header a img.logo {
   border-bottom: 1px solid var(--line);
   padding: 0.5rem 0;
   line-height: 1.2;
+}
+
+/* 10 menu items: tighter spacing on medium screens, the ☰ menu below 1140px */
+@media (max-width: 1240px) {
+  .desktop-nav { gap: 1.1rem; }
+  .desktop-nav a { letter-spacing: 0.08em; }
+}
+
+@media (max-width: 1140px) {
+  .desktop-nav { display: none; }
+  .menu-toggle { display: block; }
+  .menu { display: flex; }
 }
 
 @media (max-width: 900px) {
