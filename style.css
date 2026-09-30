@@ -1600,8 +1600,7 @@ header a img.logo {
 }
 
 .volvo-playlist {
-  max-width: 900px;
-  margin: 3.5rem auto 2rem;
+  width: 100%;
 }
 
 .volvo-playlist iframe {
