@@ -2209,6 +2209,7 @@ header a img.logo {
 .cat-blue   { --cat-color: var(--blue-500-solid);  --cat-text: #fff; }
 .cat-yellow { --cat-color: var(--yellow);          --cat-text: var(--ink); }
 .cat-navy   { --cat-color: var(--navy-500-solid);  --cat-text: #fff; }
+.cat-red    { --cat-color: var(--red-500-solid);   --cat-text: #fff; }
 
 .wiedza-tag[class*="cat-"] {
   border-color: var(--cat-color);
@@ -2382,4 +2383,39 @@ header a img.logo {
 @media (max-width: 620px) {
   .wiedza-grid { grid-template-columns: 1fr; }
   .hero-search-wrapper { max-width: 100%; }
+}
+
+/* Wiedza: podcast episodes and "Pokaż więcej" */
+.wiedza-more {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.wiedza-podcast {
+  margin: 0 0 2rem;
+}
+
+.wiedza-podcast audio {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.wiedza-podcast-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.wiedza-podcast-links .cta-button:first-child {
+  border-color: var(--green-500-solid);
+  background: var(--green-500-solid);
+  color: var(--paper);
+}
+
+.wiedza-podcast-links .cta-button:first-child:hover {
+  background: var(--green-700);
+  border-color: var(--green-700);
 }

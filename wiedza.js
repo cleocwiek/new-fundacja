@@ -1,7 +1,8 @@
 /* Wiedza page: renders the post grid, category filters, and single-post
    detail view based on URL query params (?q=, ?category=, ?post=).
    Articles come from posts-data.js, which loads them from Contentful
-   (or uses its built-in sample posts when Contentful isn't configured);
+   (or uses its built-in sample posts when Contentful isn't configured)
+   together with the podcast episodes from podcast-episodes.json;
    rendering waits for `wiedzaReady`. */
 (function () {
   const heroSection = document.querySelector(".wiedza-hero");
@@ -10,6 +11,9 @@
   const grid = document.getElementById("wiedzaGrid");
   const postSection = document.getElementById("wiedzaPostSection");
   const searchInput = document.getElementById("wiedzaSearchInput");
+  const PAGE_SIZE = 24;
+  const YOUTUBE_URL = "https://www.youtube.com/@moznazwariowac";
+  const SPOTIFY_SHOW_URL = "https://open.spotify.com/show/7yq7L2H5VwxzbtKMXawCY4";
 
   if (!grid || typeof wiedzaReady === "undefined") return;
 
@@ -25,33 +29,42 @@
     return new URLSearchParams(window.location.search);
   }
 
+  function isPodcast(post) {
+    return !!post.podcast;
+  }
+
   function renderCard(post) {
     const href = "wiedza.html?post=" + encodeURIComponent(post.slug);
+    const linkText = isPodcast(post) ? "Posłuchaj odcinka →" : "Czytaj więcej →";
     return (
       '<article class="wiedza-card">' +
       '<p class="wiedza-card-category ' + wiedzaCategoryClass(post.category) + '">' + escapeHtml(post.category) + "</p>" +
       '<h3><a href="' + href + '">' + escapeHtml(post.title) + "</a></h3>" +
       "<p>" + escapeHtml(post.excerpt) + "</p>" +
-      '<a class="wiedza-card-link" href="' + href + '">Czytaj więcej →</a>' +
+      '<a class="wiedza-card-link" href="' + href + '">' + linkText + "</a>" +
       "</article>"
     );
   }
 
-  // Random order that spreads every category evenly through the list:
-  // each category is shuffled, then its posts get evenly spaced positions
-  // (with a random offset) and all posts are sorted by position.
-  function mixedOrder(posts) {
+  function shuffle(list) {
+    for (let i = list.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = list[i]; list[i] = list[j]; list[j] = tmp;
+    }
+    return list;
+  }
+
+  // Random order that spreads every article category evenly through the
+  // list: each category is shuffled, then its posts get evenly spaced
+  // positions (with a random offset) and all posts are sorted by position.
+  function mixedArticles(posts) {
     const byCategory = {};
     posts.forEach(function (post) {
       (byCategory[post.category] = byCategory[post.category] || []).push(post);
     });
     const placed = [];
     Object.keys(byCategory).forEach(function (category) {
-      const group = byCategory[category];
-      for (let i = group.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const tmp = group[i]; group[i] = group[j]; group[j] = tmp;
-      }
+      const group = shuffle(byCategory[category]);
       group.forEach(function (post, i) {
         placed.push({ post: post, key: (i + Math.random()) / group.length });
       });
@@ -60,7 +73,44 @@
     return placed.map(function (item) { return item.post; });
   }
 
+  // There are many more podcast episodes than articles, so instead of
+  // spreading them evenly, one random episode follows every two articles;
+  // the remaining episodes come after the articles.
+  function mixedOrder(posts) {
+    const articles = mixedArticles(posts.filter(function (p) { return !isPodcast(p); }));
+    const episodes = shuffle(posts.filter(isPodcast));
+    const mixed = [];
+    articles.forEach(function (post, i) {
+      mixed.push(post);
+      if (i % 2 === 1 && episodes.length) mixed.push(episodes.shift());
+    });
+    return mixed.concat(episodes);
+  }
+
+  function newestFirst(posts) {
+    return posts.slice().sort(function (a, b) {
+      return (b.date || "").localeCompare(a.date || "");
+    });
+  }
+
   let mixedPosts = null;
+  let shownPosts = [];
+  let shownCount = 0;
+
+  function renderMore() {
+    const next = shownPosts.slice(shownCount, shownCount + PAGE_SIZE);
+    shownCount += next.length;
+    const oldButton = grid.querySelector(".wiedza-more");
+    if (oldButton) oldButton.remove();
+    grid.insertAdjacentHTML("beforeend", next.map(renderCard).join(""));
+    if (shownCount < shownPosts.length) {
+      grid.insertAdjacentHTML(
+        "beforeend",
+        '<div class="wiedza-more"><button type="button" class="cta-button">Pokaż więcej</button></div>'
+      );
+      grid.querySelector(".wiedza-more button").addEventListener("click", renderMore);
+    }
+  }
 
   function renderGrid(query, category) {
     if (!mixedPosts) mixedPosts = mixedOrder(WIEDZA_POSTS);
@@ -69,9 +119,10 @@
       posts = posts.filter(function (post) {
         return post.category === category;
       });
+      if (!query && category === WIEDZA_PODCAST_CATEGORY) posts = newestFirst(posts);
     }
 
-    if (WIEDZA_LOAD_ERROR) {
+    if (WIEDZA_LOAD_ERROR && !WIEDZA_POSTS.length) {
       grid.innerHTML =
         '<p class="wiedza-empty">Nie udało się wczytać artykułów. Odśwież stronę za chwilę.</p>';
       return;
@@ -79,13 +130,16 @@
 
     if (!posts.length) {
       grid.innerHTML =
-        '<p class="wiedza-empty">Nie znaleźliśmy artykułów pasujących do „' +
+        '<p class="wiedza-empty">Nie znaleźliśmy wyników pasujących do „' +
         escapeHtml(query || category) +
         '”. Spróbuj innego hasła.</p>';
       return;
     }
 
-    grid.innerHTML = posts.map(renderCard).join("");
+    grid.innerHTML = "";
+    shownPosts = posts;
+    shownCount = 0;
+    renderMore();
   }
 
   function renderTags(activeCategory) {
@@ -158,6 +212,19 @@
           })
           .join("");
 
+    const podcastHtml = isPodcast(post)
+      ? '<div class="wiedza-podcast">' +
+        (post.podcast.audio
+          ? '<audio controls preload="none" src="' + escapeHtml(post.podcast.audio) + '"></audio>'
+          : "") +
+        '<div class="wiedza-podcast-links">' +
+        '<a class="cta-button" href="' + escapeHtml(post.podcast.link || SPOTIFY_SHOW_URL) +
+        '" target="_blank" rel="noopener">Słuchaj na Spotify</a>' +
+        '<a class="cta-button wiedza-podcast-youtube" href="' + YOUTUBE_URL +
+        '" target="_blank" rel="noopener">Podcast na YouTube</a>' +
+        "</div></div>"
+      : "";
+
     const sourceHtml = post.source
       ? '<p class="wiedza-post-source">Na podstawie: ' +
         (post.sourceUrl && /^https?:\/\//.test(post.sourceUrl)
@@ -178,10 +245,11 @@
       '" href="wiedza.html?category=' + encodeURIComponent(post.category) + '">' +
       escapeHtml(post.category) + "</a>" +
       "<h1>" + escapeHtml(post.title) + "</h1>" +
+      podcastHtml +
       '<div class="wiedza-post-body">' + bodyHtml + "</div>" +
       '<div class="wiedza-post-tags">' + tagsHtml + "</div>" +
       sourceHtml +
-      '<div class="wiedza-disclaimer">Ten artykuł ma charakter edukacyjny i nie zastępuje konsultacji ze specjalistą. Jeśli Ty lub ktoś bliski potrzebuje wsparcia teraz, skorzystaj z bezpłatnych, całodobowych linii pomocowych wymienionych na stronie głównej w sekcji „Szukasz wsparcia?”.</div>';
+      '<div class="wiedza-disclaimer">' + (isPodcast(post) ? "Ten odcinek" : "Ten artykuł") + ' ma charakter edukacyjny i nie zastępuje konsultacji ze specjalistą. Jeśli Ty lub ktoś bliski potrzebuje wsparcia teraz, skorzystaj z bezpłatnych, całodobowych linii pomocowych wymienionych na stronie głównej w sekcji „Szukasz wsparcia?”.</div>';
 
     if (gridSection) gridSection.style.display = "none";
     if (heroSection) heroSection.style.display = "none";

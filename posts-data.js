@@ -8,10 +8,15 @@
 
    Globalne API używane przez script.js (wyszukiwarka na stronie
    głównej) i wiedza.js (strona Wiedza):
-     WIEDZA_POSTS     – aktualna lista artykułów
+     WIEDZA_POSTS     – aktualna lista artykułów i odcinków podcastu
      wiedzaReady      – Promise, który rozwiązuje się po wczytaniu
      wiedzaSearch()   – wyszukiwanie
      WIEDZA_LOAD_ERROR – true, jeśli Contentful nie odpowiedział
+
+   Odcinki podcastu pochodzą z podcast-episodes.json, który
+   codziennie aktualizuje GitHub Action z kanału RSS
+   (.github/workflows/podcast-update.yml). Na stronie są wpisami
+   z kategorią „Podcast”.
    ========================================================= */
 
 /* Przykładowe artykuły – używane tylko bez konfiguracji Contentful */
@@ -193,8 +198,34 @@ function wiedzaFromContentful(item) {
   };
 }
 
-var wiedzaReady = (function () {
-  if (!WIEDZA_USES_CONTENTFUL) return Promise.resolve(WIEDZA_POSTS);
+var WIEDZA_PODCAST_CATEGORY = "Podcast";
+
+function wiedzaFromPodcast(ep) {
+  const text = (ep.description || "").replace(/\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/[*#]/g, "");
+  const firstParagraph = text.split(/\n\s*\n/)[0].replace(/\s+/g, " ").trim();
+  const excerpt = firstParagraph.length > 200
+    ? firstParagraph.slice(0, 200).replace(/\s+\S*$/, "") + "…"
+    : firstParagraph;
+  const safeUrl = function (url) { return /^https?:\/\//.test(url || "") ? url : ""; };
+  return {
+    slug: ep.slug,
+    category: WIEDZA_PODCAST_CATEGORY,
+    title: ep.title || "",
+    excerpt: excerpt,
+    date: ep.date || "",
+    tags: ep.tags || [],
+    bodyHtml: wiedzaMarkdown(ep.description || ""),
+    bodyText: text,
+    podcast: {
+      number: ep.number || null,
+      audio: safeUrl(ep.audio),
+      link: safeUrl(ep.link),
+    },
+  };
+}
+
+function wiedzaLoadArticles() {
+  if (!WIEDZA_USES_CONTENTFUL) return Promise.resolve(WIEDZA_FALLBACK_POSTS.slice());
 
   const url =
     "https://cdn.contentful.com/spaces/" +
@@ -211,18 +242,38 @@ var wiedzaReady = (function () {
       return res.json();
     })
     .then(function (data) {
-      WIEDZA_POSTS = (data.items || [])
+      return (data.items || [])
         .map(wiedzaFromContentful)
         .filter(function (post) { return post.slug && post.title; });
-      return WIEDZA_POSTS;
     })
     .catch(function (err) {
       console.error("Nie udało się wczytać artykułów z Contentful:", err);
       WIEDZA_LOAD_ERROR = true;
-      WIEDZA_POSTS = [];
-      return WIEDZA_POSTS;
+      return [];
     });
-})();
+}
+
+function wiedzaLoadPodcast() {
+  return fetch("podcast-episodes.json", { cache: "no-cache" })
+    .then(function (res) {
+      if (!res.ok) throw new Error("Podcast HTTP " + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      return (data.episodes || [])
+        .filter(function (ep) { return ep.slug && ep.title; })
+        .map(wiedzaFromPodcast);
+    })
+    .catch(function (err) {
+      console.error("Nie udało się wczytać odcinków podcastu:", err);
+      return [];
+    });
+}
+
+var wiedzaReady = Promise.all([wiedzaLoadArticles(), wiedzaLoadPodcast()]).then(function (lists) {
+  WIEDZA_POSTS = lists[0].concat(lists[1]);
+  return WIEDZA_POSTS;
+});
 
 /* Category → colour class (see .cat-* in style.css). Categories not listed
    here simply get the neutral style. */
@@ -232,6 +283,7 @@ var WIEDZA_CATEGORY_COLORS = {
   "higiena cyfrowa": "cat-blue",
   "zdrowie psychiczne": "cat-yellow",
   "jak wspierac bliskich": "cat-navy",
+  podcast: "cat-red",
 };
 
 /* Order of the category filter buttons on wiedza.html. Categories not listed
@@ -242,6 +294,7 @@ var WIEDZA_CATEGORY_ORDER = [
   "zdrowie psychiczne",
   "higiena cyfrowa",
   "ciaza i rodzicielstwo",
+  "podcast",
 ];
 
 function wiedzaCategoryRank(category) {
