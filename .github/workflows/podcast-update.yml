@@ -1,0 +1,49 @@
+# Keeps podcast-episodes.json in sync with the podcast RSS feed, so new
+# episodes show up on the Wiedza page and in the search on their own.
+# Runs every morning, whenever content/podcast-keywords.json or the script
+# changes on main, and on demand: Actions → "Aktualizacja odcinków podcastu"
+# → Run workflow. It commits only when something actually changed.
+name: Aktualizacja odcinków podcastu
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - content/podcast-keywords.json
+      - podcast/fetch-podcast.mjs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: podcast-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Read the RSS feed
+        run: node podcast/fetch-podcast.mjs
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- podcast-episodes.json; then
+            echo "Brak zmian w odcinkach."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add podcast-episodes.json
+          git commit -m "Podcast: aktualizacja odcinków z RSS"
+          git pull --rebase origin main
+          git push origin HEAD:main

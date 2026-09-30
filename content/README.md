@@ -66,3 +66,18 @@ Body text uses simple Markdown:
 
 The note that articles are educational and not a substitute for a specialist is
 added automatically under every article.
+
+## Podcast episodes
+
+The Wiedza page and the search also show every podcast episode (category
+"Podcast"). They are not in Contentful – they come from the podcast's RSS feed
+(`https://anchor.fm/s/3a1db750/podcast/rss`):
+
+- `.github/workflows/podcast-update.yml` runs every morning (and on demand:
+  Actions → "Aktualizacja odcinków podcastu" → Run workflow). It runs
+  `podcast/fetch-podcast.mjs`, which saves all episodes to
+  `podcast-episodes.json`, and commits the file when something changed. New
+  episodes appear on the site on their own, usually by the next morning.
+- `content/podcast-keywords.json` holds extra search keywords per episode
+  (episode guid → list of words), so an episode can be found by topics its
+  description doesn't name word for word. Editing it on `main` re-runs the job.
