@@ -1594,8 +1594,9 @@ header a img.logo {
 }
 
 /* FMZ x Volvo Car Warszawa page (reuses the Magnum/OFFternoon layout) */
-.volvo-hero .offternoon-section-title {
-  color: var(--navy-500-solid);
+.volvo-hero .offternoon-section-title,
+.volvo-hero .kampania-subclaim {
+  color: var(--red-500-solid);
 }
 
 .volvo-playlist {
