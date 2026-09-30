@@ -1512,6 +1512,65 @@ header a img.logo {
   }
 }
 
+/* FMZ x Answear page (reuses the Magnum/OFFternoon layout) */
+.answear-hero .answear-row {
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.answear-figure {
+  margin: 0;
+  width: 100%;
+  max-width: 460px;
+  align-self: center;
+}
+
+.answear-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+
+.answear-hero .offternoon-section-title {
+  color: var(--blue-500-solid);
+}
+
+.answear-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin: 1rem auto 4rem;
+}
+
+.answear-stat {
+  flex: 1 1 220px;
+  max-width: 320px;
+  background: var(--pink-500-solid);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  padding: 1.6rem 1.4rem;
+  text-align: center;
+}
+
+.answear-stat-number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  color: var(--red-500-solid);
+}
+
+.answear-stat-label {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--red-500-solid);
+}
+
 /* FMZ x Magnum page (reuses the OFFternoon layout) */
 .magnum-title {
   max-width: 820px;
