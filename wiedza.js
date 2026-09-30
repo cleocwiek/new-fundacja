@@ -97,8 +97,38 @@
   let shownPosts = [];
   let shownCount = 0;
 
-  function renderMore() {
-    const next = shownPosts.slice(shownCount, shownCount + PAGE_SIZE);
+  // Coming back to the list (back button or swipe) shows it exactly as it
+  // was left: same order, same number of cards, same scroll position.
+  const navEntry = performance.getEntriesByType ? performance.getEntriesByType("navigation")[0] : null;
+  const cameBack = !!navEntry && navEntry.type === "back_forward";
+
+  function remember(key, value) {
+    try { sessionStorage.setItem("wiedza-" + key, JSON.stringify(value)); } catch (e) { /* storage unavailable */ }
+  }
+
+  function recall(key) {
+    try { return JSON.parse(sessionStorage.getItem("wiedza-" + key)); } catch (e) { return null; }
+  }
+
+  function listOrder(posts) {
+    const saved = cameBack ? recall("order") : null;
+    if (Array.isArray(saved)) {
+      const bySlug = {};
+      posts.forEach(function (post) { bySlug[post.slug] = post; });
+      const ordered = saved.map(function (slug) { return bySlug[slug]; }).filter(Boolean);
+      const known = {};
+      ordered.forEach(function (post) { known[post.slug] = true; });
+      if (ordered.length) {
+        return ordered.concat(posts.filter(function (post) { return !known[post.slug]; }));
+      }
+    }
+    const order = mixedOrder(posts);
+    remember("order", order.map(function (post) { return post.slug; }));
+    return order;
+  }
+
+  function renderMore(count) {
+    const next = shownPosts.slice(shownCount, shownCount + (count || PAGE_SIZE));
     shownCount += next.length;
     const oldButton = grid.querySelector(".wiedza-more");
     if (oldButton) oldButton.remove();
@@ -108,12 +138,15 @@
         "beforeend",
         '<div class="wiedza-more"><button type="button" class="cta-button">Pokaż więcej</button></div>'
       );
-      grid.querySelector(".wiedza-more button").addEventListener("click", renderMore);
+      grid.querySelector(".wiedza-more button").addEventListener("click", function () {
+        renderMore();
+      });
     }
+    remember("shown", { key: location.search, count: shownCount });
   }
 
   function renderGrid(query, category) {
-    if (!mixedPosts) mixedPosts = mixedOrder(WIEDZA_POSTS);
+    if (!mixedPosts) mixedPosts = listOrder(WIEDZA_POSTS);
     let posts = query ? wiedzaSearch(query) : mixedPosts.slice();
     if (category) {
       posts = posts.filter(function (post) {
@@ -139,8 +172,23 @@
     grid.innerHTML = "";
     shownPosts = posts;
     shownCount = 0;
-    renderMore();
+    const shown = cameBack ? recall("shown") : null;
+    renderMore(shown && shown.key === location.search ? Math.max(shown.count, PAGE_SIZE) : PAGE_SIZE);
+
+    const scroll = cameBack ? recall("scroll") : null;
+    if (scroll && scroll.key === location.search) {
+      const html = document.documentElement;
+      html.style.scrollBehavior = "auto";
+      window.scrollTo(0, scroll.y);
+      html.style.scrollBehavior = "";
+    }
   }
+
+  window.addEventListener("pagehide", function () {
+    if (gridSection && gridSection.style.display !== "none") {
+      remember("scroll", { key: location.search, y: window.scrollY });
+    }
+  });
 
   function renderTags(activeCategory) {
     if (!tagsBar) return;
@@ -255,7 +303,8 @@
     if (heroSection) heroSection.style.display = "none";
     if (tagsBar) tagsBar.style.display = "none";
     postSection.style.display = "block";
-    window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+    if (window.fmzScrollToTop) window.fmzScrollToTop();
+    else window.scrollTo(0, 0);
   }
 
   function init() {

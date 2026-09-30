@@ -2,6 +2,65 @@ function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("open");
 }
 
+// ---------- Page navigation helpers (every page) ----------
+(function () {
+  // Jump to the top without the smooth scrolling set on <html> in style.css.
+  function scrollToTopNow() {
+    const html = document.documentElement;
+    const previous = html.style.scrollBehavior;
+    html.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    html.style.scrollBehavior = previous;
+  }
+  window.fmzScrollToTop = scrollToTopNow;
+
+  // A page opened from a link always starts at the top. Going back keeps the
+  // browser's remembered position, and links to a section (#...) are left alone.
+  const nav = performance.getEntriesByType ? performance.getEntriesByType("navigation")[0] : null;
+  const openedFromLink = !nav || nav.type === "navigate";
+  if (openedFromLink && !location.hash) {
+    let userScrolled = false;
+    ["wheel", "touchstart", "keydown"].forEach(function (type) {
+      window.addEventListener(type, function () { userScrolled = true; }, { once: true, passive: true });
+    });
+    scrollToTopNow();
+    document.addEventListener("DOMContentLoaded", scrollToTopNow);
+    window.addEventListener("load", function () {
+      if (!userScrolled) scrollToTopNow();
+    });
+  }
+
+  // Swipe from the left edge to go back. Browsers with their own back swipe
+  // (Safari on iPhone, Android with gesture navigation) handle it themselves
+  // and cancel the touch; this covers the ones without it, e.g. a site added
+  // to the home screen or opened inside another app.
+  const ua = navigator.userAgent;
+  const standalone = navigator.standalone || (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches);
+  const inAppBrowser = /Instagram|FBAN|FBAV|Line\/|Twitter|LinkedInApp|TikTok/i.test(ua);
+  const safariHasSwipe = /iP(hone|ad|od)/.test(ua) && window.top === window && !standalone && !inAppBrowser;
+  if (safariHasSwipe) return;
+
+  let start = null;
+  window.addEventListener("touchstart", function (event) {
+    const touch = event.touches[0];
+    start = event.touches.length === 1 && touch.clientX <= 24
+      ? { x: touch.clientX, y: touch.clientY, time: Date.now() }
+      : null;
+  }, { passive: true });
+  window.addEventListener("touchcancel", function () { start = null; }, { passive: true });
+  window.addEventListener("touchend", function (event) {
+    if (!start) return;
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - start.x;
+    const dy = Math.abs(touch.clientY - start.y);
+    const quick = Date.now() - start.time < 800;
+    start = null;
+    const menu = document.getElementById("mobileMenu");
+    if (menu && menu.classList.contains("open")) return;
+    if (dx > 80 && dy < 60 && quick && window.history.length > 1) window.history.back();
+  }, { passive: true });
+})();
+
 // ---------- Wiedza search bar (reusable — works on homepage + wiedza.html) ----------
 function wireWiedzaSearchBar(formId, inputId, suggestionsId) {
   const form = document.getElementById(formId);

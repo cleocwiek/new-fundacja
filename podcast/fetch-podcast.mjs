@@ -57,7 +57,7 @@ function htmlToMarkdown(html) {
       return clean ? `**${clean}**` : "";
     })
     .replace(/<a\s[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, (_, href, label) => {
-      const url = httpsOnly(decodeEntities(href));
+      const url = httpsOnly(decodeEntities(href).trim());
       const clean = label.replace(/<[^>]+>/g, "").trim();
       if (!url) return clean;
       return clean && clean !== url ? `[${clean}](${url})` : url;
@@ -67,19 +67,53 @@ function htmlToMarkdown(html) {
     .replace(/<\/(p|div|ul|ol|h\d)>/gi, "\n\n")
     .replace(/<[^>]+>/g, "");
   text = decodeEntities(text)
-    .replace(/ /g, " ")
+    .replace(/[\u200b-\u200d\u2060\ufeff\u00ad]/g, "")
+    .replace(/\u00a0/g, " ")
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
   // bare links → [url](url) so the site shows them as links; links that
   // already are [label](url) are set aside first so they aren't wrapped twice
   const kept = [];
-  text = text.replace(/\[[^\]]*\]\(https?:\/\/[^\s)]+\)/g, (link) => `\u0000${kept.push(link) - 1}\u0000`);
+  text = text.replace(/\[[^\]]*\]\(\s*https?:\/\/[^\s)]+\s*\)/g, (link) => `\u0000${kept.push(link.replace(/\(\s+/, "(").replace(/\s+\)$/, ")")) - 1}\u0000`);
   text = text.replace(/https?:\/\/[^\s)\]<>"]+/g, (url) => {
     const clean = url.replace(/[.,;:!?]+$/, "");
     return `[${clean}](${clean})` + url.slice(clean.length);
   });
   return text.replace(/\u0000(\d+)\u0000/g, (_, i) => kept[i]);
+}
+
+// Most descriptions end with the same block (Autopromocja: Poradnia, books,
+// Patronite, where to find us, social links). It says nothing about the
+// episode and would make every episode match searches like "emocje", so
+// everything from the start of that block onwards is left out.
+const PROMO = new RegExp(
+  [
+    "#?autopromocja",
+    "dziękujemy za wasze wsparcie",
+    "(?:posłuchajcie i )?podzielcie się swoimi wrażeniami",
+    "możecie podzielić się swoimi wrażeniami",
+    "jeśli chcecie podzielić się swoimi refleksjami",
+    "szukajcie nas",
+    "znajdźcie nas",
+    "znajdziesz nas",
+    "aplikacja do medytacji cleo",
+    "książka ani:",
+    "książka cleo:",
+    "pierścionek ?wishbone",
+  ].join("|"),
+  "i"
+);
+
+function withoutPromo(markdown) {
+  return markdown
+    .split(/(?:^|\n)\s*_{3,}\s*(?:\n|$)/)
+    .map((part) => {
+      const m = part.match(PROMO);
+      return (m ? part.slice(0, m.index) : part).trim();
+    })
+    .filter(Boolean)
+    .join("\n\n");
 }
 
 function slugify(text) {
@@ -120,7 +154,7 @@ const episodes = items
       date: Number.isNaN(pub.getTime()) ? "" : pub.toISOString().slice(0, 10),
       link: httpsOnly(decodeEntities(tag(item, "link"))),
       audio: httpsOnly(attr(item, "enclosure", "url")),
-      description: htmlToMarkdown(html),
+      description: withoutPromo(htmlToMarkdown(html)),
       tags: Array.isArray(keywords[guid]) ? keywords[guid] : [],
     };
   })
