@@ -1593,6 +1593,26 @@ header a img.logo {
   color: var(--red-500-solid);
 }
 
+/* FMZ x Volvo Car Warszawa page (reuses the Magnum/OFFternoon layout) */
+.volvo-hero .offternoon-section-title {
+  color: var(--navy-500-solid);
+}
+
+.volvo-playlist {
+  max-width: 900px;
+  margin: 3.5rem auto 2rem;
+}
+
+.volvo-playlist iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: #000;
+}
+
 /* FMZ x Tymbark page (reuses the Magnum/OFFternoon layout) */
 .tymbark-hero .offternoon-section-title {
   color: var(--navy-500-solid);
