@@ -1512,10 +1512,17 @@ header a img.logo {
   }
 }
 
-/* FMZ x Magnum page (reuses the OFFternoon layout) */
 /* FMZ x Answear page (reuses the Magnum/OFFternoon layout) */
+.answear-hero .answear-row {
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
 .answear-figure {
   margin: 0;
+  width: 100%;
+  max-width: 460px;
+  align-self: center;
 }
 
 .answear-figure img {
@@ -1524,16 +1531,6 @@ header a img.logo {
   height: auto;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-card);
-}
-
-.answear-figure-wide {
-  max-width: var(--container);
-  margin: 0 auto 3rem;
-}
-
-.answear-hero .answear-centered {
-  max-width: 760px;
-  margin: 0 auto 2.5rem;
 }
 
 .answear-hero .offternoon-section-title {
@@ -1545,13 +1542,13 @@ header a img.logo {
   justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
-  margin: 3rem auto;
+  margin: 1rem auto 4rem;
 }
 
 .answear-stat {
   flex: 1 1 220px;
   max-width: 320px;
-  background: var(--red-500-solid);
+  background: var(--pink-500-solid);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-card);
   padding: 1.6rem 1.4rem;
@@ -1563,7 +1560,7 @@ header a img.logo {
   font-family: var(--font-serif);
   font-size: clamp(2.4rem, 5vw, 3.2rem);
   line-height: 1.1;
-  color: var(--navy-500-solid);
+  color: var(--red-500-solid);
 }
 
 .answear-stat-label {
@@ -1571,30 +1568,10 @@ header a img.logo {
   margin-top: 0.4rem;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--navy-500-solid);
+  color: var(--red-500-solid);
 }
 
-.answear-videos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  max-width: var(--container);
-  margin: 1rem auto 3.5rem;
-}
-
-.answear-videos iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  border: 0;
-  border-radius: var(--radius-sm);
-  background: #000;
-}
-
-@media (max-width: 860px) {
-  .answear-videos { grid-template-columns: 1fr; }
-}
-
+/* FMZ x Magnum page (reuses the OFFternoon layout) */
 .magnum-title {
   max-width: 820px;
   margin: 0 auto 2rem;
