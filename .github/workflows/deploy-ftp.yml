@@ -63,7 +63,7 @@ jobs:
 
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'workflow_run' && 'main' || github.ref }}
 
       - name: Upload new podcast episodes
         if: github.event_name == 'workflow_run'
