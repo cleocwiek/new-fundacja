@@ -1655,7 +1655,7 @@ header a img.logo {
 }
 
 .magnum-logos img {
-  height: 120px;
+  height: 84px;
   width: auto;
   border-radius: var(--radius-sm);
 }
