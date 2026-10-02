@@ -1,0 +1,114 @@
+# Publishes the website to the foundation's own server (moznazwariowac.pl)
+# over FTP encrypted with TLS.
+#
+# - The whole site goes live only on demand: Actions → "Wysyłka strony na
+#   serwer" → Run workflow. Merging into main updates just the GitHub Pages
+#   copy, which works as a final check before publishing.
+# - After every successful podcast update only podcast-episodes.json is
+#   uploaded, so new episodes appear without publishing unfinished work.
+#
+# Needs three repository secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+# (Settings → Secrets and variables → Actions). The FTP account may start
+# either in the website folder itself or above public_html; the first step
+# works out which. The full upload sends only changed files and keeps a
+# .ftp-deploy-sync-state.json file on the server to know what is there.
+name: Wysyłka strony na serwer
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Aktualizacja odcinków podcastu"]
+    types: [completed]
+
+concurrency:
+  group: deploy-ftp
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    steps:
+      - name: Find the website folder on the server
+        id: dir
+        run: |
+          if [ -z "$FTP_SERVER" ] || [ -z "$FTP_USERNAME" ] || [ -z "$FTP_PASSWORD" ]; then
+            echo "::error::FTP secrets are missing (FTP_SERVER, FTP_USERNAME, FTP_PASSWORD)."
+            exit 1
+          fi
+          # Login goes in a curl config file so it never shows up in the logs.
+          esc() { printf '%s' "$1" | sed 's/[\\"]/\\&/g'; }
+          printf 'user = "%s:%s"\n' "$(esc "$FTP_USERNAME")" "$(esc "$FTP_PASSWORD")" > "$RUNNER_TEMP/ftp.cfg"
+          list() { curl -sS --ssl-reqd --list-only -K "$RUNNER_TEMP/ftp.cfg" "ftp://$FTP_SERVER/$1"; }
+          root=$(list "") || { echo "::error::Could not log in to the FTP server."; exit 1; }
+          root=$(printf '%s\n' "$root" | tr -d '\r')
+          if echo "$root" | grep -qx 'public_html'; then
+            dir="public_html/moznazwariowac.pl/"
+            list "$dir" > /dev/null || { echo "::error::Folder $dir not found on the server."; exit 1; }
+          elif echo "$root" | grep -qx 'index.html'; then
+            dir=""
+          else
+            echo "::error::Could not find the website folder. The FTP account starts in a folder with: $(echo $root)"
+            exit 1
+          fi
+          echo "Website folder: /${dir}"
+          echo "path=$dir" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Upload new podcast episodes
+        if: github.event_name == 'workflow_run'
+        run: |
+          curl -sS --ssl-reqd -K "$RUNNER_TEMP/ftp.cfg" -T podcast-episodes.json \
+            "ftp://$FTP_SERVER/${{ steps.dir.outputs.path }}podcast-episodes.json"
+          echo "podcast-episodes.json uploaded."
+
+      # Copy only the files the website needs into _site.
+      - name: Prepare website files
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          rsync -a ./ _site/ \
+            --exclude '.git*' \
+            --exclude '.github/' \
+            --exclude 'content/' \
+            --exclude 'podcast/' \
+            --exclude '_site/' \
+            --exclude '*.md' \
+            --exclude '.DS_Store' \
+            --exclude 'images/ archive1.png' \
+            --exclude 'images/archive*.png' \
+            --exclude 'images/kampania.png' \
+            --exclude 'images/grupy*.png' \
+            --exclude 'images/takecare.png' \
+            --exclude 'images/plakat.png' \
+            --exclude 'images/podcast.png' \
+            --exclude 'images/offternoon.jpg' \
+            --exclude 'images/mamtowgrupie-video.MP4' \
+            --exclude 'images/kampania/Przewodnik*' \
+            --exclude 'images/kampania/poster13.jpg'
+          du -sh _site
+
+      - name: Upload the website
+        if: github.event_name == 'workflow_dispatch'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./_site/
+          server-dir: ./${{ steps.dir.outputs.path }}
+
+      - name: Clean up
+        if: always()
+        run: rm -f "$RUNNER_TEMP/ftp.cfg"
