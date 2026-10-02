@@ -10,8 +10,8 @@
 # Needs three repository secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
 # (Settings → Secrets and variables → Actions). The FTP account may start
 # either in the website folder itself or above public_html; the first step
-# works out which. The full upload sends only changed files and keeps a
-# .ftp-deploy-sync-state.json file on the server to know what is there.
+# works out which. The full upload sends every website file again and never
+# deletes anything on the server.
 name: Wysyłka strony na serwer
 
 on:
@@ -99,15 +99,7 @@ jobs:
 
       - name: Upload the website
         if: github.event_name == 'workflow_dispatch'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./_site/
-          server-dir: ./${{ steps.dir.outputs.path }}
+        run: python3 .github/deploy/ftp-upload.py "$RUNNER_TEMP/ftp.cfg" "$FTP_SERVER" "${{ steps.dir.outputs.path }}"
 
       - name: Clean up
         if: always()
