@@ -46,7 +46,7 @@ jobs:
           # Login goes in a curl config file so it never shows up in the logs.
           esc() { printf '%s' "$1" | sed 's/[\\"]/\\&/g'; }
           printf 'user = "%s:%s"\n' "$(esc "$FTP_USERNAME")" "$(esc "$FTP_PASSWORD")" > "$RUNNER_TEMP/ftp.cfg"
-          list() { curl -sS --ssl-reqd --list-only -K "$RUNNER_TEMP/ftp.cfg" "ftp://$FTP_SERVER/$1"; }
+          list() { curl -sS --ssl-reqd --tls-max 1.2 --list-only -K "$RUNNER_TEMP/ftp.cfg" "ftp://$FTP_SERVER/$1"; }
           root=$(list "") || { echo "::error::Could not log in to the FTP server."; exit 1; }
           root=$(printf '%s\n' "$root" | tr -d '\r')
           if echo "$root" | grep -qx 'public_html'; then
@@ -68,7 +68,7 @@ jobs:
       - name: Upload new podcast episodes
         if: github.event_name == 'workflow_run'
         run: |
-          curl -sS --ssl-reqd -K "$RUNNER_TEMP/ftp.cfg" -T podcast-episodes.json \
+          curl -sS --ssl-reqd --tls-max 1.2 -K "$RUNNER_TEMP/ftp.cfg" -T podcast-episodes.json \
             "ftp://$FTP_SERVER/${{ steps.dir.outputs.path }}podcast-episodes.json"
           echo "podcast-episodes.json uploaded."
 
