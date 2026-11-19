@@ -1,6 +1,17 @@
 {
  "episodes": [
   {
+   "slug": "podcast-186-czym-wlasciwie-sa-ataki-paniki",
+   "guid": "f67ceeae-c930-4dd0-82ee-ee9f49479310",
+   "title": "186. Czym właściwie są ataki paniki?",
+   "number": 4,
+   "date": "2026-11-18",
+   "link": "https://podcasters.spotify.com/pod/show/moznazwariowac/episodes/186--Czym-waciwie-s-ataki-paniki-e3s9qkc",
+   "audio": "https://anchor.fm/s/3a1db750/podcast/play/129345612/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-10-12%2F436607683-44100-2-e15f7ef3226ab8.mp3",
+   "description": "Współczesny język jest nasiąknięty sformułowaniami z podręczników psychologicznych. Kiedy ich używamy, z czasem mogą stracić swoje znaczenie. Czy tak stało się z atakami paniki? W tym odcinku przypominamy, czym się charakteryzują w sensie klinicznym i dlaczego tak często swobodnie używamy tego sformułowania.",
+   "tags": []
+  },
+  {
    "slug": "podcast-185-obsesja-piekna-jak-poprawianie-wygladu-wplywa-na-nasza-psychike",
    "guid": "7b349e76-150b-4366-bf8f-a089ef962e7e",
    "title": "185. Obsesja piękna. Jak poprawianie wyglądu wpływa na naszą psychikę?",
